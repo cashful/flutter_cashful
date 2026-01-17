@@ -50,6 +50,8 @@ import 'package:flutter_cashful/src/model/create_product_dto.dart';
 import 'package:flutter_cashful/src/model/create_purchase_dto.dart';
 import 'package:flutter_cashful/src/model/create_transfer_dto.dart';
 import 'package:flutter_cashful/src/model/create_webhook_endpoint_dto.dart';
+import 'package:flutter_cashful/src/model/customer_balance_dto.dart';
+import 'package:flutter_cashful/src/model/customer_payment_method_dto.dart';
 import 'package:flutter_cashful/src/model/customer_response_dto.dart';
 import 'package:flutter_cashful/src/model/customer_stats_dto.dart';
 import 'package:flutter_cashful/src/model/customer_transaction_dto.dart';
@@ -96,6 +98,7 @@ import 'package:flutter_cashful/src/model/link_social_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_accounts_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_api_keys_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_checkout_sessions_response_dto.dart';
+import 'package:flutter_cashful/src/model/list_customer_payment_methods_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_customer_transactions_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_customers_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_events_response_dto.dart';
@@ -317,6 +320,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateTransferDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateWebhookEndpointDto':
           return CreateWebhookEndpointDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CustomerBalanceDto':
+          return CustomerBalanceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CustomerPaymentMethodDto':
+          return CustomerPaymentMethodDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CustomerResponseDto':
           return CustomerResponseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CustomerStatsDto':
@@ -409,6 +416,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ListApiKeysResponseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ListCheckoutSessionsResponseDto':
           return ListCheckoutSessionsResponseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ListCustomerPaymentMethodsResponseDto':
+          return ListCustomerPaymentMethodsResponseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ListCustomerTransactionsResponseDto':
           return ListCustomerTransactionsResponseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ListCustomersResponseDto':

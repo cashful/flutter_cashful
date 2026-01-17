@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getCustomerBalance**
-> Object getCustomerBalance(id)
+> CustomerBalanceDto getCustomerBalance(id)
 
 Get Customer's Cash Balance
 
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CustomerBalanceDto**](CustomerBalanceDto.md)
 
 ### Authorization
 
@@ -105,7 +105,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listCustomerPaymentMethods**
-> Object listCustomerPaymentMethods(id, limit, offset)
+> ListCustomerPaymentMethodsResponseDto listCustomerPaymentMethods(id, limit, offset)
 
 List Customer's Payment Methods
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**ListCustomerPaymentMethodsResponseDto**](ListCustomerPaymentMethodsResponseDto.md)
 
 ### Authorization
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **retrieveCustomer**
-> Object retrieveCustomer(id)
+> CustomerResponseDto retrieveCustomer(id)
 
 Retrieve Customer
 
@@ -279,7 +279,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CustomerResponseDto**](CustomerResponseDto.md)
 
 ### Authorization
 
@@ -293,7 +293,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateCustomer**
-> Object updateCustomer(id, updateCustomerDto)
+> CustomerResponseDto updateCustomer(id, updateCustomerDto)
 
 Update Customer
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**CustomerResponseDto**](CustomerResponseDto.md)
 
 ### Authorization
 

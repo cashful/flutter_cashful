@@ -38,7 +38,7 @@ void main() {
     //
     // Updates a product's name, description, or metadata.
     //
-    //Future<Object> updateProduct(String id, UpdateProductDto updateProductDto) async
+    //Future<ProductResponseDto> updateProduct(String id, UpdateProductDto updateProductDto) async
     test('test updateProduct', () async {
       // TODO
     });

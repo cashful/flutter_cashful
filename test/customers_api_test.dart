@@ -20,7 +20,7 @@ void main() {
     //
     // Retrieves the real-time balance for a single customer's \"cash balance\" (the \"wallet-enabling\" feature).
     //
-    //Future<Object> getCustomerBalance(String id) async
+    //Future<CustomerBalanceDto> getCustomerBalance(String id) async
     test('test getCustomerBalance', () async {
       // TODO
     });
@@ -29,7 +29,7 @@ void main() {
     //
     // Shows all saved payment methods (cards, etc.) for a single customer.
     //
-    //Future<Object> listCustomerPaymentMethods(String id, { num limit, num offset }) async
+    //Future<ListCustomerPaymentMethodsResponseDto> listCustomerPaymentMethods(String id, { num limit, num offset }) async
     test('test listCustomerPaymentMethods', () async {
       // TODO
     });
@@ -56,7 +56,7 @@ void main() {
     //
     // Gets the details for a single customer.
     //
-    //Future<Object> retrieveCustomer(String id) async
+    //Future<CustomerResponseDto> retrieveCustomer(String id) async
     test('test retrieveCustomer', () async {
       // TODO
     });
@@ -65,7 +65,7 @@ void main() {
     //
     // Updates a customer's details (e.g., email, metadata).
     //
-    //Future<Object> updateCustomer(String id, UpdateCustomerDto updateCustomerDto) async
+    //Future<CustomerResponseDto> updateCustomer(String id, UpdateCustomerDto updateCustomerDto) async
     test('test updateCustomer', () async {
       // TODO
     });

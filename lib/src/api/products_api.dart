@@ -300,9 +300,9 @@ _responseData = rawData == null ? null : deserialize<ProductResponseDto, Product
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [ProductResponseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Object>> updateProduct({ 
+  Future<Response<ProductResponseDto>> updateProduct({ 
     required String id,
     required UpdateProductDto updateProductDto,
     CancelToken? cancelToken,
@@ -357,11 +357,11 @@ _bodyData=jsonEncode(updateProductDto);
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object? _responseData;
+    ProductResponseDto? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'Object', growable: true);
+_responseData = rawData == null ? null : deserialize<ProductResponseDto, ProductResponseDto>(rawData, 'ProductResponseDto', growable: true);
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -373,7 +373,7 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       );
     }
 
-    return Response<Object>(
+    return Response<ProductResponseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -10,8 +10,10 @@ import 'package:flutter_cashful/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:flutter_cashful/src/model/create_customer_dto.dart';
+import 'package:flutter_cashful/src/model/customer_balance_dto.dart';
 import 'package:flutter_cashful/src/model/customer_response_dto.dart';
 import 'package:flutter_cashful/src/model/error_response_dto.dart';
+import 'package:flutter_cashful/src/model/list_customer_payment_methods_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_customer_transactions_response_dto.dart';
 import 'package:flutter_cashful/src/model/list_customers_response_dto.dart';
 import 'package:flutter_cashful/src/model/update_customer_dto.dart';
@@ -130,9 +132,9 @@ _responseData = rawData == null ? null : deserialize<CustomerResponseDto, Custom
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [CustomerBalanceDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Object>> getCustomerBalance({ 
+  Future<Response<CustomerBalanceDto>> getCustomerBalance({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -168,11 +170,11 @@ _responseData = rawData == null ? null : deserialize<CustomerResponseDto, Custom
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object? _responseData;
+    CustomerBalanceDto? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'Object', growable: true);
+_responseData = rawData == null ? null : deserialize<CustomerBalanceDto, CustomerBalanceDto>(rawData, 'CustomerBalanceDto', growable: true);
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -184,7 +186,7 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       );
     }
 
-    return Response<Object>(
+    return Response<CustomerBalanceDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -210,9 +212,9 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [ListCustomerPaymentMethodsResponseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Object>> listCustomerPaymentMethods({ 
+  Future<Response<ListCustomerPaymentMethodsResponseDto>> listCustomerPaymentMethods({ 
     required String id,
     num? limit,
     num? offset,
@@ -256,11 +258,11 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object? _responseData;
+    ListCustomerPaymentMethodsResponseDto? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'Object', growable: true);
+_responseData = rawData == null ? null : deserialize<ListCustomerPaymentMethodsResponseDto, ListCustomerPaymentMethodsResponseDto>(rawData, 'ListCustomerPaymentMethodsResponseDto', growable: true);
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -272,7 +274,7 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       );
     }
 
-    return Response<Object>(
+    return Response<ListCustomerPaymentMethodsResponseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -479,9 +481,9 @@ _responseData = rawData == null ? null : deserialize<ListCustomersResponseDto, L
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [CustomerResponseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Object>> retrieveCustomer({ 
+  Future<Response<CustomerResponseDto>> retrieveCustomer({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -517,11 +519,11 @@ _responseData = rawData == null ? null : deserialize<ListCustomersResponseDto, L
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object? _responseData;
+    CustomerResponseDto? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'Object', growable: true);
+_responseData = rawData == null ? null : deserialize<CustomerResponseDto, CustomerResponseDto>(rawData, 'CustomerResponseDto', growable: true);
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -533,7 +535,7 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       );
     }
 
-    return Response<Object>(
+    return Response<CustomerResponseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -558,9 +560,9 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [CustomerResponseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<Object>> updateCustomer({ 
+  Future<Response<CustomerResponseDto>> updateCustomer({ 
     required String id,
     required UpdateCustomerDto updateCustomerDto,
     CancelToken? cancelToken,
@@ -615,11 +617,11 @@ _bodyData=jsonEncode(updateCustomerDto);
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object? _responseData;
+    CustomerResponseDto? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'Object', growable: true);
+_responseData = rawData == null ? null : deserialize<CustomerResponseDto, CustomerResponseDto>(rawData, 'CustomerResponseDto', growable: true);
 
     } catch (error, stackTrace) {
       throw DioException(
@@ -631,7 +633,7 @@ _responseData = rawData == null ? null : deserialize<Object, Object>(rawData, 'O
       );
     }
 
-    return Response<Object>(
+    return Response<CustomerResponseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
