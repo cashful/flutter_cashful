@@ -1,0 +1,89 @@
+import 'package:test/test.dart';
+import 'package:flutter_cashful/flutter_cashful.dart';
+
+// tests for InitiatePaymentDto
+void main() {
+  final InitiatePaymentDto? instance = /* InitiatePaymentDto(...) */ null;
+  // TODO add properties to the entity
+
+  group(InitiatePaymentDto, () {
+    // Payment amount in the smallest currency unit (e.g., cents)
+    // num amount
+    test('to test the property `amount`', () async {
+      // TODO
+    });
+
+    // Three-letter ISO 4217 currency code
+    // String currency
+    test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // The unique identifier of the merchant
+    // String merchantId
+    test('to test the property `merchantId`', () async {
+      // TODO
+    });
+
+    // Evervault encrypted card details
+    // EvervaultEncryptedCardDto evervaultEncryptedCard
+    test('to test the property `evervaultEncryptedCard`', () async {
+      // TODO
+    });
+
+    // Payment intent ID (generated if not provided)
+    // String paymentIntentId
+    test('to test the property `paymentIntentId`', () async {
+      // TODO
+    });
+
+    // Masked PAN for display purposes
+    // String maskedPan
+    test('to test the property `maskedPan`', () async {
+      // TODO
+    });
+
+    // Whether to tokenize the card for future use
+    // bool tokenizeCard (default value: false)
+    test('to test the property `tokenizeCard`', () async {
+      // TODO
+    });
+
+    // Cardholder first name
+    // String firstName
+    test('to test the property `firstName`', () async {
+      // TODO
+    });
+
+    // Cardholder last name
+    // String lastName
+    test('to test the property `lastName`', () async {
+      // TODO
+    });
+
+    // Cardholder phone number
+    // String phoneNumber
+    test('to test the property `phoneNumber`', () async {
+      // TODO
+    });
+
+    // Payment description
+    // String paymentDescription
+    test('to test the property `paymentDescription`', () async {
+      // TODO
+    });
+
+    // Merchant name for display
+    // String merchantName
+    test('to test the property `merchantName`', () async {
+      // TODO
+    });
+
+    // Additional metadata
+    // Object metadata
+    test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+  });
+}
