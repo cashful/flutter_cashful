@@ -27,7 +27,7 @@ import 'package:flutter_cashful/src/api/transfers_api.dart';
 import 'package:flutter_cashful/src/api/webhooks_api.dart';
 
 class FlutterCashful {
-  static const String basePath = r'http://localhost:9000';
+  static const String basePath = r'https://api.cashful.africa';
 
   final Dio dio;
   FlutterCashful({
