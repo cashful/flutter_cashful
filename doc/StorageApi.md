@@ -25,14 +25,20 @@ Confirm that a file upload was completed
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final ConfirmUploadDto confirmUploadDto = {"fileId":"file_abc123xyz","checksum":"sha256:a1b2c3d4e5f6...","size":245760}; // ConfirmUploadDto | 
+final api_instance = StorageApi();
+final confirmUploadDto = ConfirmUploadDto(); // ConfirmUploadDto | 
 
 try {
-    final response = api.storageControllerConfirmUploadCanary(confirmUploadDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.storageControllerConfirmUploadCanary(confirmUploadDto);
+    print(result);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerConfirmUploadCanary: $e\n');
 }
 ```
@@ -66,13 +72,19 @@ Delete a file
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final String id = id_example; // String | File ID
+final api_instance = StorageApi();
+final id = id_example; // String | File ID
 
 try {
-    api.storageControllerDeleteCanary(id);
-} catch on DioException (e) {
+    api_instance.storageControllerDeleteCanary(id);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerDeleteCanary: $e\n');
 }
 ```
@@ -106,14 +118,20 @@ Get a presigned download URL for a file
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final String id = id_example; // String | File ID
+final api_instance = StorageApi();
+final id = id_example; // String | File ID
 
 try {
-    final response = api.storageControllerGetDownloadUrlCanary(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.storageControllerGetDownloadUrlCanary(id);
+    print(result);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerGetDownloadUrlCanary: $e\n');
 }
 ```
@@ -147,20 +165,26 @@ List files
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 50; // num | Maximum number of records to return
-final num offset = 0; // num | Number of records to skip
-final String tag = tag_example; // String | Filter by tag
-final String status = status_example; // String | 
-final String relatedEntityId = relatedEntityId_example; // String | 
-final String relatedEntityType = relatedEntityType_example; // String | 
+final api_instance = StorageApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 50; // num | Maximum number of records to return
+final offset = 0; // num | Number of records to skip
+final tag = tag_example; // String | Filter by tag
+final status = status_example; // String | 
+final relatedEntityId = relatedEntityId_example; // String | 
+final relatedEntityType = relatedEntityType_example; // String | 
 
 try {
-    final response = api.storageControllerListCanary(merchantId, limit, offset, tag, status, relatedEntityId, relatedEntityType);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.storageControllerListCanary(merchantId, limit, offset, tag, status, relatedEntityId, relatedEntityType);
+    print(result);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerListCanary: $e\n');
 }
 ```
@@ -200,14 +224,20 @@ Request a presigned URL for file upload
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final RequestUploadUrlDto requestUploadUrlDto = {"filename":"identity-document.pdf","mimeType":"application/pdf","tags":["compliance","identity-document"],"relatedEntityId":"compliance_info_123","relatedEntityType":"complianceInfo"}; // RequestUploadUrlDto | 
+final api_instance = StorageApi();
+final requestUploadUrlDto = RequestUploadUrlDto(); // RequestUploadUrlDto | 
 
 try {
-    final response = api.storageControllerRequestUploadUrlCanary(requestUploadUrlDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.storageControllerRequestUploadUrlCanary(requestUploadUrlDto);
+    print(result);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerRequestUploadUrlCanary: $e\n');
 }
 ```
@@ -241,14 +271,20 @@ Get file details
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getStorageApi();
-final String id = id_example; // String | File ID
+final api_instance = StorageApi();
+final id = id_example; // String | File ID
 
 try {
-    final response = api.storageControllerRetrieveCanary(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.storageControllerRetrieveCanary(id);
+    print(result);
+} catch (e) {
     print('Exception when calling StorageApi->storageControllerRetrieveCanary: $e\n');
 }
 ```

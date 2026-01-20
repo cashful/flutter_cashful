@@ -1,12 +1,21 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for AdminCreateUserDto
 void main() {
-  final AdminCreateUserDto? instance = /* AdminCreateUserDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = AdminCreateUserDto();
 
-  group(AdminCreateUserDto, () {
+  group('test AdminCreateUserDto', () {
     // The name of the user
     // String name
     test('to test the property `name`', () async {
@@ -37,5 +46,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

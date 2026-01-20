@@ -1,12 +1,21 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for WebhookEndpointResponseDto
 void main() {
-  final WebhookEndpointResponseDto? instance = /* WebhookEndpointResponseDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = WebhookEndpointResponseDto();
 
-  group(WebhookEndpointResponseDto, () {
+  group('test WebhookEndpointResponseDto', () {
     // Unique identifier for the webhook endpoint
     // String id
     test('to test the property `id`', () async {
@@ -26,7 +35,7 @@ void main() {
     });
 
     // Array of event types subscribed to
-    // List<String> events
+    // List<String> events (default value: const [])
     test('to test the property `events`', () async {
       // TODO
     });
@@ -38,7 +47,7 @@ void main() {
     });
 
     // Custom metadata attached to the webhook endpoint
-    // Map<String, Object> metadata
+    // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
       // TODO
     });
@@ -61,5 +70,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

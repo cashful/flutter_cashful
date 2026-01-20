@@ -25,14 +25,20 @@ Creates a re-usable hosted link. Can be used for: (1) Selling a product, or (2) 
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentLinksApi();
-final CreatePaymentLinkDto createPaymentLinkDto = ; // CreatePaymentLinkDto | Payment link details
+final api_instance = PaymentLinksApi();
+final createPaymentLinkDto = CreatePaymentLinkDto(); // CreatePaymentLinkDto | Payment link details
 
 try {
-    final response = api.createPaymentLink(createPaymentLinkDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createPaymentLink(createPaymentLinkDto);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentLinksApi->createPaymentLink: $e\n');
 }
 ```
@@ -68,17 +74,23 @@ Retrieves all payment links created by the merchant.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentLinksApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final bool active = true; // bool | Filter by active status
+final api_instance = PaymentLinksApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final active = true; // bool | Filter by active status
 
 try {
-    final response = api.listPaymentLinks(merchantId, limit, offset, active);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listPaymentLinks(merchantId, limit, offset, active);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentLinksApi->listPaymentLinks: $e\n');
 }
 ```
@@ -117,14 +129,20 @@ Retrieves a single payment link by ID.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentLinksApi();
-final String id = id_example; // String | The unique identifier of the payment link
+final api_instance = PaymentLinksApi();
+final id = id_example; // String | The unique identifier of the payment link
 
 try {
-    final response = api.retrievePaymentLink(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrievePaymentLink(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentLinksApi->retrievePaymentLink: $e\n');
 }
 ```
@@ -160,15 +178,21 @@ Updates a link's details, most commonly to set active: false.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentLinksApi();
-final String id = id_example; // String | The unique identifier of the payment link
-final UpdatePaymentLinkDto updatePaymentLinkDto = ; // UpdatePaymentLinkDto | Payment link update details
+final api_instance = PaymentLinksApi();
+final id = id_example; // String | The unique identifier of the payment link
+final updatePaymentLinkDto = UpdatePaymentLinkDto(); // UpdatePaymentLinkDto | Payment link update details
 
 try {
-    final response = api.updatePaymentLink(id, updatePaymentLinkDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updatePaymentLink(id, updatePaymentLinkDto);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentLinksApi->updatePaymentLink: $e\n');
 }
 ```
@@ -182,7 +206,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Object**](Object.md)
 
 ### Authorization
 

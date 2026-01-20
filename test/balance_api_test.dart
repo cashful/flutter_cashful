@@ -1,12 +1,22 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 
 /// tests for BalanceApi
 void main() {
-  final instance = FlutterCashful().getBalanceApi();
+  // final instance = BalanceApi();
 
-  group(BalanceApi, () {
+  group('tests for BalanceApi', () {
     // List Merchant Balance History
     //
     // A full ledger of all transactions, fees, and payouts for the merchant's master account.

@@ -8,7 +8,7 @@ import 'package:flutter_cashful/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**List&lt;PaymentLinkResponseDto&gt;**](PaymentLinkResponseDto.md) |  | 
+**data** | [**List<PaymentLinkResponseDto>**](PaymentLinkResponseDto.md) |  | [default to const []]
 **pagination** | [**PaginationResponseDto**](PaginationResponseDto.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

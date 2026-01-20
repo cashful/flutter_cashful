@@ -23,14 +23,20 @@ Retrieves transaction volume and customer growth metrics for the merchant.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAnalyticsApi();
-final String merchantId = merchant_123; // String | The unique identifier of the merchant
+final api_instance = AnalyticsApi();
+final merchantId = merchant_123; // String | The unique identifier of the merchant
 
 try {
-    final response = api.getAnalytics(merchantId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getAnalytics(merchantId);
+    print(result);
+} catch (e) {
     print('Exception when calling AnalyticsApi->getAnalytics: $e\n');
 }
 ```
@@ -66,14 +72,20 @@ Retrieves a quick summary of key metrics for the merchant.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAnalyticsApi();
-final String merchantId = merchant_123; // String | The unique identifier of the merchant
+final api_instance = AnalyticsApi();
+final merchantId = merchant_123; // String | The unique identifier of the merchant
 
 try {
-    final response = api.getAnalyticsSummary(merchantId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getAnalyticsSummary(merchantId);
+    print(result);
+} catch (e) {
     print('Exception when calling AnalyticsApi->getAnalyticsSummary: $e\n');
 }
 ```

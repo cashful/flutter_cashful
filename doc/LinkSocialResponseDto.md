@@ -9,7 +9,7 @@ import 'package:flutter_cashful/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **success** | **bool** | Social account linked successfully | 
-**account** | **Object** | Linked account details | [optional] 
+**account** | [**Object**](.md) | Linked account details | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

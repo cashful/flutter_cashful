@@ -24,13 +24,13 @@ Send an email notification
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getNotificationsApi();
-final SendEmailDto sendEmailDto = ; // SendEmailDto | 
+final api_instance = NotificationsApi();
+final sendEmailDto = SendEmailDto(); // SendEmailDto | 
 
 try {
-    final response = api.sendEmail(sendEmailDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.sendEmail(sendEmailDto);
+    print(result);
+} catch (e) {
     print('Exception when calling NotificationsApi->sendEmail: $e\n');
 }
 ```
@@ -65,12 +65,12 @@ Send notifications via multiple channels
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getNotificationsApi();
+final api_instance = NotificationsApi();
 
 try {
-    final response = api.sendMultiChannelNotification();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.sendMultiChannelNotification();
+    print(result);
+} catch (e) {
     print('Exception when calling NotificationsApi->sendMultiChannelNotification: $e\n');
 }
 ```
@@ -102,12 +102,12 @@ Send a notification via specified channel
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getNotificationsApi();
-final NotificationDto notificationDto = ; // NotificationDto | 
+final api_instance = NotificationsApi();
+final notificationDto = NotificationDto(); // NotificationDto | 
 
 try {
-    api.sendNotification(notificationDto);
-} catch on DioException (e) {
+    api_instance.sendNotification(notificationDto);
+} catch (e) {
     print('Exception when calling NotificationsApi->sendNotification: $e\n');
 }
 ```
@@ -142,13 +142,13 @@ Send an SMS notification
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getNotificationsApi();
-final SendSmsDto sendSmsDto = ; // SendSmsDto | 
+final api_instance = NotificationsApi();
+final sendSmsDto = SendSmsDto(); // SendSmsDto | 
 
 try {
-    final response = api.sendSms(sendSmsDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.sendSms(sendSmsDto);
+    print(result);
+} catch (e) {
     print('Exception when calling NotificationsApi->sendSms: $e\n');
 }
 ```

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **mode** | **String** | The payment mode (e.g., 'payment' or 'subscription') | 
 **successUrl** | **String** | The URL to redirect to on successful payment | 
 **cancelUrl** | **String** | The URL to redirect to if customer cancels | 
-**metadata** | **Map&lt;String, Object&gt;** | Optional custom metadata | 
+**metadata** | [**Map<String, Object>**](Object.md) | Optional custom metadata | [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

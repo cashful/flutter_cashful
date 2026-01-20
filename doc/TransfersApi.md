@@ -22,14 +22,20 @@ Create P2P Transfer
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getTransfersApi();
-final CreateTransferDto createTransferDto = ; // CreateTransferDto | Transfer details
+final api_instance = TransfersApi();
+final createTransferDto = CreateTransferDto(); // CreateTransferDto | Transfer details
 
 try {
-    final response = api.createTransfer(createTransferDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createTransfer(createTransferDto);
+    print(result);
+} catch (e) {
     print('Exception when calling TransfersApi->createTransfer: $e\n');
 }
 ```

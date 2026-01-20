@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | 
 **successUrl** | **String** |  | 
 **cancelUrl** | **String** |  | 
-**metadata** | **Map&lt;String, Object&gt;** |  | 
+**metadata** | [**Map<String, Object>**](Object.md) |  | [default to const {}]
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **deletedAt** | [**DateTime**](DateTime.md) |  | [optional] 

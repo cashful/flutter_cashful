@@ -23,12 +23,12 @@ Performs a health check on the application and external dependencies
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getHealthApi();
+final api_instance = HealthApi();
 
 try {
-    final response = api.checkHealth();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.checkHealth();
+    print(result);
+} catch (e) {
     print('Exception when calling HealthApi->checkHealth: $e\n');
 }
 ```
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Object**
+[**Object**](Object.md)
 
 ### Authorization
 

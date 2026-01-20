@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **slug** | **String** | Organization slug | 
 **logo** | **String** | Organization logo | [optional] 
 **createdAt** | **String** | Organization creation date | 
-**metadata** | **Object** | Organization metadata | [optional] 
+**metadata** | [**Object**](.md) | Organization metadata | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

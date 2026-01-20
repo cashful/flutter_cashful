@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **currency** | **String** |  | 
 **bankAccount** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** |  | 
+**metadata** | [**Map<String, Object>**](Object.md) |  | [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

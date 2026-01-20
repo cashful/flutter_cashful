@@ -8,7 +8,7 @@ import 'package:flutter_cashful/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permission** | **Object** | The permission to check | 
+**permission** | [**Object**](.md) | The permission to check | 
 **resource** | **String** | The resource to check permission on | [optional] 
 **organizationId** | **String** | The organization ID to check permission in | [optional] 
 

@@ -24,14 +24,20 @@ Registers a URL to receive real-time events (e.g., checkout.session.completed, p
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getWebhooksApi();
-final CreateWebhookEndpointDto createWebhookEndpointDto = ; // CreateWebhookEndpointDto | Webhook endpoint details
+final api_instance = WebhooksApi();
+final createWebhookEndpointDto = CreateWebhookEndpointDto(); // CreateWebhookEndpointDto | Webhook endpoint details
 
 try {
-    final response = api.createWebhookEndpoint(createWebhookEndpointDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createWebhookEndpoint(createWebhookEndpointDto);
+    print(result);
+} catch (e) {
     print('Exception when calling WebhooksApi->createWebhookEndpoint: $e\n');
 }
 ```
@@ -67,14 +73,20 @@ Stops sending events to a specific URL.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getWebhooksApi();
-final String id = id_example; // String | The unique identifier of the webhook endpoint
+final api_instance = WebhooksApi();
+final id = id_example; // String | The unique identifier of the webhook endpoint
 
 try {
-    final response = api.deleteWebhookEndpoint(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.deleteWebhookEndpoint(id);
+    print(result);
+} catch (e) {
     print('Exception when calling WebhooksApi->deleteWebhookEndpoint: $e\n');
 }
 ```
@@ -87,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Object**](Object.md)
 
 ### Authorization
 
@@ -110,16 +122,22 @@ Lists all configured webhook endpoints.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getWebhooksApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
+final api_instance = WebhooksApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
 
 try {
-    final response = api.listWebhookEndpoints(merchantId, limit, offset);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listWebhookEndpoints(merchantId, limit, offset);
+    print(result);
+} catch (e) {
     print('Exception when calling WebhooksApi->listWebhookEndpoints: $e\n');
 }
 ```

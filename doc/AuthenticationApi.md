@@ -79,14 +79,20 @@ Accept an invitation to an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final AcceptInvitationDto acceptInvitationDto = ; // AcceptInvitationDto | 
+final api_instance = AuthenticationApi();
+final acceptInvitationDto = AcceptInvitationDto(); // AcceptInvitationDto | 
 
 try {
-    final response = api.acceptInvitation(acceptInvitationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.acceptInvitation(acceptInvitationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->acceptInvitation: $e\n');
 }
 ```
@@ -122,14 +128,20 @@ Cancel an invitation to an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final CancelInvitationDto cancelInvitationDto = ; // CancelInvitationDto | 
+final api_instance = AuthenticationApi();
+final cancelInvitationDto = CancelInvitationDto(); // CancelInvitationDto | 
 
 try {
-    final response = api.cancelInvitation(cancelInvitationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.cancelInvitation(cancelInvitationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->cancelInvitation: $e\n');
 }
 ```
@@ -165,14 +177,20 @@ Change the email address of the current user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final ChangeEmailDto changeEmailDto = ; // ChangeEmailDto | 
+final api_instance = AuthenticationApi();
+final changeEmailDto = ChangeEmailDto(); // ChangeEmailDto | 
 
 try {
-    final response = api.changeEmail(changeEmailDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.changeEmail(changeEmailDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->changeEmail: $e\n');
 }
 ```
@@ -208,14 +226,20 @@ Change the password of the current user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final ChangePasswordDto changePasswordDto = ; // ChangePasswordDto | 
+final api_instance = AuthenticationApi();
+final changePasswordDto = ChangePasswordDto(); // ChangePasswordDto | 
 
 try {
-    final response = api.changePassword(changePasswordDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.changePassword(changePasswordDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->changePassword: $e\n');
 }
 ```
@@ -251,14 +275,20 @@ Check if organization slug is available
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final CheckSlugDto checkSlugDto = ; // CheckSlugDto | 
+final api_instance = AuthenticationApi();
+final checkSlugDto = CheckSlugDto(); // CheckSlugDto | 
 
 try {
-    final response = api.checkSlug(checkSlugDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.checkSlug(checkSlugDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->checkSlug: $e\n');
 }
 ```
@@ -294,14 +324,20 @@ Create a new API key
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final CreateApiKeyDto createApiKeyDto = ; // CreateApiKeyDto | 
+final api_instance = AuthenticationApi();
+final createApiKeyDto = CreateApiKeyDto(); // CreateApiKeyDto | 
 
 try {
-    final response = api.createApiKey(createApiKeyDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createApiKey(createApiKeyDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->createApiKey: $e\n');
 }
 ```
@@ -337,14 +373,20 @@ Create a new organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final CreateOrganizationDto createOrganizationDto = ; // CreateOrganizationDto | 
+final api_instance = AuthenticationApi();
+final createOrganizationDto = CreateOrganizationDto(); // CreateOrganizationDto | 
 
 try {
-    final response = api.createOrganization(createOrganizationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createOrganization(createOrganizationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->createOrganization: $e\n');
 }
 ```
@@ -380,14 +422,20 @@ Delete an API key
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final DeleteApiKeyDto deleteApiKeyDto = ; // DeleteApiKeyDto | 
+final api_instance = AuthenticationApi();
+final deleteApiKeyDto = DeleteApiKeyDto(); // DeleteApiKeyDto | 
 
 try {
-    final response = api.deleteApiKey(deleteApiKeyDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.deleteApiKey(deleteApiKeyDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->deleteApiKey: $e\n');
 }
 ```
@@ -423,14 +471,20 @@ Delete an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final DeleteOrganizationDto deleteOrganizationDto = ; // DeleteOrganizationDto | 
+final api_instance = AuthenticationApi();
+final deleteOrganizationDto = DeleteOrganizationDto(); // DeleteOrganizationDto | 
 
 try {
-    final response = api.deleteOrganization(deleteOrganizationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.deleteOrganization(deleteOrganizationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->deleteOrganization: $e\n');
 }
 ```
@@ -466,14 +520,20 @@ Delete the current user's account
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final DeleteUserDto deleteUserDto = ; // DeleteUserDto | 
+final api_instance = AuthenticationApi();
+final deleteUserDto = DeleteUserDto(); // DeleteUserDto | 
 
 try {
-    final response = api.deleteUser(deleteUserDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.deleteUser(deleteUserDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->deleteUser: $e\n');
 }
 ```
@@ -510,13 +570,13 @@ Send a password reset email to the user
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final ForgotPasswordDto forgotPasswordDto = ; // ForgotPasswordDto | 
+final api_instance = AuthenticationApi();
+final forgotPasswordDto = ForgotPasswordDto(); // ForgotPasswordDto | 
 
 try {
-    final response = api.forgetPassword(forgotPasswordDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.forgetPassword(forgotPasswordDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->forgetPassword: $e\n');
 }
 ```
@@ -552,14 +612,20 @@ Get current access token
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final GetAccessTokenDto getAccessTokenDto = ; // GetAccessTokenDto | 
+final api_instance = AuthenticationApi();
+final getAccessTokenDto = GetAccessTokenDto(); // GetAccessTokenDto | 
 
 try {
-    final response = api.getAccessToken(getAccessTokenDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getAccessToken(getAccessTokenDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getAccessToken: $e\n');
 }
 ```
@@ -595,14 +661,20 @@ Get the member details of the active organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String organizationId = org_12345; // String | Filter by organization ID
+final api_instance = AuthenticationApi();
+final organizationId = org_12345; // String | Filter by organization ID
 
 try {
-    final response = api.getActiveMember(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getActiveMember(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getActiveMember: $e\n');
 }
 ```
@@ -638,14 +710,20 @@ Get the role of the current user in the active organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String organizationId = org_12345; // String | Filter by organization ID
+final api_instance = AuthenticationApi();
+final organizationId = org_12345; // String | Filter by organization ID
 
 try {
-    final response = api.getActiveMemberRole(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getActiveMemberRole(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getActiveMemberRole: $e\n');
 }
 ```
@@ -681,14 +759,20 @@ Retrieve a specific API key by ID
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String id = key_12345; // String | The ID of API key to retrieve
+final api_instance = AuthenticationApi();
+final id = key_12345; // String | The ID of API key to retrieve
 
 try {
-    final response = api.getApiKey(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getApiKey(id);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getApiKey: $e\n');
 }
 ```
@@ -724,14 +808,20 @@ Get an invitation by ID
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String invitationId = inv_12345; // String | The ID of the invitation to get
+final api_instance = AuthenticationApi();
+final invitationId = inv_12345; // String | The ID of the invitation to get
 
 try {
-    final response = api.getInvitation(invitationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getInvitation(invitationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getInvitation: $e\n');
 }
 ```
@@ -767,14 +857,20 @@ Get the full organization details
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String organizationId = org_12345; // String | The organization ID to get
+final api_instance = AuthenticationApi();
+final organizationId = org_12345; // String | The organization ID to get
 
 try {
-    final response = api.getOrganization(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getOrganization(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getOrganization: $e\n');
 }
 ```
@@ -810,13 +906,19 @@ Retrieve the current user session
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.getSession();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getSession();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->getSession: $e\n');
 }
 ```
@@ -849,14 +951,20 @@ Check if a user has permission
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final HasPermissionDto hasPermissionDto = ; // HasPermissionDto | 
+final api_instance = AuthenticationApi();
+final hasPermissionDto = HasPermissionDto(); // HasPermissionDto | 
 
 try {
-    final response = api.hasPermission(hasPermissionDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.hasPermission(hasPermissionDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->hasPermission: $e\n');
 }
 ```
@@ -892,14 +1000,20 @@ Invite a user to an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final InviteMemberDto inviteMemberDto = ; // InviteMemberDto | 
+final api_instance = AuthenticationApi();
+final inviteMemberDto = InviteMemberDto(); // InviteMemberDto | 
 
 try {
-    final response = api.inviteMember(inviteMemberDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.inviteMember(inviteMemberDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->inviteMember: $e\n');
 }
 ```
@@ -936,13 +1050,13 @@ Check if username is available for signup
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final IsUsernameAvailableDto isUsernameAvailableDto = ; // IsUsernameAvailableDto | 
+final api_instance = AuthenticationApi();
+final isUsernameAvailableDto = IsUsernameAvailableDto(); // IsUsernameAvailableDto | 
 
 try {
-    final response = api.isUsernameAvailable(isUsernameAvailableDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.isUsernameAvailable(isUsernameAvailableDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->isUsernameAvailable: $e\n');
 }
 ```
@@ -978,14 +1092,20 @@ Leave an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final LeaveOrganizationDto leaveOrganizationDto = ; // LeaveOrganizationDto | 
+final api_instance = AuthenticationApi();
+final leaveOrganizationDto = LeaveOrganizationDto(); // LeaveOrganizationDto | 
 
 try {
-    final response = api.leaveOrganization(leaveOrganizationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.leaveOrganization(leaveOrganizationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->leaveOrganization: $e\n');
 }
 ```
@@ -1021,14 +1141,20 @@ Link a social account to existing user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final LinkSocialDto linkSocialDto = ; // LinkSocialDto | 
+final api_instance = AuthenticationApi();
+final linkSocialDto = LinkSocialDto(); // LinkSocialDto | 
 
 try {
-    final response = api.linkSocial(linkSocialDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.linkSocial(linkSocialDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->linkSocial: $e\n');
 }
 ```
@@ -1064,13 +1190,19 @@ List all linked social accounts
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.listAccounts();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listAccounts();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listAccounts: $e\n');
 }
 ```
@@ -1103,13 +1235,19 @@ List all API keys for the current user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.listApiKeys();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listApiKeys();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listApiKeys: $e\n');
 }
 ```
@@ -1142,14 +1280,20 @@ List all members of an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String organizationId = org_12345; // String | Filter by organization ID
+final api_instance = AuthenticationApi();
+final organizationId = org_12345; // String | Filter by organization ID
 
 try {
-    final response = api.listMembers(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listMembers(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listMembers: $e\n');
 }
 ```
@@ -1185,14 +1329,20 @@ List all invitations a user has received
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String organizationId = org_12345; // String | Filter by organization ID
+final api_instance = AuthenticationApi();
+final organizationId = org_12345; // String | Filter by organization ID
 
 try {
-    final response = api.listOrganizationInvitations(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listOrganizationInvitations(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listOrganizationInvitations: $e\n');
 }
 ```
@@ -1228,14 +1378,20 @@ List all organizations for the current user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final bool include = true; // bool | Include additional organization data
+final api_instance = AuthenticationApi();
+final include = true; // bool | Include additional organization data
 
 try {
-    final response = api.listOrganizations(include);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listOrganizations(include);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listOrganizations: $e\n');
 }
 ```
@@ -1248,7 +1404,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;OrganizationDto&gt;**](OrganizationDto.md)
+[**List<OrganizationDto>**](OrganizationDto.md)
 
 ### Authorization
 
@@ -1271,14 +1427,20 @@ List all invitations a user has received
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final String status = pending; // String | Filter by status
+final api_instance = AuthenticationApi();
+final status = pending; // String | Filter by status
 
 try {
-    final response = api.listUserInvitations(status);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listUserInvitations(status);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listUserInvitations: $e\n');
 }
 ```
@@ -1314,13 +1476,19 @@ List all active sessions for the user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.listUserSessions();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listUserSessions();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->listUserSessions: $e\n');
 }
 ```
@@ -1354,12 +1522,12 @@ Check if the authentication API is working
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.ok();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.ok();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->ok: $e\n');
 }
 ```
@@ -1392,14 +1560,20 @@ Refresh authentication token
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final RefreshTokenDto refreshTokenDto = ; // RefreshTokenDto | 
+final api_instance = AuthenticationApi();
+final refreshTokenDto = RefreshTokenDto(); // RefreshTokenDto | 
 
 try {
-    final response = api.refreshToken(refreshTokenDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.refreshToken(refreshTokenDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->refreshToken: $e\n');
 }
 ```
@@ -1435,14 +1609,20 @@ Reject an invitation to an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final RejectInvitationDto rejectInvitationDto = ; // RejectInvitationDto | 
+final api_instance = AuthenticationApi();
+final rejectInvitationDto = RejectInvitationDto(); // RejectInvitationDto | 
 
 try {
-    final response = api.rejectInvitation(rejectInvitationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.rejectInvitation(rejectInvitationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->rejectInvitation: $e\n');
 }
 ```
@@ -1478,14 +1658,20 @@ Remove a member from an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final RemoveMemberDto removeMemberDto = ; // RemoveMemberDto | 
+final api_instance = AuthenticationApi();
+final removeMemberDto = RemoveMemberDto(); // RemoveMemberDto | 
 
 try {
-    final response = api.removeMember(removeMemberDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.removeMember(removeMemberDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->removeMember: $e\n');
 }
 ```
@@ -1522,13 +1708,13 @@ Send a password reset email to the user
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final RequestPasswordResetDto requestPasswordResetDto = ; // RequestPasswordResetDto | 
+final api_instance = AuthenticationApi();
+final requestPasswordResetDto = RequestPasswordResetDto(); // RequestPasswordResetDto | 
 
 try {
-    final response = api.requestPasswordReset(requestPasswordResetDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.requestPasswordReset(requestPasswordResetDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->requestPasswordReset: $e\n');
 }
 ```
@@ -1565,13 +1751,13 @@ Request password reset via phone number
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final RequestPhonePasswordResetDto requestPhonePasswordResetDto = ; // RequestPhonePasswordResetDto | 
+final api_instance = AuthenticationApi();
+final requestPhonePasswordResetDto = RequestPhonePasswordResetDto(); // RequestPhonePasswordResetDto | 
 
 try {
-    final response = api.requestPhonePasswordReset(requestPhonePasswordResetDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.requestPhonePasswordReset(requestPhonePasswordResetDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->requestPhonePasswordReset: $e\n');
 }
 ```
@@ -1608,13 +1794,13 @@ Reset the user's password using a token
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final ResetPasswordDto resetPasswordDto = ; // ResetPasswordDto | 
+final api_instance = AuthenticationApi();
+final resetPasswordDto = ResetPasswordDto(); // ResetPasswordDto | 
 
 try {
-    final response = api.resetPassword(resetPasswordDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.resetPassword(resetPasswordDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->resetPassword: $e\n');
 }
 ```
@@ -1651,14 +1837,14 @@ Redirects user to callback URL with token
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final String token = token_example; // String | 
-final String callbackURL = https://example.com/reset-password; // String | The URL to redirect user to reset their password
+final api_instance = AuthenticationApi();
+final token = token_example; // String | 
+final callbackURL = https://example.com/reset-password; // String | The URL to redirect user to reset their password
 
 try {
-    final response = api.resetPasswordCallback(token, callbackURL);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.resetPasswordCallback(token, callbackURL);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->resetPasswordCallback: $e\n');
 }
 ```
@@ -1696,13 +1882,13 @@ Reset password using phone verification
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final ResetPhonePasswordDto resetPhonePasswordDto = ; // ResetPhonePasswordDto | 
+final api_instance = AuthenticationApi();
+final resetPhonePasswordDto = ResetPhonePasswordDto(); // ResetPhonePasswordDto | 
 
 try {
-    final response = api.resetPhonePassword(resetPhonePasswordDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.resetPhonePassword(resetPhonePasswordDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->resetPhonePassword: $e\n');
 }
 ```
@@ -1738,13 +1924,19 @@ Revoke all sessions except the current one
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.revokeOtherSessions();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.revokeOtherSessions();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->revokeOtherSessions: $e\n');
 }
 ```
@@ -1777,14 +1969,20 @@ Revoke a specific session
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final RevokeSessionDto revokeSessionDto = ; // RevokeSessionDto | 
+final api_instance = AuthenticationApi();
+final revokeSessionDto = RevokeSessionDto(); // RevokeSessionDto | 
 
 try {
-    final response = api.revokeSession(revokeSessionDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.revokeSession(revokeSessionDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->revokeSession: $e\n');
 }
 ```
@@ -1820,13 +2018,19 @@ Revoke all sessions for the current user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
+final api_instance = AuthenticationApi();
 
 try {
-    final response = api.revokeSessions();
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.revokeSessions();
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->revokeSessions: $e\n');
 }
 ```
@@ -1860,13 +2064,13 @@ Send one-time password to phone number
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SendPhoneOTPDto sendPhoneOTPDto = ; // SendPhoneOTPDto | 
+final api_instance = AuthenticationApi();
+final sendPhoneOTPDto = SendPhoneOTPDto(); // SendPhoneOTPDto | 
 
 try {
-    final response = api.sendPhoneOTP(sendPhoneOTPDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.sendPhoneOTP(sendPhoneOTPDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->sendPhoneOTP: $e\n');
 }
 ```
@@ -1903,13 +2107,13 @@ Send a verification email to the user
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SendVerificationEmailDto sendVerificationEmailDto = ; // SendVerificationEmailDto | 
+final api_instance = AuthenticationApi();
+final sendVerificationEmailDto = SendVerificationEmailDto(); // SendVerificationEmailDto | 
 
 try {
-    final response = api.sendVerificationEmail(sendVerificationEmailDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.sendVerificationEmail(sendVerificationEmailDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->sendVerificationEmail: $e\n');
 }
 ```
@@ -1945,14 +2149,20 @@ Set the active organization for the current session
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final SetActiveOrganizationDto setActiveOrganizationDto = ; // SetActiveOrganizationDto | 
+final api_instance = AuthenticationApi();
+final setActiveOrganizationDto = SetActiveOrganizationDto(); // SetActiveOrganizationDto | 
 
 try {
-    final response = api.setActiveOrganization(setActiveOrganizationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.setActiveOrganization(setActiveOrganizationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->setActiveOrganization: $e\n');
 }
 ```
@@ -1989,13 +2199,13 @@ Authenticate a user using email and password
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SignInDto signInDto = ; // SignInDto | 
+final api_instance = AuthenticationApi();
+final signInDto = SignInDto(); // SignInDto | 
 
 try {
-    final response = api.signInEmail(signInDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.signInEmail(signInDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->signInEmail: $e\n');
 }
 ```
@@ -2032,13 +2242,13 @@ Sign in using phone number and password
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SignInPhoneNumberDto signInPhoneNumberDto = ; // SignInPhoneNumberDto | 
+final api_instance = AuthenticationApi();
+final signInPhoneNumberDto = SignInPhoneNumberDto(); // SignInPhoneNumberDto | 
 
 try {
-    final response = api.signInPhoneNumber(signInPhoneNumberDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.signInPhoneNumber(signInPhoneNumberDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->signInPhoneNumber: $e\n');
 }
 ```
@@ -2074,14 +2284,20 @@ Sign out the current user and invalidate the session
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final Object body = Object; // Object | 
+final api_instance = AuthenticationApi();
+final body = Object(); // Object | 
 
 try {
-    final response = api.signOut(body);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.signOut(body);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->signOut: $e\n');
 }
 ```
@@ -2118,13 +2334,13 @@ Create a new user account using email and password
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SignUpDto signUpDto = ; // SignUpDto | 
+final api_instance = AuthenticationApi();
+final signUpDto = SignUpDto(); // SignUpDto | 
 
 try {
-    final response = api.signUpEmail(signUpDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.signUpEmail(signUpDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->signUpEmail: $e\n');
 }
 ```
@@ -2161,13 +2377,13 @@ Sign in with a social provider (OAuth, etc.)
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final SocialSignInDto socialSignInDto = ; // SocialSignInDto | 
+final api_instance = AuthenticationApi();
+final socialSignInDto = SocialSignInDto(); // SocialSignInDto | 
 
 try {
-    final response = api.socialSignIn(socialSignInDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.socialSignIn(socialSignInDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->socialSignIn: $e\n');
 }
 ```
@@ -2203,14 +2419,20 @@ Unlink a social account from user
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final UnlinkAccountDto unlinkAccountDto = ; // UnlinkAccountDto | 
+final api_instance = AuthenticationApi();
+final unlinkAccountDto = UnlinkAccountDto(); // UnlinkAccountDto | 
 
 try {
-    final response = api.unlinkAccount(unlinkAccountDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.unlinkAccount(unlinkAccountDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->unlinkAccount: $e\n');
 }
 ```
@@ -2246,14 +2468,20 @@ Update an API key
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final UpdateApiKeyDto updateApiKeyDto = ; // UpdateApiKeyDto | 
+final api_instance = AuthenticationApi();
+final updateApiKeyDto = UpdateApiKeyDto(); // UpdateApiKeyDto | 
 
 try {
-    final response = api.updateApiKey(updateApiKeyDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateApiKey(updateApiKeyDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->updateApiKey: $e\n');
 }
 ```
@@ -2289,14 +2517,20 @@ Update a member's role in an organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final UpdateMemberRoleDto updateMemberRoleDto = ; // UpdateMemberRoleDto | 
+final api_instance = AuthenticationApi();
+final updateMemberRoleDto = UpdateMemberRoleDto(); // UpdateMemberRoleDto | 
 
 try {
-    final response = api.updateMemberRole(updateMemberRoleDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateMemberRole(updateMemberRoleDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->updateMemberRole: $e\n');
 }
 ```
@@ -2332,14 +2566,20 @@ Update an organization's details
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final UpdateOrganizationDto updateOrganizationDto = ; // UpdateOrganizationDto | 
+final api_instance = AuthenticationApi();
+final updateOrganizationDto = UpdateOrganizationDto(); // UpdateOrganizationDto | 
 
 try {
-    final response = api.updateOrganization(updateOrganizationDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateOrganization(updateOrganizationDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->updateOrganization: $e\n');
 }
 ```
@@ -2375,14 +2615,20 @@ Update the current user's information
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getAuthenticationApi();
-final UpdateUserDto updateUserDto = ; // UpdateUserDto | 
+final api_instance = AuthenticationApi();
+final updateUserDto = UpdateUserDto(); // UpdateUserDto | 
 
 try {
-    final response = api.updateUser(updateUserDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateUser(updateUserDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->updateUser: $e\n');
 }
 ```
@@ -2419,13 +2665,13 @@ Verify an API key
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final VerifyApiKeyDto verifyApiKeyDto = ; // VerifyApiKeyDto | 
+final api_instance = AuthenticationApi();
+final verifyApiKeyDto = VerifyApiKeyDto(); // VerifyApiKeyDto | 
 
 try {
-    final response = api.verifyApiKey(verifyApiKeyDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.verifyApiKey(verifyApiKeyDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->verifyApiKey: $e\n');
 }
 ```
@@ -2462,14 +2708,14 @@ Verify the email of a user
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final String token = verify_token_12345; // String | The token to verify email
-final String callbackURL = https://example.com/callback; // String | The URL to redirect to after email verification
+final api_instance = AuthenticationApi();
+final token = verify_token_12345; // String | The token to verify email
+final callbackURL = https://example.com/callback; // String | The URL to redirect to after email verification
 
 try {
-    final response = api.verifyEmail(token, callbackURL);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.verifyEmail(token, callbackURL);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->verifyEmail: $e\n');
 }
 ```
@@ -2507,13 +2753,13 @@ Verify phone number with OTP code
 ```dart
 import 'package:flutter_cashful/api.dart';
 
-final api = FlutterCashful().getAuthenticationApi();
-final VerifyPhoneNumberDto verifyPhoneNumberDto = ; // VerifyPhoneNumberDto | 
+final api_instance = AuthenticationApi();
+final verifyPhoneNumberDto = VerifyPhoneNumberDto(); // VerifyPhoneNumberDto | 
 
 try {
-    final response = api.verifyPhoneNumber(verifyPhoneNumberDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.verifyPhoneNumber(verifyPhoneNumberDto);
+    print(result);
+} catch (e) {
     print('Exception when calling AuthenticationApi->verifyPhoneNumber: $e\n');
 }
 ```

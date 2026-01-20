@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** | A description of the product | [optional] 
 **amount** | **num** | The price of the product in the smallest currency unit | [optional] 
 **active** | **bool** | Whether the product is active | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** | Optional custom metadata | 
+**metadata** | [**Map<String, Object>**](Object.md) | Optional custom metadata | [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

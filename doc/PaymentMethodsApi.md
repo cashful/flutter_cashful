@@ -24,14 +24,20 @@ Detaches and deletes a saved payment method from a customer.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentMethodsApi();
-final String id = id_example; // String | The unique identifier of the payment method
+final api_instance = PaymentMethodsApi();
+final id = id_example; // String | The unique identifier of the payment method
 
 try {
-    final response = api.deletePaymentMethod(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.deletePaymentMethod(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentMethodsApi->deletePaymentMethod: $e\n');
 }
 ```
@@ -44,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**Object**](Object.md)
 
 ### Authorization
 
@@ -67,17 +73,23 @@ Lists saved payment methods for a specific customer.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentMethodsApi();
-final String merchantId = merchantId_example; // String | The unique identifier of the merchant
-final num limit = 50; // num | Maximum number of records to return
-final num offset = 0; // num | Number of records to skip
-final String customerId = customerId_example; // String | The unique identifier of the customer
+final api_instance = PaymentMethodsApi();
+final merchantId = merchantId_example; // String | The unique identifier of the merchant
+final limit = 50; // num | Maximum number of records to return
+final offset = 0; // num | Number of records to skip
+final customerId = customerId_example; // String | The unique identifier of the customer
 
 try {
-    final response = api.listPaymentMethods(merchantId, limit, offset, customerId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listPaymentMethods(merchantId, limit, offset, customerId);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentMethodsApi->listPaymentMethods: $e\n');
 }
 ```
@@ -116,14 +128,20 @@ Gets the non-sensitive details of a saved card (e.g., brand, last 4).
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentMethodsApi();
-final String id = id_example; // String | The unique identifier of the payment method
+final api_instance = PaymentMethodsApi();
+final id = id_example; // String | The unique identifier of the payment method
 
 try {
-    final response = api.retrievePaymentMethod(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrievePaymentMethod(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentMethodsApi->retrievePaymentMethod: $e\n');
 }
 ```

@@ -23,14 +23,20 @@ Allows the merchant to move funds from their MerchantBalance (their earnings) to
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPayoutsApi();
-final CreatePayoutDto createPayoutDto = ; // CreatePayoutDto | Payout details
+final api_instance = PayoutsApi();
+final createPayoutDto = CreatePayoutDto(); // CreatePayoutDto | Payout details
 
 try {
-    final response = api.createPayout(createPayoutDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createPayout(createPayoutDto);
+    print(result);
+} catch (e) {
     print('Exception when calling PayoutsApi->createPayout: $e\n');
 }
 ```
@@ -66,17 +72,23 @@ Retrieves a list of all historical and pending payouts for the merchant.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPayoutsApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final String status = status_example; // String | Filter by status
+final api_instance = PayoutsApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final status = status_example; // String | Filter by status
 
 try {
-    final response = api.listPayouts(merchantId, limit, offset, status);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listPayouts(merchantId, limit, offset, status);
+    print(result);
+} catch (e) {
     print('Exception when calling PayoutsApi->listPayouts: $e\n');
 }
 ```

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **filename** | **String** |  | 
 **mimeType** | **String** |  | 
 **size** | **num** |  | 
-**tags** | **List&lt;String&gt;** |  | 
+**tags** | **List<String>** |  | [default to const []]
 **status** | **String** |  | 
 **checksum** | **String** |  | [optional] 
 **isPublic** | **bool** |  | 

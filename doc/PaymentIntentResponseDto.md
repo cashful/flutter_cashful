@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **status** | **String** | Current status of the payment intent | 
 **mode** | **String** | Mode of the payment intent | 
 **description** | **String** | Description | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** | Custom metadata | [optional] 
+**metadata** | [**Map<String, Object>**](Object.md) | Custom metadata | [optional] [default to const {}]
 **idempotencyKey** | **String** | Unique idempotency key for this payment intent | 
 **expiresAt** | [**DateTime**](DateTime.md) | When the payment intent expires | 
 **createdAt** | [**DateTime**](DateTime.md) | Creation timestamp | 

@@ -1,12 +1,21 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for CreatePaymentIntentDto
 void main() {
-  final CreatePaymentIntentDto? instance = /* CreatePaymentIntentDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = CreatePaymentIntentDto();
 
-  group(CreatePaymentIntentDto, () {
+  group('test CreatePaymentIntentDto', () {
     // The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
     // String merchantId
     test('to test the property `merchantId`', () async {
@@ -50,7 +59,7 @@ void main() {
     });
 
     // Optional custom metadata
-    // Map<String, Object> metadata
+    // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
       // TODO
     });
@@ -67,5 +76,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **merchantId** | **String** | ID of the merchant this event belongs to | 
 **webhookEndpointId** | **String** | ID of the webhook endpoint this event was sent to | 
 **type** | **String** | Event type name | 
-**data** | **Object** | Event data payload | 
+**data** | [**Object**](.md) | Event data payload | 
 **status** | **String** | Current delivery status of the event | 
 **attempts** | **num** | Number of delivery attempts | 
 **relatedEntityId** | **String** | ID of the related entity | [optional] 

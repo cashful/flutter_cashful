@@ -9,9 +9,9 @@ import 'package:flutter_cashful/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **String** | The URL where webhook events will be sent | [optional] 
-**events** | **List&lt;String&gt;** | Array of event types to listen for | [optional] 
+**events** | **List<String>** | Array of event types to listen for | [optional] [default to const []]
 **active** | **bool** | Whether the webhook endpoint is active | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** | Optional custom metadata | [optional] 
+**metadata** | [**Map<String, Object>**](Object.md) | Optional custom metadata | [optional] [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

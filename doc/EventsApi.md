@@ -22,20 +22,26 @@ Retrieves a log of all API events for debugging and logging.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getEventsApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final String type = type_example; // String | Filter by event type
-final String status = status_example; // String | Filter by event status
-final String startDate = startDate_example; // String | Filter by start date
-final String endDate = endDate_example; // String | Filter by end date
+final api_instance = EventsApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final type = type_example; // String | Filter by event type
+final status = status_example; // String | Filter by event status
+final startDate = startDate_example; // String | Filter by start date
+final endDate = endDate_example; // String | Filter by end date
 
 try {
-    final response = api.listEvents(merchantId, limit, offset, type, status, startDate, endDate);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listEvents(merchantId, limit, offset, type, status, startDate, endDate);
+    print(result);
+} catch (e) {
     print('Exception when calling EventsApi->listEvents: $e\n');
 }
 ```

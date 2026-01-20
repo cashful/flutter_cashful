@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **remaining** | **num** |  | 
 **lastRequest** | [**DateTime**](DateTime.md) |  | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**metadata** | **Object** |  | [optional] 
+**metadata** | [**Object**](.md) |  | [optional] 
 **permissions** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

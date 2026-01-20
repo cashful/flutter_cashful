@@ -24,14 +24,20 @@ Creates a hosted payment page. Used for: (1) A standard e-commerce purchase, or 
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCheckoutsApi();
-final CreateCheckoutSessionDto createCheckoutSessionDto = ; // CreateCheckoutSessionDto | Checkout session details
+final api_instance = CheckoutsApi();
+final createCheckoutSessionDto = CreateCheckoutSessionDto(); // CreateCheckoutSessionDto | Checkout session details
 
 try {
-    final response = api.createCheckoutSession(createCheckoutSessionDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createCheckoutSession(createCheckoutSessionDto);
+    print(result);
+} catch (e) {
     print('Exception when calling CheckoutsApi->createCheckoutSession: $e\n');
 }
 ```
@@ -67,17 +73,23 @@ Lists checkout sessions
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCheckoutsApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 50; // num | Maximum number of records to return
-final num offset = 0; // num | Number of records to skip
-final String status = status_example; // String | The status to filter checkout sessions
+final api_instance = CheckoutsApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 50; // num | Maximum number of records to return
+final offset = 0; // num | Number of records to skip
+final status = status_example; // String | The status to filter checkout sessions
 
 try {
-    final response = api.listCheckoutSessions(merchantId, limit, offset, status);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listCheckoutSessions(merchantId, limit, offset, status);
+    print(result);
+} catch (e) {
     print('Exception when calling CheckoutsApi->listCheckoutSessions: $e\n');
 }
 ```
@@ -116,14 +128,20 @@ Retrieves details of a specific checkout session
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCheckoutsApi();
-final String id = id_example; // String | The unique identifier of the checkout session
+final api_instance = CheckoutsApi();
+final id = id_example; // String | The unique identifier of the checkout session
 
 try {
-    final response = api.retrieveCheckoutSession(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrieveCheckoutSession(id);
+    print(result);
+} catch (e) {
     print('Exception when calling CheckoutsApi->retrieveCheckoutSession: $e\n');
 }
 ```

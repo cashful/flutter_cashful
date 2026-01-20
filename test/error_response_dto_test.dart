@@ -1,19 +1,28 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for ErrorResponseDto
 void main() {
-  final ErrorResponseDto? instance = /* ErrorResponseDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = ErrorResponseDto();
 
-  group(ErrorResponseDto, () {
+  group('test ErrorResponseDto', () {
     // HTTP status code
     // num statusCode
     test('to test the property `statusCode`', () async {
       // TODO
     });
 
-    // List<String> message
+    // List<String> message (default value: const [])
     test('to test the property `message`', () async {
       // TODO
     });
@@ -24,5 +33,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

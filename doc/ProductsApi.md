@@ -25,14 +25,20 @@ Defines a product in the merchant's catalog (e.g., \"Airtime,\" \"Data\").
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getProductsApi();
-final CreateProductDto createProductDto = ; // CreateProductDto | Product details
+final api_instance = ProductsApi();
+final createProductDto = CreateProductDto(); // CreateProductDto | Product details
 
 try {
-    final response = api.createProduct(createProductDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createProduct(createProductDto);
+    print(result);
+} catch (e) {
     print('Exception when calling ProductsApi->createProduct: $e\n');
 }
 ```
@@ -68,17 +74,23 @@ Retrieves all products in the merchant's catalog.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getProductsApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 50; // num | Maximum number of records to return
-final num offset = 0; // num | Number of records to skip
-final bool active = true; // bool | Filter by active status
+final api_instance = ProductsApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 50; // num | Maximum number of records to return
+final offset = 0; // num | Number of records to skip
+final active = true; // bool | Filter by active status
 
 try {
-    final response = api.listProducts(merchantId, limit, offset, active);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listProducts(merchantId, limit, offset, active);
+    print(result);
+} catch (e) {
     print('Exception when calling ProductsApi->listProducts: $e\n');
 }
 ```
@@ -117,14 +129,20 @@ Retrieves a single product by ID.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getProductsApi();
-final String id = id_example; // String | The unique identifier of the product
+final api_instance = ProductsApi();
+final id = id_example; // String | The unique identifier of the product
 
 try {
-    final response = api.retrieveProduct(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrieveProduct(id);
+    print(result);
+} catch (e) {
     print('Exception when calling ProductsApi->retrieveProduct: $e\n');
 }
 ```
@@ -160,15 +178,21 @@ Updates a product's name, description, or metadata.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getProductsApi();
-final String id = id_example; // String | The unique identifier of the product
-final UpdateProductDto updateProductDto = ; // UpdateProductDto | Product update details
+final api_instance = ProductsApi();
+final id = id_example; // String | The unique identifier of the product
+final updateProductDto = UpdateProductDto(); // UpdateProductDto | Product update details
 
 try {
-    final response = api.updateProduct(id, updateProductDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateProduct(id, updateProductDto);
+    print(result);
+} catch (e) {
     print('Exception when calling ProductsApi->updateProduct: $e\n');
 }
 ```

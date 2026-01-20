@@ -26,14 +26,20 @@ Cancels a payment intent that has not yet succeeded or failed.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentIntentsApi();
-final String id = id_example; // String | The unique identifier of the payment intent
+final api_instance = PaymentIntentsApi();
+final id = id_example; // String | The unique identifier of the payment intent
 
 try {
-    final response = api.cancelPaymentIntent(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.cancelPaymentIntent(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentIntentsApi->cancelPaymentIntent: $e\n');
 }
 ```
@@ -69,14 +75,20 @@ Confirms a payment intent that requires confirmation. This initiates the actual 
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentIntentsApi();
-final String id = id_example; // String | The unique identifier of the payment intent
+final api_instance = PaymentIntentsApi();
+final id = id_example; // String | The unique identifier of the payment intent
 
 try {
-    final response = api.confirmPaymentIntent(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.confirmPaymentIntent(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentIntentsApi->confirmPaymentIntent: $e\n');
 }
 ```
@@ -112,14 +124,20 @@ Creates a payment intent for off-session charges. Used for subscriptions, recurr
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentIntentsApi();
-final CreatePaymentIntentDto createPaymentIntentDto = ; // CreatePaymentIntentDto | Payment intent details
+final api_instance = PaymentIntentsApi();
+final createPaymentIntentDto = CreatePaymentIntentDto(); // CreatePaymentIntentDto | Payment intent details
 
 try {
-    final response = api.createPaymentIntent(createPaymentIntentDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createPaymentIntent(createPaymentIntentDto);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentIntentsApi->createPaymentIntent: $e\n');
 }
 ```
@@ -155,16 +173,22 @@ Lists payment intents for a specific merchant with pagination and filtering.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentIntentsApi();
-final String merchantId = merchantId_example; // String | Filter by merchant ID
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final String status = status_example; // String | Filter by status
+final api_instance = PaymentIntentsApi();
+final merchantId = merchantId_example; // String | Filter by merchant ID
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final status = status_example; // String | Filter by status
 
 try {
-    api.listPaymentIntents(merchantId, limit, offset, status);
-} catch on DioException (e) {
+    api_instance.listPaymentIntents(merchantId, limit, offset, status);
+} catch (e) {
     print('Exception when calling PaymentIntentsApi->listPaymentIntents: $e\n');
 }
 ```
@@ -203,14 +227,20 @@ Retrieves the current state of a specific payment intent.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPaymentIntentsApi();
-final String id = id_example; // String | The unique identifier of the payment intent
+final api_instance = PaymentIntentsApi();
+final id = id_example; // String | The unique identifier of the payment intent
 
 try {
-    final response = api.retrievePaymentIntent(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrievePaymentIntent(id);
+    print(result);
+} catch (e) {
     print('Exception when calling PaymentIntentsApi->retrievePaymentIntent: $e\n');
 }
 ```

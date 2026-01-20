@@ -1,12 +1,21 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for PaymentIntentResponseDto
 void main() {
-  final PaymentIntentResponseDto? instance = /* PaymentIntentResponseDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = PaymentIntentResponseDto();
 
-  group(PaymentIntentResponseDto, () {
+  group('test PaymentIntentResponseDto', () {
     // Unique payment intent ID
     // String id
     test('to test the property `id`', () async {
@@ -62,7 +71,7 @@ void main() {
     });
 
     // Custom metadata
-    // Map<String, Object> metadata
+    // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
       // TODO
     });
@@ -97,5 +106,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

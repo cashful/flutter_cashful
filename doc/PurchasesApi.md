@@ -22,14 +22,20 @@ Buy with Cash Balance
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getPurchasesApi();
-final CreatePurchaseDto createPurchaseDto = ; // CreatePurchaseDto | Purchase details
+final api_instance = PurchasesApi();
+final createPurchaseDto = CreatePurchaseDto(); // CreatePurchaseDto | Purchase details
 
 try {
-    final response = api.createPurchase(createPurchaseDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createPurchase(createPurchaseDto);
+    print(result);
+} catch (e) {
     print('Exception when calling PurchasesApi->createPurchase: $e\n');
 }
 ```

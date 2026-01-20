@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 **sessionUrl** | **String** |  | 
 **successUrl** | **String** |  | 
 **cancelUrl** | **String** |  | 
-**lineItems** | [**List&lt;LineItemDto&gt;**](LineItemDto.md) |  | [optional] 
+**lineItems** | [**List<LineItemDto>**](LineItemDto.md) |  | [optional] [default to const []]
 **totalAmount** | **num** |  | [optional] 
 **currency** | **String** |  | 
 **mode** | **String** |  | [optional] 
 **status** | **String** |  | 
 **expiresAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** |  | 
+**metadata** | [**Map<String, Object>**](Object.md) |  | [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

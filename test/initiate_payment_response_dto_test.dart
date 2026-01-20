@@ -1,12 +1,21 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+// @dart=2.18
+
+// ignore_for_file: unused_element, unused_import
+// ignore_for_file: always_put_required_named_parameters_first
+// ignore_for_file: constant_identifier_names
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
-import 'package:flutter_cashful/flutter_cashful.dart';
 
 // tests for InitiatePaymentResponseDto
 void main() {
-  final InitiatePaymentResponseDto? instance = /* InitiatePaymentResponseDto(...) */ null;
-  // TODO add properties to the entity
+  // final instance = InitiatePaymentResponseDto();
 
-  group(InitiatePaymentResponseDto, () {
+  group('test InitiatePaymentResponseDto', () {
     // Parameters to POST to iVeri 3DS endpoint
     // IveriParamsDto iveriParams
     test('to test the property `iveriParams`', () async {
@@ -19,5 +28,7 @@ void main() {
       // TODO
     });
 
+
   });
+
 }

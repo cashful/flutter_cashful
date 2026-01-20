@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **phoneNumber** | **String** | Cardholder phone number | [optional] 
 **paymentDescription** | **String** | Payment description | [optional] 
 **merchantName** | **String** | Merchant name for display | [optional] 
-**metadata** | **Object** | Additional metadata | [optional] 
+**metadata** | [**Object**](.md) | Additional metadata | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

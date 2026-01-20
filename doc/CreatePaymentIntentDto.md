@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **currency** | **String** | The three-letter ISO 4217 currency code | 
 **mode** | **String** | The mode of the payment intent | [optional] [default to 'payment']
 **description** | **String** | Optional description for the payment | [optional] 
-**metadata** | **Map&lt;String, Object&gt;** | Optional custom metadata | [optional] 
+**metadata** | [**Map<String, Object>**](Object.md) | Optional custom metadata | [optional] [default to const {}]
 **idempotencyKey** | **String** | A unique key to prevent duplicate charges. If not provided, one will be generated. | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) | When the payment intent expires. Defaults to 24 hours from creation. | [optional] 
 

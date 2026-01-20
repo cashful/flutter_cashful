@@ -23,19 +23,25 @@ A full ledger of all transactions, fees, and payouts for the merchant's master a
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getBalanceApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final String startDate = startDate_example; // String | Filter transactions from this date (ISO 8601 format)
-final String endDate = endDate_example; // String | Filter transactions until this date (ISO 8601 format)
-final String transactionType = transactionType_example; // String | Filter by transaction type (e.g., \"credit\", \"debit\", \"fee\", \"payout\")
+final api_instance = BalanceApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final startDate = startDate_example; // String | Filter transactions from this date (ISO 8601 format)
+final endDate = endDate_example; // String | Filter transactions until this date (ISO 8601 format)
+final transactionType = transactionType_example; // String | Filter by transaction type (e.g., \"credit\", \"debit\", \"fee\", \"payout\")
 
 try {
-    final response = api.getBalanceHistory(merchantId, limit, offset, startDate, endDate, transactionType);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getBalanceHistory(merchantId, limit, offset, startDate, endDate, transactionType);
+    print(result);
+} catch (e) {
     print('Exception when calling BalanceApi->getBalanceHistory: $e\n');
 }
 ```
@@ -76,14 +82,20 @@ Retrieves the merchant's own master balance (their earnings) available for payou
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getBalanceApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested.
+final api_instance = BalanceApi();
+final merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested.
 
 try {
-    final response = api.getMerchantBalance(merchantId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getMerchantBalance(merchantId);
+    print(result);
+} catch (e) {
     print('Exception when calling BalanceApi->getMerchantBalance: $e\n');
 }
 ```

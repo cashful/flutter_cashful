@@ -9,7 +9,7 @@ import 'package:flutter_cashful/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **statusCode** | **num** | HTTP status code | 
-**message** | **List&lt;String&gt;** |  | 
+**message** | **List<String>** |  | [default to const []]
 **error** | **String** | Error type | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

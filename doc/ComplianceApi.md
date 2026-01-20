@@ -22,14 +22,20 @@ Create Compliance info
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getComplianceApi();
-final CreateOrganizationComplianceDto createOrganizationComplianceDto = ; // CreateOrganizationComplianceDto | 
+final api_instance = ComplianceApi();
+final createOrganizationComplianceDto = CreateOrganizationComplianceDto(); // CreateOrganizationComplianceDto | 
 
 try {
-    final response = api.createCompliance(createOrganizationComplianceDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createCompliance(createOrganizationComplianceDto);
+    print(result);
+} catch (e) {
     print('Exception when calling ComplianceApi->createCompliance: $e\n');
 }
 ```
@@ -63,14 +69,20 @@ Get Compliance info for organization
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getComplianceApi();
-final String organizationId = organizationId_example; // String | 
+final api_instance = ComplianceApi();
+final organizationId = organizationId_example; // String | 
 
 try {
-    final response = api.getCompliance(organizationId);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getCompliance(organizationId);
+    print(result);
+} catch (e) {
     print('Exception when calling ComplianceApi->getCompliance: $e\n');
 }
 ```
@@ -104,14 +116,20 @@ Update Compliance info
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getComplianceApi();
-final String id = id_example; // String | 
-final UpdateOrganizationComplianceDto updateOrganizationComplianceDto = ; // UpdateOrganizationComplianceDto | 
+final api_instance = ComplianceApi();
+final id = id_example; // String | 
+final updateOrganizationComplianceDto = UpdateOrganizationComplianceDto(); // UpdateOrganizationComplianceDto | 
 
 try {
-    api.updateCompliance(id, updateOrganizationComplianceDto);
-} catch on DioException (e) {
+    api_instance.updateCompliance(id, updateOrganizationComplianceDto);
+} catch (e) {
     print('Exception when calling ComplianceApi->updateCompliance: $e\n');
 }
 ```

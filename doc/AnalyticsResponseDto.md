@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **transactions** | [**TimeframeMetricsDto**](TimeframeMetricsDto.md) |  | 
 **newCustomers** | [**CustomerStatsDto**](CustomerStatsDto.md) |  | 
-**recentTransactions** | [**List&lt;CustomerTransactionDto&gt;**](CustomerTransactionDto.md) | The 5 most recent transactions | 
+**recentTransactions** | [**List<CustomerTransactionDto>**](CustomerTransactionDto.md) | The 5 most recent transactions | [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

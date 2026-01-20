@@ -10,9 +10,9 @@ All URIs are relative to *https://api.cashful.africa*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCustomer**](CustomersApi.md#createcustomer) | **POST** /api/canary/customers | Create Customer
-[**getCustomerBalance**](CustomersApi.md#getcustomerbalance) | **GET** /api/canary/customers/{id}/balance | Get Customer&#39;s Cash Balance
-[**listCustomerPaymentMethods**](CustomersApi.md#listcustomerpaymentmethods) | **GET** /api/canary/customers/{id}/payment-methods | List Customer&#39;s Payment Methods
-[**listCustomerTransactions**](CustomersApi.md#listcustomertransactions) | **GET** /api/canary/customers/{id}/transactions | List Customer&#39;s Cash Transactions
+[**getCustomerBalance**](CustomersApi.md#getcustomerbalance) | **GET** /api/canary/customers/{id}/balance | Get Customer's Cash Balance
+[**listCustomerPaymentMethods**](CustomersApi.md#listcustomerpaymentmethods) | **GET** /api/canary/customers/{id}/payment-methods | List Customer's Payment Methods
+[**listCustomerTransactions**](CustomersApi.md#listcustomertransactions) | **GET** /api/canary/customers/{id}/transactions | List Customer's Cash Transactions
 [**listCustomers**](CustomersApi.md#listcustomers) | **GET** /api/canary/customers | List Customers
 [**retrieveCustomer**](CustomersApi.md#retrievecustomer) | **GET** /api/canary/customers/{id} | Retrieve Customer
 [**updateCustomer**](CustomersApi.md#updatecustomer) | **PATCH** /api/canary/customers/{id} | Update Customer
@@ -28,14 +28,20 @@ Creates a new customer object. This also provisions their \"cash balance\" featu
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final CreateCustomerDto createCustomerDto = ; // CreateCustomerDto | Customer details
+final api_instance = CustomersApi();
+final createCustomerDto = CreateCustomerDto(); // CreateCustomerDto | Customer details
 
 try {
-    final response = api.createCustomer(createCustomerDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.createCustomer(createCustomerDto);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->createCustomer: $e\n');
 }
 ```
@@ -71,14 +77,20 @@ Retrieves the real-time balance for a single customer's \"cash balance\" (the \"
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String id = id_example; // String | The unique identifier of the customer
+final api_instance = CustomersApi();
+final id = id_example; // String | The unique identifier of the customer
 
 try {
-    final response = api.getCustomerBalance(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.getCustomerBalance(id);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->getCustomerBalance: $e\n');
 }
 ```
@@ -114,16 +126,22 @@ Shows all saved payment methods (cards, etc.) for a single customer.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String id = id_example; // String | The unique identifier of the customer
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
+final api_instance = CustomersApi();
+final id = id_example; // String | The unique identifier of the customer
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
 
 try {
-    final response = api.listCustomerPaymentMethods(id, limit, offset);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listCustomerPaymentMethods(id, limit, offset);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->listCustomerPaymentMethods: $e\n');
 }
 ```
@@ -161,16 +179,22 @@ Provides the full transaction history for a single customer's \"cash balance\" (
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String id = id_example; // String | The unique identifier of the customer
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
+final api_instance = CustomersApi();
+final id = id_example; // String | The unique identifier of the customer
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
 
 try {
-    final response = api.listCustomerTransactions(id, limit, offset);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listCustomerTransactions(id, limit, offset);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->listCustomerTransactions: $e\n');
 }
 ```
@@ -208,18 +232,24 @@ Retrieves a paginated list of all customers for the merchant.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final num limit = 8.14; // num | Maximum number of records to return
-final num offset = 8.14; // num | Number of records to skip
-final String email = email_example; // String | Filter by email address
-final String search = search_example; // String | Search across customer fields
+final api_instance = CustomersApi();
+final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final email = email_example; // String | Filter by email address
+final search = search_example; // String | Search across customer fields
 
 try {
-    final response = api.listCustomers(merchantId, limit, offset, email, search);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.listCustomers(merchantId, limit, offset, email, search);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->listCustomers: $e\n');
 }
 ```
@@ -259,14 +289,20 @@ Gets the details for a single customer.
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String id = id_example; // String | The unique identifier of the customer
+final api_instance = CustomersApi();
+final id = id_example; // String | The unique identifier of the customer
 
 try {
-    final response = api.retrieveCustomer(id);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.retrieveCustomer(id);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->retrieveCustomer: $e\n');
 }
 ```
@@ -302,15 +338,21 @@ Updates a customer's details (e.g., email, metadata).
 ### Example
 ```dart
 import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
-final api = FlutterCashful().getCustomersApi();
-final String id = id_example; // String | The unique identifier of the customer
-final UpdateCustomerDto updateCustomerDto = ; // UpdateCustomerDto | Customer update details
+final api_instance = CustomersApi();
+final id = id_example; // String | The unique identifier of the customer
+final updateCustomerDto = UpdateCustomerDto(); // UpdateCustomerDto | Customer update details
 
 try {
-    final response = api.updateCustomer(id, updateCustomerDto);
-    print(response);
-} catch on DioException (e) {
+    final result = api_instance.updateCustomer(id, updateCustomerDto);
+    print(result);
+} catch (e) {
     print('Exception when calling CustomersApi->updateCustomer: $e\n');
 }
 ```
