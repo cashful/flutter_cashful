@@ -398,6 +398,8 @@ class ApiClient {
           return ListMembersResponseDto.fromJson(value);
         case 'ListOrganizationComplianceResponseDto':
           return ListOrganizationComplianceResponseDto.fromJson(value);
+        case 'ListPaymentIntentsResponseDto':
+          return ListPaymentIntentsResponseDto.fromJson(value);
         case 'ListPaymentLinksResponseDto':
           return ListPaymentLinksResponseDto.fromJson(value);
         case 'ListPaymentMethodsResponseDto':
@@ -408,6 +410,8 @@ class ApiClient {
           return ListProductsResponseDto.fromJson(value);
         case 'ListSessionsResponseDto':
           return ListSessionsResponseDto.fromJson(value);
+        case 'ListTransfersResponseDto':
+          return ListTransfersResponseDto.fromJson(value);
         case 'ListUserInvitationsResponseDto':
           return ListUserInvitationsResponseDto.fromJson(value);
         case 'ListUsersResponseDto':

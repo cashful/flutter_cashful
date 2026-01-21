@@ -26,5 +26,14 @@ void main() {
       // TODO
     });
 
+    // List Transfers
+    //
+    // Lists transfers for a specific merchant with pagination.
+    //
+    //Future<ListTransfersResponseDto> listTransfers(String merchantId, { num limit, num offset }) async
+    test('test listTransfers', () async {
+      // TODO
+    });
+
   });
 }

@@ -3,7 +3,7 @@
 #
 
 name: 'flutter_cashful'
-version: '0.6.2'
+version: '0.6.3'
 description: 'Cashful Flutter SDK for payment integrations'
 homepage: 'https://cashful.africa'
 repository: https://github.com/cashful/flutter_cashful

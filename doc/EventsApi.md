@@ -31,8 +31,8 @@ import 'package:flutter_cashful/api.dart';
 
 final api_instance = EventsApi();
 final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
-final limit = 8.14; // num | Maximum number of records to return
-final offset = 8.14; // num | Number of records to skip
+final limit = 50; // num | Maximum number of records to return
+final offset = 0; // num | Number of records to skip
 final type = type_example; // String | Filter by event type
 final status = status_example; // String | Filter by event status
 final startDate = startDate_example; // String | Filter by start date

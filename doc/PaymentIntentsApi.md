@@ -164,7 +164,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listPaymentIntents**
-> listPaymentIntents(merchantId, limit, offset, status)
+> ListPaymentIntentsResponseDto listPaymentIntents(merchantId, limit, offset, status)
 
 List Payment Intents
 
@@ -187,7 +187,8 @@ final offset = 8.14; // num | Number of records to skip
 final status = status_example; // String | Filter by status
 
 try {
-    api_instance.listPaymentIntents(merchantId, limit, offset, status);
+    final result = api_instance.listPaymentIntents(merchantId, limit, offset, status);
+    print(result);
 } catch (e) {
     print('Exception when calling PaymentIntentsApi->listPaymentIntents: $e\n');
 }
@@ -204,7 +205,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**ListPaymentIntentsResponseDto**](ListPaymentIntentsResponseDto.md)
 
 ### Authorization
 

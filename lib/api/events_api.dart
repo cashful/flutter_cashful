@@ -55,13 +55,13 @@ class EventsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
     }
+      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
     if (type != null) {
       queryParams.addAll(_queryParams('', 'type', type));
     }

@@ -48,7 +48,7 @@ void main() {
     //
     // Lists payment intents for a specific merchant with pagination and filtering.
     //
-    //Future listPaymentIntents(String merchantId, { num limit, num offset, String status }) async
+    //Future<ListPaymentIntentsResponseDto> listPaymentIntents(String merchantId, { num limit, num offset, String status }) async
     test('test listPaymentIntents', () async {
       // TODO
     });
