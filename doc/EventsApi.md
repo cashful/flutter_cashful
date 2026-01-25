@@ -30,7 +30,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = EventsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose events are being requested. This parameter is required.
 final limit = 50; // num | Maximum number of records to return
 final offset = 0; // num | Number of records to skip
 final type = type_example; // String | Filter by event type
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose events are being requested. This parameter is required. | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **type** | **String**| Filter by event type | [optional] 

@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listProducts**
-> ListProductsResponseDto listProducts(merchantId, limit, offset, active)
+> ListProductsResponseDto listProducts(limit, offset, merchantId, active)
 
 List Products
 
@@ -82,13 +82,13 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = ProductsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
 final limit = 50; // num | Maximum number of records to return
 final offset = 0; // num | Number of records to skip
+final merchantId = merchantId_example; // String | The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned.
 final active = true; // bool | Filter by active status
 
 try {
-    final result = api_instance.listProducts(merchantId, limit, offset, active);
+    final result = api_instance.listProducts(limit, offset, merchantId, active);
     print(result);
 } catch (e) {
     print('Exception when calling ProductsApi->listProducts: $e\n');
@@ -99,9 +99,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
+ **merchantId** | **String**| The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned. | [optional] 
  **active** | **bool**| Filter by active status | [optional] 
 
 ### Return type

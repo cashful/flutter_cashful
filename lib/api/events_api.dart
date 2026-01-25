@@ -25,7 +25,7 @@ class EventsApi {
   /// Parameters:
   ///
   /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  ///   The ID of the merchant whose events are being requested. This parameter is required.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -96,7 +96,7 @@ class EventsApi {
   /// Parameters:
   ///
   /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  ///   The ID of the merchant whose events are being requested. This parameter is required.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return

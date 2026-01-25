@@ -18,6 +18,7 @@ class RequestUploadUrlDto {
     this.tags = const [],
     this.relatedEntityId,
     this.relatedEntityType,
+    this.isPublic = false,
   });
 
   /// Original filename
@@ -47,13 +48,17 @@ class RequestUploadUrlDto {
   ///
   String? relatedEntityType;
 
+  /// Whether the file should be publicly accessible
+  bool isPublic;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is RequestUploadUrlDto &&
     other.filename == filename &&
     other.mimeType == mimeType &&
     _deepEquality.equals(other.tags, tags) &&
     other.relatedEntityId == relatedEntityId &&
-    other.relatedEntityType == relatedEntityType;
+    other.relatedEntityType == relatedEntityType &&
+    other.isPublic == isPublic;
 
   @override
   int get hashCode =>
@@ -62,10 +67,11 @@ class RequestUploadUrlDto {
     (mimeType.hashCode) +
     (tags.hashCode) +
     (relatedEntityId == null ? 0 : relatedEntityId!.hashCode) +
-    (relatedEntityType == null ? 0 : relatedEntityType!.hashCode);
+    (relatedEntityType == null ? 0 : relatedEntityType!.hashCode) +
+    (isPublic.hashCode);
 
   @override
-  String toString() => 'RequestUploadUrlDto[filename=$filename, mimeType=$mimeType, tags=$tags, relatedEntityId=$relatedEntityId, relatedEntityType=$relatedEntityType]';
+  String toString() => 'RequestUploadUrlDto[filename=$filename, mimeType=$mimeType, tags=$tags, relatedEntityId=$relatedEntityId, relatedEntityType=$relatedEntityType, isPublic=$isPublic]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -82,6 +88,7 @@ class RequestUploadUrlDto {
     } else {
       json[r'relatedEntityType'] = null;
     }
+      json[r'isPublic'] = this.isPublic;
     return json;
   }
 
@@ -111,6 +118,7 @@ class RequestUploadUrlDto {
             : const [],
         relatedEntityId: mapValueOfType<String>(json, r'relatedEntityId'),
         relatedEntityType: mapValueOfType<String>(json, r'relatedEntityType'),
+        isPublic: mapValueOfType<bool>(json, r'isPublic') ?? false,
       );
     }
     return null;

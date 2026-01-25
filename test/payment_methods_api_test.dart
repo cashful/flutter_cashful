@@ -30,7 +30,7 @@ void main() {
     //
     // Lists saved payment methods for a specific customer.
     //
-    //Future<ListPaymentMethodsResponseDto> listPaymentMethods(String merchantId, { num limit, num offset, String customerId }) async
+    //Future<ListPaymentMethodsResponseDto> listPaymentMethods({ num limit, num offset, String merchantId, String customerId }) async
     test('test listPaymentMethods', () async {
       // TODO
     });

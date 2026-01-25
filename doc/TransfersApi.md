@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listTransfers**
-> ListTransfersResponseDto listTransfers(merchantId, limit, offset)
+> ListTransfersResponseDto listTransfers(limit, offset, merchantId)
 
 List Transfers
 
@@ -80,12 +80,12 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = TransfersApi();
-final merchantId = merchantId_example; // String | Filter by merchant ID
 final limit = 50; // num | Maximum number of items to return
 final offset = 0; // num | Number of items to skip
+final merchantId = merchantId_example; // String | Filter by merchant ID. If omitted, defaults to the authenticated merchant.
 
 try {
-    final result = api_instance.listTransfers(merchantId, limit, offset);
+    final result = api_instance.listTransfers(limit, offset, merchantId);
     print(result);
 } catch (e) {
     print('Exception when calling TransfersApi->listTransfers: $e\n');
@@ -96,9 +96,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| Filter by merchant ID | 
  **limit** | **num**| Maximum number of items to return | [optional] 
  **offset** | **num**| Number of items to skip | [optional] 
+ **merchantId** | **String**| Filter by merchant ID. If omitted, defaults to the authenticated merchant. | [optional] 
 
 ### Return type
 

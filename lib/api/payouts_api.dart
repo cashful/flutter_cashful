@@ -82,8 +82,8 @@ class PayoutsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose payouts are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -93,7 +93,7 @@ class PayoutsApi {
   ///
   /// * [String] status:
   ///   Filter by status
-  Future<Response> listPayoutsWithHttpInfo(String merchantId, { num? limit, num? offset, String? status, }) async {
+  Future<Response> listPayoutsWithHttpInfo({ String? merchantId, num? limit, num? offset, String? status, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payouts';
 
@@ -104,7 +104,9 @@ class PayoutsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -135,8 +137,8 @@ class PayoutsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose payouts are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -146,8 +148,8 @@ class PayoutsApi {
   ///
   /// * [String] status:
   ///   Filter by status
-  Future<ListPayoutsResponseDto?> listPayouts(String merchantId, { num? limit, num? offset, String? status, }) async {
-    final response = await listPayoutsWithHttpInfo(merchantId,  limit: limit, offset: offset, status: status, );
+  Future<ListPayoutsResponseDto?> listPayouts({ String? merchantId, num? limit, num? offset, String? status, }) async {
+    final response = await listPayoutsWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, status: status, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

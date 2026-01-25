@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieves a list of all historical and pending payouts for the merchant.
     //
-    //Future<ListPayoutsResponseDto> listPayouts(String merchantId, { num limit, num offset, String status }) async
+    //Future<ListPayoutsResponseDto> listPayouts({ String merchantId, num limit, num offset, String status }) async
     test('test listPayouts', () async {
       // TODO
     });

@@ -46,6 +46,12 @@ void main() {
       // TODO
     });
 
+    // Whether the file should be publicly accessible
+    // bool isPublic (default value: false)
+    test('to test the property `isPublic`', () async {
+      // TODO
+    });
+
 
   });
 

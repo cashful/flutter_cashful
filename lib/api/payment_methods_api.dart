@@ -83,18 +83,18 @@ class PaymentMethodsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
   ///
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  ///
   /// * [String] customerId:
   ///   The unique identifier of the customer
-  Future<Response> listPaymentMethodsWithHttpInfo(String merchantId, { num? limit, num? offset, String? customerId, }) async {
+  Future<Response> listPaymentMethodsWithHttpInfo({ num? limit, num? offset, String? merchantId, String? customerId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-methods';
 
@@ -111,7 +111,9 @@ class PaymentMethodsApi {
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
     }
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (customerId != null) {
       queryParams.addAll(_queryParams('', 'customerId', customerId));
     }
@@ -136,19 +138,19 @@ class PaymentMethodsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
   ///
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  ///
   /// * [String] customerId:
   ///   The unique identifier of the customer
-  Future<ListPaymentMethodsResponseDto?> listPaymentMethods(String merchantId, { num? limit, num? offset, String? customerId, }) async {
-    final response = await listPaymentMethodsWithHttpInfo(merchantId,  limit: limit, offset: offset, customerId: customerId, );
+  Future<ListPaymentMethodsResponseDto?> listPaymentMethods({ num? limit, num? offset, String? merchantId, String? customerId, }) async {
+    final response = await listPaymentMethodsWithHttpInfo( limit: limit, offset: offset, merchantId: merchantId, customerId: customerId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

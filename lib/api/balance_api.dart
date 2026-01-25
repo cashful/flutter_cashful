@@ -24,8 +24,8 @@ class BalanceApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -41,7 +41,7 @@ class BalanceApi {
   ///
   /// * [String] transactionType:
   ///   Filter by transaction type (e.g., \"credit\", \"debit\", \"fee\", \"payout\")
-  Future<Response> getBalanceHistoryWithHttpInfo(String merchantId, { num? limit, num? offset, String? startDate, String? endDate, String? transactionType, }) async {
+  Future<Response> getBalanceHistoryWithHttpInfo({ String? merchantId, num? limit, num? offset, String? startDate, String? endDate, String? transactionType, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/balance/history';
 
@@ -52,7 +52,9 @@ class BalanceApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -89,8 +91,8 @@ class BalanceApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -106,8 +108,8 @@ class BalanceApi {
   ///
   /// * [String] transactionType:
   ///   Filter by transaction type (e.g., \"credit\", \"debit\", \"fee\", \"payout\")
-  Future<BalanceHistoryResponseDto?> getBalanceHistory(String merchantId, { num? limit, num? offset, String? startDate, String? endDate, String? transactionType, }) async {
-    final response = await getBalanceHistoryWithHttpInfo(merchantId,  limit: limit, offset: offset, startDate: startDate, endDate: endDate, transactionType: transactionType, );
+  Future<BalanceHistoryResponseDto?> getBalanceHistory({ String? merchantId, num? limit, num? offset, String? startDate, String? endDate, String? transactionType, }) async {
+    final response = await getBalanceHistoryWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, startDate: startDate, endDate: endDate, transactionType: transactionType, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -129,9 +131,9 @@ class BalanceApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant whose balance is being requested.
-  Future<Response> getMerchantBalanceWithHttpInfo(String merchantId,) async {
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
+  Future<Response> getMerchantBalanceWithHttpInfo({ String? merchantId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/balance';
 
@@ -142,7 +144,9 @@ class BalanceApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
 
     const contentTypes = <String>[];
 
@@ -164,10 +168,10 @@ class BalanceApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant whose balance is being requested.
-  Future<MerchantBalanceResponseDto?> getMerchantBalance(String merchantId,) async {
-    final response = await getMerchantBalanceWithHttpInfo(merchantId,);
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
+  Future<MerchantBalanceResponseDto?> getMerchantBalance({ String? merchantId, }) async {
+    final response = await getMerchantBalanceWithHttpInfo( merchantId: merchantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

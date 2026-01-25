@@ -80,7 +80,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = PayoutsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose payouts are being requested. If omitted, defaults to the authenticated merchant.
 final limit = 8.14; // num | Maximum number of records to return
 final offset = 8.14; // num | Number of records to skip
 final status = status_example; // String | Filter by status
@@ -97,7 +97,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose payouts are being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **status** | **String**| Filter by status | [optional] 

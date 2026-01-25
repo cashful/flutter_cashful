@@ -82,18 +82,18 @@ class ProductsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
   ///
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned.
+  ///
   /// * [bool] active:
   ///   Filter by active status
-  Future<Response> listProductsWithHttpInfo(String merchantId, { num? limit, num? offset, bool? active, }) async {
+  Future<Response> listProductsWithHttpInfo({ num? limit, num? offset, String? merchantId, bool? active, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/products';
 
@@ -110,7 +110,9 @@ class ProductsApi {
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
     }
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (active != null) {
       queryParams.addAll(_queryParams('', 'active', active));
     }
@@ -135,19 +137,19 @@ class ProductsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
   ///
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose products are being requested. If not provided, the products of the authenticated merchant will be returned.
+  ///
   /// * [bool] active:
   ///   Filter by active status
-  Future<ListProductsResponseDto?> listProducts(String merchantId, { num? limit, num? offset, bool? active, }) async {
-    final response = await listProductsWithHttpInfo(merchantId,  limit: limit, offset: offset, active: active, );
+  Future<ListProductsResponseDto?> listProducts({ num? limit, num? offset, String? merchantId, bool? active, }) async {
+    final response = await listProductsWithHttpInfo( limit: limit, offset: offset, merchantId: merchantId, active: active, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

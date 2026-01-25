@@ -82,15 +82,15 @@ class TransfersApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   Filter by merchant ID
-  ///
   /// * [num] limit:
   ///   Maximum number of items to return
   ///
   /// * [num] offset:
   ///   Number of items to skip
-  Future<Response> listTransfersWithHttpInfo(String merchantId, { num? limit, num? offset, }) async {
+  ///
+  /// * [String] merchantId:
+  ///   Filter by merchant ID. If omitted, defaults to the authenticated merchant.
+  Future<Response> listTransfersWithHttpInfo({ num? limit, num? offset, String? merchantId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/transfers';
 
@@ -107,7 +107,9 @@ class TransfersApi {
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
     }
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
 
     const contentTypes = <String>[];
 
@@ -129,16 +131,16 @@ class TransfersApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   Filter by merchant ID
-  ///
   /// * [num] limit:
   ///   Maximum number of items to return
   ///
   /// * [num] offset:
   ///   Number of items to skip
-  Future<ListTransfersResponseDto?> listTransfers(String merchantId, { num? limit, num? offset, }) async {
-    final response = await listTransfersWithHttpInfo(merchantId,  limit: limit, offset: offset, );
+  ///
+  /// * [String] merchantId:
+  ///   Filter by merchant ID. If omitted, defaults to the authenticated merchant.
+  Future<ListTransfersResponseDto?> listTransfers({ num? limit, num? offset, String? merchantId, }) async {
+    final response = await listTransfersWithHttpInfo( limit: limit, offset: offset, merchantId: merchantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

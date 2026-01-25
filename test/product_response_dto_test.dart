@@ -67,6 +67,18 @@ void main() {
       // TODO
     });
 
+    // The ID of the product image file
+    // String imageId
+    test('to test the property `imageId`', () async {
+      // TODO
+    });
+
+    // The public URL of the product image
+    // String imageUrl
+    test('to test the property `imageUrl`', () async {
+      // TODO
+    });
+
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
       // TODO

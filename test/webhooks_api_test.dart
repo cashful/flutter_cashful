@@ -39,7 +39,7 @@ void main() {
     //
     // Lists all configured webhook endpoints.
     //
-    //Future<ListWebhookEndpointsResponseDto> listWebhookEndpoints(String merchantId, { num limit, num offset }) async
+    //Future<ListWebhookEndpointsResponseDto> listWebhookEndpoints({ String merchantId, num limit, num offset }) async
     test('test listWebhookEndpoints', () async {
       // TODO
     });

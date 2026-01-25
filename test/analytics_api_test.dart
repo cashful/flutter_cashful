@@ -21,7 +21,7 @@ void main() {
     //
     // Retrieves transaction volume and customer growth metrics for the merchant.
     //
-    //Future<AnalyticsResponseDto> getAnalytics(String merchantId) async
+    //Future<AnalyticsResponseDto> getAnalytics({ String merchantId }) async
     test('test getAnalytics', () async {
       // TODO
     });
@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieves a quick summary of key metrics for the merchant.
     //
-    //Future<AnalyticsSummaryDto> getAnalyticsSummary(String merchantId) async
+    //Future<AnalyticsSummaryDto> getAnalyticsSummary({ String merchantId }) async
     test('test getAnalyticsSummary', () async {
       // TODO
     });

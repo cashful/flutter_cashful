@@ -57,7 +57,7 @@ void main() {
     //
     // Retrieves a paginated list of all customers for the merchant.
     //
-    //Future<ListCustomersResponseDto> listCustomers(String merchantId, { num limit, num offset, String email, String search }) async
+    //Future<ListCustomersResponseDto> listCustomers({ String merchantId, num limit, num offset, String email, String search }) async
     test('test listCustomers', () async {
       // TODO
     });

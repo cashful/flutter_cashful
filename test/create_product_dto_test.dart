@@ -52,6 +52,12 @@ void main() {
       // TODO
     });
 
+    // The ID of the product image file
+    // String imageId
+    test('to test the property `imageId`', () async {
+      // TODO
+    });
+
     // Optional custom metadata
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {

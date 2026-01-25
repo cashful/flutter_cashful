@@ -24,9 +24,9 @@ class AnalyticsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  Future<Response> getAnalyticsWithHttpInfo(String merchantId,) async {
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  Future<Response> getAnalyticsWithHttpInfo({ String? merchantId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/analytics';
 
@@ -37,7 +37,9 @@ class AnalyticsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
 
     const contentTypes = <String>[];
 
@@ -59,10 +61,10 @@ class AnalyticsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  Future<AnalyticsResponseDto?> getAnalytics(String merchantId,) async {
-    final response = await getAnalyticsWithHttpInfo(merchantId,);
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  Future<AnalyticsResponseDto?> getAnalytics({ String? merchantId, }) async {
+    final response = await getAnalyticsWithHttpInfo( merchantId: merchantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -84,9 +86,9 @@ class AnalyticsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  Future<Response> getAnalyticsSummaryWithHttpInfo(String merchantId,) async {
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  Future<Response> getAnalyticsSummaryWithHttpInfo({ String? merchantId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/analytics/summary';
 
@@ -97,7 +99,9 @@ class AnalyticsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
 
     const contentTypes = <String>[];
 
@@ -119,10 +123,10 @@ class AnalyticsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The unique identifier of the merchant
-  Future<AnalyticsSummaryDto?> getAnalyticsSummary(String merchantId,) async {
-    final response = await getAnalyticsSummaryWithHttpInfo(merchantId,);
+  /// * [String] merchantId:
+  ///   The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
+  Future<AnalyticsSummaryDto?> getAnalyticsSummary({ String? merchantId, }) async {
+    final response = await getAnalyticsSummaryWithHttpInfo( merchantId: merchantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

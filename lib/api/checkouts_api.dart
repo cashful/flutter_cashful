@@ -83,7 +83,7 @@ class CheckoutsApi {
   /// Parameters:
   ///
   /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  ///   The ID of the merchant to filter checkout sessions
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -136,7 +136,7 @@ class CheckoutsApi {
   /// Parameters:
   ///
   /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  ///   The ID of the merchant to filter checkout sessions
   ///
   /// * [num] limit:
   ///   Maximum number of records to return

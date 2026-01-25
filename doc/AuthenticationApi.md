@@ -25,6 +25,8 @@ Method | HTTP request | Description
 [**getActiveMemberRole**](AuthenticationApi.md#getactivememberrole) | **GET** /api/canary/authentication/organization/get-active-member-role | Get Active Member Role
 [**getApiKey**](AuthenticationApi.md#getapikey) | **GET** /api/canary/authentication/api-key/get | Get API Key
 [**getInvitation**](AuthenticationApi.md#getinvitation) | **GET** /api/canary/authentication/organization/get-invitation | Get Invitation
+[**getJSONWebKeySet**](AuthenticationApi.md#getjsonwebkeyset) | **GET** /api/canary/authentication/jwks | Get the JSON Web Key Set
+[**getJSONWebToken**](AuthenticationApi.md#getjsonwebtoken) | **GET** /api/canary/authentication/token | Get a JWT token
 [**getOrganization**](AuthenticationApi.md#getorganization) | **GET** /api/canary/authentication/organization/get-full-organization | Get Full Organization
 [**getSession**](AuthenticationApi.md#getsession) | **GET** /api/canary/authentication/get-session | Get Session
 [**hasPermission**](AuthenticationApi.md#haspermission) | **POST** /api/canary/authentication/organization/has-permission | Has Permission
@@ -835,6 +837,96 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GetInvitationResponseDto**](GetInvitationResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getJSONWebKeySet**
+> GetJsonWebKeySetResponseDto getJSONWebKeySet()
+
+Get the JSON Web Key Set
+
+Get the JSON Web Key Set
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = AuthenticationApi();
+
+try {
+    final result = api_instance.getJSONWebKeySet();
+    print(result);
+} catch (e) {
+    print('Exception when calling AuthenticationApi->getJSONWebKeySet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetJsonWebKeySetResponseDto**](GetJsonWebKeySetResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getJSONWebToken**
+> GetJsonWebTokenResponseDto getJSONWebToken()
+
+Get a JWT token
+
+Get a JWT token
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = AuthenticationApi();
+
+try {
+    final result = api_instance.getJSONWebToken();
+    print(result);
+} catch (e) {
+    print('Exception when calling AuthenticationApi->getJSONWebToken: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**GetJsonWebTokenResponseDto**](GetJsonWebTokenResponseDto.md)
 
 ### Authorization
 

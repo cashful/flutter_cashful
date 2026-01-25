@@ -19,6 +19,7 @@ class CreateProductDto {
     this.amount,
     required this.currency,
     this.active,
+    this.imageId,
     this.metadata = const {},
   });
 
@@ -64,6 +65,15 @@ class CreateProductDto {
   ///
   bool? active;
 
+  /// The ID of the product image file
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? imageId;
+
   /// Optional custom metadata
   Map<String, Object> metadata;
 
@@ -75,6 +85,7 @@ class CreateProductDto {
     other.amount == amount &&
     other.currency == currency &&
     other.active == active &&
+    other.imageId == imageId &&
     _deepEquality.equals(other.metadata, metadata);
 
   @override
@@ -86,10 +97,11 @@ class CreateProductDto {
     (amount == null ? 0 : amount!.hashCode) +
     (currency.hashCode) +
     (active == null ? 0 : active!.hashCode) +
+    (imageId == null ? 0 : imageId!.hashCode) +
     (metadata.hashCode);
 
   @override
-  String toString() => 'CreateProductDto[merchantId=$merchantId, name=$name, description=$description, amount=$amount, currency=$currency, active=$active, metadata=$metadata]';
+  String toString() => 'CreateProductDto[merchantId=$merchantId, name=$name, description=$description, amount=$amount, currency=$currency, active=$active, imageId=$imageId, metadata=$metadata]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -114,6 +126,11 @@ class CreateProductDto {
       json[r'active'] = this.active;
     } else {
       json[r'active'] = null;
+    }
+    if (this.imageId != null) {
+      json[r'imageId'] = this.imageId;
+    } else {
+      json[r'imageId'] = null;
     }
       json[r'metadata'] = this.metadata;
     return json;
@@ -144,6 +161,7 @@ class CreateProductDto {
         amount: num.parse('${json[r'amount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
         active: mapValueOfType<bool>(json, r'active'),
+        imageId: mapValueOfType<String>(json, r'imageId'),
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
       );
     }

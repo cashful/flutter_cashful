@@ -82,8 +82,8 @@ class PaymentLinksApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -93,7 +93,7 @@ class PaymentLinksApi {
   ///
   /// * [bool] active:
   ///   Filter by active status
-  Future<Response> listPaymentLinksWithHttpInfo(String merchantId, { num? limit, num? offset, bool? active, }) async {
+  Future<Response> listPaymentLinksWithHttpInfo({ String? merchantId, num? limit, num? offset, bool? active, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-links';
 
@@ -104,7 +104,9 @@ class PaymentLinksApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -135,8 +137,8 @@ class PaymentLinksApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -146,8 +148,8 @@ class PaymentLinksApi {
   ///
   /// * [bool] active:
   ///   Filter by active status
-  Future<ListPaymentLinksResponseDto?> listPaymentLinks(String merchantId, { num? limit, num? offset, bool? active, }) async {
-    final response = await listPaymentLinksWithHttpInfo(merchantId,  limit: limit, offset: offset, active: active, );
+  Future<ListPaymentLinksResponseDto?> listPaymentLinks({ String? merchantId, num? limit, num? offset, bool? active, }) async {
+    final response = await listPaymentLinksWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, active: active, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

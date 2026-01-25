@@ -141,15 +141,15 @@ class WebhooksApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
-  Future<Response> listWebhookEndpointsWithHttpInfo(String merchantId, { num? limit, num? offset, }) async {
+  Future<Response> listWebhookEndpointsWithHttpInfo({ String? merchantId, num? limit, num? offset, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/webhook-endpoints';
 
@@ -160,7 +160,9 @@ class WebhooksApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -188,16 +190,16 @@ class WebhooksApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
-  Future<ListWebhookEndpointsResponseDto?> listWebhookEndpoints(String merchantId, { num? limit, num? offset, }) async {
-    final response = await listWebhookEndpointsWithHttpInfo(merchantId,  limit: limit, offset: offset, );
+  Future<ListWebhookEndpointsResponseDto?> listWebhookEndpoints({ String? merchantId, num? limit, num? offset, }) async {
+    final response = await listWebhookEndpointsWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

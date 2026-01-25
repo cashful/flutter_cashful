@@ -297,8 +297,8 @@ class CustomersApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -311,7 +311,7 @@ class CustomersApi {
   ///
   /// * [String] search:
   ///   Search across customer fields
-  Future<Response> listCustomersWithHttpInfo(String merchantId, { num? limit, num? offset, String? email, String? search, }) async {
+  Future<Response> listCustomersWithHttpInfo({ String? merchantId, num? limit, num? offset, String? email, String? search, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/customers';
 
@@ -322,7 +322,9 @@ class CustomersApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -356,8 +358,8 @@ class CustomersApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
+  /// * [String] merchantId:
+  ///   The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -370,8 +372,8 @@ class CustomersApi {
   ///
   /// * [String] search:
   ///   Search across customer fields
-  Future<ListCustomersResponseDto?> listCustomers(String merchantId, { num? limit, num? offset, String? email, String? search, }) async {
-    final response = await listCustomersWithHttpInfo(merchantId,  limit: limit, offset: offset, email: email, search: search, );
+  Future<ListCustomersResponseDto?> listCustomers({ String? merchantId, num? limit, num? offset, String? email, String? search, }) async {
+    final response = await listCustomersWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, email: email, search: search, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

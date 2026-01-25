@@ -932,6 +932,102 @@ class AuthenticationApi {
     return null;
   }
 
+  /// Get the JSON Web Key Set
+  ///
+  /// Get the JSON Web Key Set
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> getJSONWebKeySetWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/authentication/jwks';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Get the JSON Web Key Set
+  ///
+  /// Get the JSON Web Key Set
+  Future<GetJsonWebKeySetResponseDto?> getJSONWebKeySet() async {
+    final response = await getJSONWebKeySetWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetJsonWebKeySetResponseDto',) as GetJsonWebKeySetResponseDto;
+    
+    }
+    return null;
+  }
+
+  /// Get a JWT token
+  ///
+  /// Get a JWT token
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> getJSONWebTokenWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/authentication/token';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Get a JWT token
+  ///
+  /// Get a JWT token
+  Future<GetJsonWebTokenResponseDto?> getJSONWebToken() async {
+    final response = await getJSONWebTokenWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetJsonWebTokenResponseDto',) as GetJsonWebTokenResponseDto;
+    
+    }
+    return null;
+  }
+
   /// Get Full Organization
   ///
   /// Get the full organization details

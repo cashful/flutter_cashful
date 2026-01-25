@@ -82,7 +82,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = PaymentLinksApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant.
 final limit = 8.14; // num | Maximum number of records to return
 final offset = 8.14; // num | Number of records to skip
 final active = true; // bool | Filter by active status
@@ -99,7 +99,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose payment links are being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **active** | **bool**| Filter by active status | [optional] 

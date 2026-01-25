@@ -81,7 +81,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = CheckoutsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant to filter checkout sessions
 final limit = 50; // num | Maximum number of records to return
 final offset = 0; // num | Number of records to skip
 final status = status_example; // String | The status to filter checkout sessions
@@ -98,7 +98,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant to filter checkout sessions | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **status** | **String**| The status to filter checkout sessions | [optional] 

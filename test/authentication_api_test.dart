@@ -161,6 +161,24 @@ void main() {
       // TODO
     });
 
+    // Get the JSON Web Key Set
+    //
+    // Get the JSON Web Key Set
+    //
+    //Future<GetJsonWebKeySetResponseDto> getJSONWebKeySet() async
+    test('test getJSONWebKeySet', () async {
+      // TODO
+    });
+
+    // Get a JWT token
+    //
+    // Get a JWT token
+    //
+    //Future<GetJsonWebTokenResponseDto> getJSONWebToken() async
+    test('test getJSONWebToken', () async {
+      // TODO
+    });
+
     // Get Full Organization
     //
     // Get the full organization details

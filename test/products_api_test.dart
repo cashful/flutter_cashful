@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieves all products in the merchant's catalog.
     //
-    //Future<ListProductsResponseDto> listProducts(String merchantId, { num limit, num offset, bool active }) async
+    //Future<ListProductsResponseDto> listProducts({ num limit, num offset, String merchantId, bool active }) async
     test('test listProducts', () async {
       // TODO
     });

@@ -31,7 +31,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = BalanceApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
 final limit = 8.14; // num | Maximum number of records to return
 final offset = 8.14; // num | Number of records to skip
 final startDate = startDate_example; // String | Filter transactions from this date (ISO 8601 format)
@@ -50,7 +50,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **startDate** | **String**| Filter transactions from this date (ISO 8601 format) | [optional] 
@@ -90,7 +90,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = BalanceApi();
-final merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested.
+final merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
 
 try {
     final result = api_instance.getMerchantBalance(merchantId);
@@ -104,7 +104,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant whose balance is being requested. | 
+ **merchantId** | **String**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
 
 ### Return type
 

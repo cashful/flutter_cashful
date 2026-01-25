@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **tags** | **List<String>** | Tags for classification | [optional] [default to const []]
 **relatedEntityId** | **String** | Related entity ID (e.g., compliance info ID) | [optional] 
 **relatedEntityType** | **String** | Related entity type | [optional] 
+**isPublic** | **bool** | Whether the file should be publicly accessible | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -31,7 +31,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = AnalyticsApi();
-final merchantId = merchant_123; // String | The unique identifier of the merchant
+final merchantId = merchant_123; // String | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
 
 try {
     final result = api_instance.getAnalytics(merchantId);
@@ -45,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The unique identifier of the merchant | 
+ **merchantId** | **String**| The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. | [optional] 
 
 ### Return type
 
@@ -80,7 +80,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = AnalyticsApi();
-final merchantId = merchant_123; // String | The unique identifier of the merchant
+final merchantId = merchant_123; // String | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
 
 try {
     final result = api_instance.getAnalyticsSummary(merchantId);
@@ -94,7 +94,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The unique identifier of the merchant | 
+ **merchantId** | **String**| The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. | [optional] 
 
 ### Return type
 

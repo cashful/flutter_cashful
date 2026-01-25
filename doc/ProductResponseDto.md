@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **amount** | **num** |  | [optional] 
 **currency** | **String** |  | 
 **active** | **bool** |  | 
+**imageId** | **String** | The ID of the product image file | [optional] 
+**imageUrl** | **String** | The public URL of the product image | [optional] 
 **metadata** | [**Map<String, Object>**](Object.md) |  | [default to const {}]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

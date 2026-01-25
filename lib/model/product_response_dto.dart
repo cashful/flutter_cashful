@@ -23,6 +23,8 @@ class ProductResponseDto {
     this.amount,
     required this.currency,
     required this.active,
+    this.imageId,
+    this.imageUrl,
     this.metadata = const {},
   });
 
@@ -65,6 +67,24 @@ class ProductResponseDto {
 
   bool active;
 
+  /// The ID of the product image file
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? imageId;
+
+  /// The public URL of the product image
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? imageUrl;
+
   Map<String, Object> metadata;
 
   @override
@@ -79,6 +99,8 @@ class ProductResponseDto {
     other.amount == amount &&
     other.currency == currency &&
     other.active == active &&
+    other.imageId == imageId &&
+    other.imageUrl == imageUrl &&
     _deepEquality.equals(other.metadata, metadata);
 
   @override
@@ -94,10 +116,12 @@ class ProductResponseDto {
     (amount == null ? 0 : amount!.hashCode) +
     (currency.hashCode) +
     (active.hashCode) +
+    (imageId == null ? 0 : imageId!.hashCode) +
+    (imageUrl == null ? 0 : imageUrl!.hashCode) +
     (metadata.hashCode);
 
   @override
-  String toString() => 'ProductResponseDto[id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, merchantId=$merchantId, name=$name, description=$description, amount=$amount, currency=$currency, active=$active, metadata=$metadata]';
+  String toString() => 'ProductResponseDto[id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, merchantId=$merchantId, name=$name, description=$description, amount=$amount, currency=$currency, active=$active, imageId=$imageId, imageUrl=$imageUrl, metadata=$metadata]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -123,6 +147,16 @@ class ProductResponseDto {
     }
       json[r'currency'] = this.currency;
       json[r'active'] = this.active;
+    if (this.imageId != null) {
+      json[r'imageId'] = this.imageId;
+    } else {
+      json[r'imageId'] = null;
+    }
+    if (this.imageUrl != null) {
+      json[r'imageUrl'] = this.imageUrl;
+    } else {
+      json[r'imageUrl'] = null;
+    }
       json[r'metadata'] = this.metadata;
     return json;
   }
@@ -156,6 +190,8 @@ class ProductResponseDto {
         amount: num.parse('${json[r'amount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
         active: mapValueOfType<bool>(json, r'active')!,
+        imageId: mapValueOfType<String>(json, r'imageId'),
+        imageUrl: mapValueOfType<String>(json, r'imageUrl'),
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
       );
     }

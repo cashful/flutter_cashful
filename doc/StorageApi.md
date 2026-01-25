@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **storageControllerListCanary**
-> ListFilesResponseDto storageControllerListCanary(merchantId, limit, offset, tag, status, relatedEntityId, relatedEntityType)
+> ListFilesResponseDto storageControllerListCanary(limit, offset, tag, status, relatedEntityId, relatedEntityType)
 
 List files
 
@@ -173,7 +173,6 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = StorageApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
 final limit = 50; // num | Maximum number of records to return
 final offset = 0; // num | Number of records to skip
 final tag = tag_example; // String | Filter by tag
@@ -182,7 +181,7 @@ final relatedEntityId = relatedEntityId_example; // String |
 final relatedEntityType = relatedEntityType_example; // String | 
 
 try {
-    final result = api_instance.storageControllerListCanary(merchantId, limit, offset, tag, status, relatedEntityId, relatedEntityType);
+    final result = api_instance.storageControllerListCanary(limit, offset, tag, status, relatedEntityId, relatedEntityType);
     print(result);
 } catch (e) {
     print('Exception when calling StorageApi->storageControllerListCanary: $e\n');
@@ -193,7 +192,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **tag** | **String**| Filter by tag | [optional] 

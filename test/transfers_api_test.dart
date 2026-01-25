@@ -30,7 +30,7 @@ void main() {
     //
     // Lists transfers for a specific merchant with pagination.
     //
-    //Future<ListTransfersResponseDto> listTransfers(String merchantId, { num limit, num offset }) async
+    //Future<ListTransfersResponseDto> listTransfers({ num limit, num offset, String merchantId }) async
     test('test listTransfers', () async {
       // TODO
     });

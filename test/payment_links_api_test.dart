@@ -30,7 +30,7 @@ void main() {
     //
     // Retrieves all payment links created by the merchant.
     //
-    //Future<ListPaymentLinksResponseDto> listPaymentLinks(String merchantId, { num limit, num offset, bool active }) async
+    //Future<ListPaymentLinksResponseDto> listPaymentLinks({ String merchantId, num limit, num offset, bool active }) async
     test('test listPaymentLinks', () async {
       // TODO
     });

@@ -130,7 +130,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = WebhooksApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant.
 final limit = 8.14; // num | Maximum number of records to return
 final offset = 8.14; // num | Number of records to skip
 
@@ -146,7 +146,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose webhooks are being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
 

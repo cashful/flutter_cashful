@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listPaymentMethods**
-> ListPaymentMethodsResponseDto listPaymentMethods(merchantId, limit, offset, customerId)
+> ListPaymentMethodsResponseDto listPaymentMethods(limit, offset, merchantId, customerId)
 
 List Payment Methods
 
@@ -81,13 +81,13 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = PaymentMethodsApi();
-final merchantId = merchantId_example; // String | The unique identifier of the merchant
 final limit = 50; // num | Maximum number of records to return
 final offset = 0; // num | Number of records to skip
+final merchantId = merchantId_example; // String | The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization.
 final customerId = customerId_example; // String | The unique identifier of the customer
 
 try {
-    final result = api_instance.listPaymentMethods(merchantId, limit, offset, customerId);
+    final result = api_instance.listPaymentMethods(limit, offset, merchantId, customerId);
     print(result);
 } catch (e) {
     print('Exception when calling PaymentMethodsApi->listPaymentMethods: $e\n');
@@ -98,9 +98,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The unique identifier of the merchant | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
+ **merchantId** | **String**| The unique identifier of the merchant. If not provided, defaults to the authenticated user's active organization. | [optional] 
  **customerId** | **String**| The unique identifier of the customer | [optional] 
 
 ### Return type

@@ -200,8 +200,8 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   Filter by merchant ID
+  /// * [String] merchantId:
+  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -211,7 +211,7 @@ class PaymentIntentsApi {
   ///
   /// * [String] status:
   ///   Filter by status
-  Future<Response> listPaymentIntentsWithHttpInfo(String merchantId, { num? limit, num? offset, String? status, }) async {
+  Future<Response> listPaymentIntentsWithHttpInfo({ String? merchantId, num? limit, num? offset, String? status, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-intents';
 
@@ -222,7 +222,9 @@ class PaymentIntentsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
+    if (merchantId != null) {
       queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
@@ -253,8 +255,8 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   Filter by merchant ID
+  /// * [String] merchantId:
+  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
   ///   Maximum number of records to return
@@ -264,8 +266,8 @@ class PaymentIntentsApi {
   ///
   /// * [String] status:
   ///   Filter by status
-  Future<ListPaymentIntentsResponseDto?> listPaymentIntents(String merchantId, { num? limit, num? offset, String? status, }) async {
-    final response = await listPaymentIntentsWithHttpInfo(merchantId,  limit: limit, offset: offset, status: status, );
+  Future<ListPaymentIntentsResponseDto?> listPaymentIntents({ String? merchantId, num? limit, num? offset, String? status, }) async {
+    final response = await listPaymentIntentsWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, status: status, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

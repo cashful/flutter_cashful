@@ -240,7 +240,7 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = CustomersApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. This parameter is required.
+final merchantId = merchantId_example; // String | The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
 final limit = 8.14; // num | Maximum number of records to return
 final offset = 8.14; // num | Number of records to skip
 final email = email_example; // String | Filter by email address
@@ -258,7 +258,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. This parameter is required. | 
+ **merchantId** | **String**| The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant. | [optional] 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
  **email** | **String**| Filter by email address | [optional] 

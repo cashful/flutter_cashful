@@ -338,6 +338,10 @@ class ApiClient {
           return GetFullOrganizationResponseDto.fromJson(value);
         case 'GetInvitationResponseDto':
           return GetInvitationResponseDto.fromJson(value);
+        case 'GetJsonWebKeySetResponseDto':
+          return GetJsonWebKeySetResponseDto.fromJson(value);
+        case 'GetJsonWebTokenResponseDto':
+          return GetJsonWebTokenResponseDto.fromJson(value);
         case 'GetSessionResponseDto':
           return GetSessionResponseDto.fromJson(value);
         case 'HasPermissionDto':
@@ -366,6 +370,8 @@ class ApiClient {
           return IsUsernameAvailableResponseDto.fromJson(value);
         case 'IveriParamsDto':
           return IveriParamsDto.fromJson(value);
+        case 'JwkDto':
+          return JwkDto.fromJson(value);
         case 'LeaveOrganizationDto':
           return LeaveOrganizationDto.fromJson(value);
         case 'LeaveOrganizationResponseDto':

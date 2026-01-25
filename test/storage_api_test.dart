@@ -40,7 +40,7 @@ void main() {
 
     // List files
     //
-    //Future<ListFilesResponseDto> storageControllerListCanary(String merchantId, { num limit, num offset, String tag, String status, String relatedEntityId, String relatedEntityType }) async
+    //Future<ListFilesResponseDto> storageControllerListCanary({ num limit, num offset, String tag, String status, String relatedEntityId, String relatedEntityType }) async
     test('test storageControllerListCanary', () async {
       // TODO
     });

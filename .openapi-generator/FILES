@@ -88,6 +88,8 @@ doc/GetActiveMemberRoleResponseDto.md
 doc/GetApiKeyResponseDto.md
 doc/GetFullOrganizationResponseDto.md
 doc/GetInvitationResponseDto.md
+doc/GetJsonWebKeySetResponseDto.md
+doc/GetJsonWebTokenResponseDto.md
 doc/GetSessionResponseDto.md
 doc/HasPermissionDto.md
 doc/HasPermissionResponseDto.md
@@ -103,6 +105,7 @@ doc/InviteMemberResponseDto.md
 doc/IsUsernameAvailableDto.md
 doc/IsUsernameAvailableResponseDto.md
 doc/IveriParamsDto.md
+doc/JwkDto.md
 doc/LeaveOrganizationDto.md
 doc/LeaveOrganizationResponseDto.md
 doc/LineItemDto.md
@@ -328,6 +331,8 @@ lib/model/get_active_member_role_response_dto.dart
 lib/model/get_api_key_response_dto.dart
 lib/model/get_full_organization_response_dto.dart
 lib/model/get_invitation_response_dto.dart
+lib/model/get_json_web_key_set_response_dto.dart
+lib/model/get_json_web_token_response_dto.dart
 lib/model/get_session_response_dto.dart
 lib/model/has_permission_dto.dart
 lib/model/has_permission_response_dto.dart
@@ -342,6 +347,7 @@ lib/model/invite_member_response_dto.dart
 lib/model/is_username_available_dto.dart
 lib/model/is_username_available_response_dto.dart
 lib/model/iveri_params_dto.dart
+lib/model/jwk_dto.dart
 lib/model/leave_organization_dto.dart
 lib/model/leave_organization_response_dto.dart
 lib/model/line_item_dto.dart
@@ -537,6 +543,8 @@ test/get_active_member_role_response_dto_test.dart
 test/get_api_key_response_dto_test.dart
 test/get_full_organization_response_dto_test.dart
 test/get_invitation_response_dto_test.dart
+test/get_json_web_key_set_response_dto_test.dart
+test/get_json_web_token_response_dto_test.dart
 test/get_session_response_dto_test.dart
 test/has_permission_dto_test.dart
 test/has_permission_response_dto_test.dart
@@ -552,6 +560,7 @@ test/invite_member_response_dto_test.dart
 test/is_username_available_dto_test.dart
 test/is_username_available_response_dto_test.dart
 test/iveri_params_dto_test.dart
+test/jwk_dto_test.dart
 test/leave_organization_dto_test.dart
 test/leave_organization_response_dto_test.dart
 test/line_item_dto_test.dart

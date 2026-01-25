@@ -176,9 +176,6 @@ class StorageApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
@@ -193,7 +190,7 @@ class StorageApi {
   /// * [String] relatedEntityId:
   ///
   /// * [String] relatedEntityType:
-  Future<Response> storageControllerListCanaryWithHttpInfo(String merchantId, { num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
+  Future<Response> storageControllerListCanaryWithHttpInfo({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage';
 
@@ -222,7 +219,6 @@ class StorageApi {
     if (relatedEntityType != null) {
       queryParams.addAll(_queryParams('', 'relatedEntityType', relatedEntityType));
     }
-      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
 
     const contentTypes = <String>[];
 
@@ -242,9 +238,6 @@ class StorageApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant. This parameter is required.
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
@@ -259,8 +252,8 @@ class StorageApi {
   /// * [String] relatedEntityId:
   ///
   /// * [String] relatedEntityType:
-  Future<ListFilesResponseDto?> storageControllerListCanary(String merchantId, { num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
-    final response = await storageControllerListCanaryWithHttpInfo(merchantId,  limit: limit, offset: offset, tag: tag, status: status, relatedEntityId: relatedEntityId, relatedEntityType: relatedEntityType, );
+  Future<ListFilesResponseDto?> storageControllerListCanary({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
+    final response = await storageControllerListCanaryWithHttpInfo( limit: limit, offset: offset, tag: tag, status: status, relatedEntityId: relatedEntityId, relatedEntityType: relatedEntityType, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
