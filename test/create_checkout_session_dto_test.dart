@@ -16,7 +16,7 @@ void main() {
   // final instance = CreateCheckoutSessionDto();
 
   group('test CreateCheckoutSessionDto', () {
-    // The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
+    // The ID of the merchant for the checkout session.
     // String merchantId
     test('to test the property `merchantId`', () async {
       // TODO
@@ -40,7 +40,7 @@ void main() {
       // TODO
     });
 
-    // The URL to redirect to if customer cancels
+    // The URL to redirect to on cancel
     // String cancelUrl
     test('to test the property `cancelUrl`', () async {
       // TODO
@@ -73,6 +73,12 @@ void main() {
     // Optional custom metadata
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+    // Configuration for the hosted checkout page
+    // HostedCheckoutConfigDto hostedCheckoutConfig
+    test('to test the property `hostedCheckoutConfig`', () async {
       // TODO
     });
 

@@ -17,7 +17,7 @@ class InitiatePaymentDto {
     required this.currency,
     required this.merchantId,
     required this.evervaultEncryptedCard,
-    this.paymentIntentId,
+    required this.paymentIntentId,
     this.maskedPan,
     this.tokenizeCard = false,
     this.firstName,
@@ -40,14 +40,8 @@ class InitiatePaymentDto {
   /// Evervault encrypted card details
   EvervaultEncryptedCardDto evervaultEncryptedCard;
 
-  /// Payment intent ID (generated if not provided)
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? paymentIntentId;
+  /// Payment intent ID linked to the checkout/payment flow
+  String paymentIntentId;
 
   /// Masked PAN for display purposes
   ///
@@ -138,7 +132,7 @@ class InitiatePaymentDto {
     (currency.hashCode) +
     (merchantId.hashCode) +
     (evervaultEncryptedCard.hashCode) +
-    (paymentIntentId == null ? 0 : paymentIntentId!.hashCode) +
+    (paymentIntentId.hashCode) +
     (maskedPan == null ? 0 : maskedPan!.hashCode) +
     (tokenizeCard.hashCode) +
     (firstName == null ? 0 : firstName!.hashCode) +
@@ -157,11 +151,7 @@ class InitiatePaymentDto {
       json[r'currency'] = this.currency;
       json[r'merchantId'] = this.merchantId;
       json[r'evervaultEncryptedCard'] = this.evervaultEncryptedCard;
-    if (this.paymentIntentId != null) {
       json[r'paymentIntentId'] = this.paymentIntentId;
-    } else {
-      json[r'paymentIntentId'] = null;
-    }
     if (this.maskedPan != null) {
       json[r'maskedPan'] = this.maskedPan;
     } else {
@@ -224,7 +214,7 @@ class InitiatePaymentDto {
         currency: mapValueOfType<String>(json, r'currency')!,
         merchantId: mapValueOfType<String>(json, r'merchantId')!,
         evervaultEncryptedCard: EvervaultEncryptedCardDto.fromJson(json[r'evervaultEncryptedCard'])!,
-        paymentIntentId: mapValueOfType<String>(json, r'paymentIntentId'),
+        paymentIntentId: mapValueOfType<String>(json, r'paymentIntentId')!,
         maskedPan: mapValueOfType<String>(json, r'maskedPan'),
         tokenizeCard: mapValueOfType<bool>(json, r'tokenizeCard') ?? false,
         firstName: mapValueOfType<String>(json, r'firstName'),
@@ -284,6 +274,7 @@ class InitiatePaymentDto {
     'currency',
     'merchantId',
     'evervaultEncryptedCard',
+    'paymentIntentId',
   };
 }
 

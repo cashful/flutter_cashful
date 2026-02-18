@@ -40,7 +40,7 @@ void main() {
       // TODO
     });
 
-    // Payment intent ID (generated if not provided)
+    // Payment intent ID linked to the checkout/payment flow
     // String paymentIntentId
     test('to test the property `paymentIntentId`', () async {
       // TODO

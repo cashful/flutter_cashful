@@ -224,6 +224,8 @@ class ApiClient {
           return AnalyticsSummaryDto.fromJson(value);
         case 'ApiKey':
           return ApiKey.fromJson(value);
+        case 'BadRequestResponseDto':
+          return BadRequestResponseDto.fromJson(value);
         case 'BalanceHistoryResponseDto':
           return BalanceHistoryResponseDto.fromJson(value);
         case 'BalanceTransactionDto':
@@ -250,8 +252,16 @@ class ApiClient {
           return CheckSlugDto.fromJson(value);
         case 'CheckSlugResponseDto':
           return CheckSlugResponseDto.fromJson(value);
+        case 'CheckoutSessionConfirmResponseDto':
+          return CheckoutSessionConfirmResponseDto.fromJson(value);
         case 'CheckoutSessionResponseDto':
           return CheckoutSessionResponseDto.fromJson(value);
+        case 'ConfirmCheckoutSessionDto':
+          return ConfirmCheckoutSessionDto.fromJson(value);
+        case 'ConfirmPaymentIntentDto':
+          return ConfirmPaymentIntentDto.fromJson(value);
+        case 'ConfirmPaymentIntentResponseDto':
+          return ConfirmPaymentIntentResponseDto.fromJson(value);
         case 'ConfirmUploadDto':
           return ConfirmUploadDto.fromJson(value);
         case 'CreateApiKeyDto':
@@ -298,8 +308,6 @@ class ApiClient {
           return CustomerTransactionDto.fromJson(value);
         case 'DailyBreakdownDto':
           return DailyBreakdownDto.fromJson(value);
-        case 'DebitReturnResponseDto':
-          return DebitReturnResponseDto.fromJson(value);
         case 'DeleteApiKeyDto':
           return DeleteApiKeyDto.fromJson(value);
         case 'DeleteApiKeyResponseDto':
@@ -312,14 +320,14 @@ class ApiClient {
           return DeleteUserDto.fromJson(value);
         case 'DeleteUserResponseDto':
           return DeleteUserResponseDto.fromJson(value);
-        case 'ErrorResponseDto':
-          return ErrorResponseDto.fromJson(value);
         case 'EventResponseDto':
           return EventResponseDto.fromJson(value);
         case 'EvervaultEncryptedCardDto':
           return EvervaultEncryptedCardDto.fromJson(value);
         case 'FileDto':
           return FileDto.fromJson(value);
+        case 'ForbiddenResponseDto':
+          return ForbiddenResponseDto.fromJson(value);
         case 'ForgotPasswordDto':
           return ForgotPasswordDto.fromJson(value);
         case 'ForgotPasswordResponseDto':
@@ -348,6 +356,8 @@ class ApiClient {
           return HasPermissionDto.fromJson(value);
         case 'HasPermissionResponseDto':
           return HasPermissionResponseDto.fromJson(value);
+        case 'HostedCheckoutConfigDto':
+          return HostedCheckoutConfigDto.fromJson(value);
         case 'IVeriHealthCheckResponseDto':
           return IVeriHealthCheckResponseDto.fromJson(value);
         case 'ImpersonateUserDto':
@@ -358,6 +368,8 @@ class ApiClient {
           return InitiatePaymentDto.fromJson(value);
         case 'InitiatePaymentResponseDto':
           return InitiatePaymentResponseDto.fromJson(value);
+        case 'InternalServerErrorResponseDto':
+          return InternalServerErrorResponseDto.fromJson(value);
         case 'InvitationDto':
           return InvitationDto.fromJson(value);
         case 'InviteMemberDto':
@@ -430,6 +442,8 @@ class ApiClient {
           return MerchantBalanceResponseDto.fromJson(value);
         case 'MetricStatsDto':
           return MetricStatsDto.fromJson(value);
+        case 'NotFoundResponseDto':
+          return NotFoundResponseDto.fromJson(value);
         case 'NotificationDto':
           return NotificationDto.fromJson(value);
         case 'OrganizationComplianceResponseDto':
@@ -486,6 +500,8 @@ class ApiClient {
           return ResetPhonePasswordDto.fromJson(value);
         case 'ResetPhonePasswordResponseDto':
           return ResetPhonePasswordResponseDto.fromJson(value);
+        case 'RetrieveMultipleProductsDto':
+          return RetrieveMultipleProductsDto.fromJson(value);
         case 'RevokeSessionDto':
           return RevokeSessionDto.fromJson(value);
         case 'RevokeSessionResponseDto':
@@ -540,6 +556,8 @@ class ApiClient {
           return TimeframeMetricsDto.fromJson(value);
         case 'TransferResponseDto':
           return TransferResponseDto.fromJson(value);
+        case 'UnauthorizedResponseDto':
+          return UnauthorizedResponseDto.fromJson(value);
         case 'UnbanUserDto':
           return UnbanUserDto.fromJson(value);
         case 'UnbanUserResponseDto':
@@ -554,6 +572,10 @@ class ApiClient {
           return UpdateApiKeyResponseDto.fromJson(value);
         case 'UpdateBalanceDto':
           return UpdateBalanceDto.fromJson(value);
+        case 'UpdateCheckoutSessionDto':
+          return UpdateCheckoutSessionDto.fromJson(value);
+        case 'UpdateCheckoutSessionResponseDto':
+          return UpdateCheckoutSessionResponseDto.fromJson(value);
         case 'UpdateCustomerDto':
           return UpdateCustomerDto.fromJson(value);
         case 'UpdateMemberRoleDto':

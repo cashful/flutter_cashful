@@ -77,7 +77,7 @@ class PaymentIntentsApi {
 
   /// Confirm Payment Intent
   ///
-  /// Confirms a payment intent that requires confirmation. This initiates the actual payment processing.
+  /// Confirms a payment intent that requires confirmation and returns 3DS parameters for card authentication.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -85,19 +85,21 @@ class PaymentIntentsApi {
   ///
   /// * [String] id (required):
   ///   The unique identifier of the payment intent
-  Future<Response> confirmPaymentIntentWithHttpInfo(String id,) async {
+  ///
+  /// * [ConfirmPaymentIntentDto] confirmPaymentIntentDto (required):
+  Future<Response> confirmPaymentIntentWithHttpInfo(String id, ConfirmPaymentIntentDto confirmPaymentIntentDto,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-intents/{id}/confirm'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
-    Object? postBody;
+    Object? postBody = confirmPaymentIntentDto;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const contentTypes = <String>[];
+    const contentTypes = <String>['application/json'];
 
 
     return apiClient.invokeAPI(
@@ -113,14 +115,16 @@ class PaymentIntentsApi {
 
   /// Confirm Payment Intent
   ///
-  /// Confirms a payment intent that requires confirmation. This initiates the actual payment processing.
+  /// Confirms a payment intent that requires confirmation and returns 3DS parameters for card authentication.
   ///
   /// Parameters:
   ///
   /// * [String] id (required):
   ///   The unique identifier of the payment intent
-  Future<PaymentIntentResponseDto?> confirmPaymentIntent(String id,) async {
-    final response = await confirmPaymentIntentWithHttpInfo(id,);
+  ///
+  /// * [ConfirmPaymentIntentDto] confirmPaymentIntentDto (required):
+  Future<ConfirmPaymentIntentResponseDto?> confirmPaymentIntent(String id, ConfirmPaymentIntentDto confirmPaymentIntentDto,) async {
+    final response = await confirmPaymentIntentWithHttpInfo(id, confirmPaymentIntentDto,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -128,7 +132,7 @@ class PaymentIntentsApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PaymentIntentResponseDto',) as PaymentIntentResponseDto;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ConfirmPaymentIntentResponseDto',) as ConfirmPaymentIntentResponseDto;
     
     }
     return null;
@@ -136,7 +140,7 @@ class PaymentIntentsApi {
 
   /// Create Payment Intent
   ///
-  /// Creates a payment intent for off-session charges. Used for subscriptions, recurring billing, or server-to-server payments with saved cards.
+  /// Creates a payment intent for a payment attempt. Used for hosted checkout or direct integrations.
   ///
   /// Note: This method returns the HTTP [Response].
   ///
@@ -171,7 +175,7 @@ class PaymentIntentsApi {
 
   /// Create Payment Intent
   ///
-  /// Creates a payment intent for off-session charges. Used for subscriptions, recurring billing, or server-to-server payments with saved cards.
+  /// Creates a payment intent for a payment attempt. Used for hosted checkout or direct integrations.
   ///
   /// Parameters:
   ///
@@ -200,18 +204,14 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId:
-  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
-  ///
-  /// * [num] limit:
-  ///   Maximum number of records to return
+  /// * [String] status:
   ///
   /// * [num] offset:
-  ///   Number of records to skip
   ///
-  /// * [String] status:
-  ///   Filter by status
-  Future<Response> listPaymentIntentsWithHttpInfo({ String? merchantId, num? limit, num? offset, String? status, }) async {
+  /// * [num] limit:
+  ///
+  /// * [String] merchantId:
+  Future<Response> listPaymentIntentsWithHttpInfo({ String? status, num? offset, num? limit, String? merchantId, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-intents';
 
@@ -222,17 +222,17 @@ class PaymentIntentsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    if (merchantId != null) {
-      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
-    }
-    if (limit != null) {
-      queryParams.addAll(_queryParams('', 'limit', limit));
+    if (status != null) {
+      queryParams.addAll(_queryParams('', 'status', status));
     }
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
     }
-    if (status != null) {
-      queryParams.addAll(_queryParams('', 'status', status));
+    if (limit != null) {
+      queryParams.addAll(_queryParams('', 'limit', limit));
+    }
+    if (merchantId != null) {
+      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
     }
 
     const contentTypes = <String>[];
@@ -255,19 +255,15 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId:
-  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
-  ///
-  /// * [num] limit:
-  ///   Maximum number of records to return
+  /// * [String] status:
   ///
   /// * [num] offset:
-  ///   Number of records to skip
   ///
-  /// * [String] status:
-  ///   Filter by status
-  Future<ListPaymentIntentsResponseDto?> listPaymentIntents({ String? merchantId, num? limit, num? offset, String? status, }) async {
-    final response = await listPaymentIntentsWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, status: status, );
+  /// * [num] limit:
+  ///
+  /// * [String] merchantId:
+  Future<ListPaymentIntentsResponseDto?> listPaymentIntents({ String? status, num? offset, num? limit, String? merchantId, }) async {
+    final response = await listPaymentIntentsWithHttpInfo( status: status, offset: offset, limit: limit, merchantId: merchantId, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

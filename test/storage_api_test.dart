@@ -19,43 +19,43 @@ void main() {
   group('tests for StorageApi', () {
     // Confirm that a file upload was completed
     //
-    //Future<FileDto> storageControllerConfirmUploadCanary(ConfirmUploadDto confirmUploadDto) async
-    test('test storageControllerConfirmUploadCanary', () async {
+    //Future<FileDto> confirmUpload(ConfirmUploadDto confirmUploadDto) async
+    test('test confirmUpload', () async {
       // TODO
     });
 
     // Delete a file
     //
-    //Future storageControllerDeleteCanary(String id) async
-    test('test storageControllerDeleteCanary', () async {
+    //Future deleteFile(String id) async
+    test('test deleteFile', () async {
       // TODO
     });
 
     // Get a presigned download URL for a file
     //
-    //Future<PresignedDownloadResponseDto> storageControllerGetDownloadUrlCanary(String id) async
-    test('test storageControllerGetDownloadUrlCanary', () async {
-      // TODO
-    });
-
-    // List files
-    //
-    //Future<ListFilesResponseDto> storageControllerListCanary({ num limit, num offset, String tag, String status, String relatedEntityId, String relatedEntityType }) async
-    test('test storageControllerListCanary', () async {
-      // TODO
-    });
-
-    // Request a presigned URL for file upload
-    //
-    //Future<PresignedUploadResponseDto> storageControllerRequestUploadUrlCanary(RequestUploadUrlDto requestUploadUrlDto) async
-    test('test storageControllerRequestUploadUrlCanary', () async {
+    //Future<PresignedDownloadResponseDto> getDownloadUrl(String id) async
+    test('test getDownloadUrl', () async {
       // TODO
     });
 
     // Get file details
     //
-    //Future<FileDto> storageControllerRetrieveCanary(String id) async
-    test('test storageControllerRetrieveCanary', () async {
+    //Future<FileDto> getFileDetails(String id) async
+    test('test getFileDetails', () async {
+      // TODO
+    });
+
+    // List files
+    //
+    //Future<ListFilesResponseDto> listFiles({ num limit, num offset, String tag, String status, String relatedEntityId, String relatedEntityType }) async
+    test('test listFiles', () async {
+      // TODO
+    });
+
+    // Request a presigned URL for file upload
+    //
+    //Future<PresignedUploadResponseDto> requestUploadUrl(RequestUploadUrlDto requestUploadUrlDto) async
+    test('test requestUploadUrl', () async {
       // TODO
     });
 

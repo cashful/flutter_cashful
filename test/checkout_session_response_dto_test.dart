@@ -42,6 +42,11 @@ void main() {
       // TODO
     });
 
+    // String paymentIntentId
+    test('to test the property `paymentIntentId`', () async {
+      // TODO
+    });
+
     // String customerId
     test('to test the property `customerId`', () async {
       // TODO
@@ -94,6 +99,12 @@ void main() {
 
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+    // Configuration for the hosted checkout page
+    // HostedCheckoutConfigDto hostedCheckoutConfig
+    test('to test the property `hostedCheckoutConfig`', () async {
       // TODO
     });
 

@@ -13,26 +13,21 @@ part of openapi.api;
 class CreateCheckoutSessionDto {
   /// Returns a new [CreateCheckoutSessionDto] instance.
   CreateCheckoutSessionDto({
-    this.merchantId,
+    required this.merchantId,
     this.customerId,
     this.productId,
-    required this.successUrl,
-    required this.cancelUrl,
+    this.successUrl,
+    this.cancelUrl,
     this.lineItems = const [],
     this.totalAmount,
     required this.currency,
     this.mode,
     this.metadata = const {},
+    this.hostedCheckoutConfig,
   });
 
-  /// The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? merchantId;
+  /// The ID of the merchant for the checkout session.
+  String merchantId;
 
   /// The unique identifier of the customer
   ///
@@ -53,10 +48,22 @@ class CreateCheckoutSessionDto {
   String? productId;
 
   /// The URL to redirect to on successful payment
-  String successUrl;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? successUrl;
 
-  /// The URL to redirect to if customer cancels
-  String cancelUrl;
+  /// The URL to redirect to on cancel
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? cancelUrl;
 
   /// Array of line items for the checkout
   List<LineItemDto> lineItems;
@@ -85,6 +92,15 @@ class CreateCheckoutSessionDto {
   /// Optional custom metadata
   Map<String, Object> metadata;
 
+  /// Configuration for the hosted checkout page
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  HostedCheckoutConfigDto? hostedCheckoutConfig;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateCheckoutSessionDto &&
     other.merchantId == merchantId &&
@@ -96,32 +112,30 @@ class CreateCheckoutSessionDto {
     other.totalAmount == totalAmount &&
     other.currency == currency &&
     other.mode == mode &&
-    _deepEquality.equals(other.metadata, metadata);
+    _deepEquality.equals(other.metadata, metadata) &&
+    other.hostedCheckoutConfig == hostedCheckoutConfig;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (merchantId == null ? 0 : merchantId!.hashCode) +
+    (merchantId.hashCode) +
     (customerId == null ? 0 : customerId!.hashCode) +
     (productId == null ? 0 : productId!.hashCode) +
-    (successUrl.hashCode) +
-    (cancelUrl.hashCode) +
+    (successUrl == null ? 0 : successUrl!.hashCode) +
+    (cancelUrl == null ? 0 : cancelUrl!.hashCode) +
     (lineItems.hashCode) +
     (totalAmount == null ? 0 : totalAmount!.hashCode) +
     (currency.hashCode) +
     (mode == null ? 0 : mode!.hashCode) +
-    (metadata.hashCode);
+    (metadata.hashCode) +
+    (hostedCheckoutConfig == null ? 0 : hostedCheckoutConfig!.hashCode);
 
   @override
-  String toString() => 'CreateCheckoutSessionDto[merchantId=$merchantId, customerId=$customerId, productId=$productId, successUrl=$successUrl, cancelUrl=$cancelUrl, lineItems=$lineItems, totalAmount=$totalAmount, currency=$currency, mode=$mode, metadata=$metadata]';
+  String toString() => 'CreateCheckoutSessionDto[merchantId=$merchantId, customerId=$customerId, productId=$productId, successUrl=$successUrl, cancelUrl=$cancelUrl, lineItems=$lineItems, totalAmount=$totalAmount, currency=$currency, mode=$mode, metadata=$metadata, hostedCheckoutConfig=$hostedCheckoutConfig]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.merchantId != null) {
       json[r'merchantId'] = this.merchantId;
-    } else {
-      json[r'merchantId'] = null;
-    }
     if (this.customerId != null) {
       json[r'customerId'] = this.customerId;
     } else {
@@ -132,8 +146,16 @@ class CreateCheckoutSessionDto {
     } else {
       json[r'productId'] = null;
     }
+    if (this.successUrl != null) {
       json[r'successUrl'] = this.successUrl;
+    } else {
+      json[r'successUrl'] = null;
+    }
+    if (this.cancelUrl != null) {
       json[r'cancelUrl'] = this.cancelUrl;
+    } else {
+      json[r'cancelUrl'] = null;
+    }
       json[r'lineItems'] = this.lineItems;
     if (this.totalAmount != null) {
       json[r'totalAmount'] = this.totalAmount;
@@ -147,6 +169,11 @@ class CreateCheckoutSessionDto {
       json[r'mode'] = null;
     }
       json[r'metadata'] = this.metadata;
+    if (this.hostedCheckoutConfig != null) {
+      json[r'hostedCheckoutConfig'] = this.hostedCheckoutConfig;
+    } else {
+      json[r'hostedCheckoutConfig'] = null;
+    }
     return json;
   }
 
@@ -169,16 +196,17 @@ class CreateCheckoutSessionDto {
       }());
 
       return CreateCheckoutSessionDto(
-        merchantId: mapValueOfType<String>(json, r'merchantId'),
+        merchantId: mapValueOfType<String>(json, r'merchantId')!,
         customerId: mapValueOfType<String>(json, r'customerId'),
         productId: mapValueOfType<String>(json, r'productId'),
-        successUrl: mapValueOfType<String>(json, r'successUrl')!,
-        cancelUrl: mapValueOfType<String>(json, r'cancelUrl')!,
+        successUrl: mapValueOfType<String>(json, r'successUrl'),
+        cancelUrl: mapValueOfType<String>(json, r'cancelUrl'),
         lineItems: LineItemDto.listFromJson(json[r'lineItems']),
         totalAmount: num.parse('${json[r'totalAmount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
         mode: mapValueOfType<String>(json, r'mode'),
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
+        hostedCheckoutConfig: HostedCheckoutConfigDto.fromJson(json[r'hostedCheckoutConfig']),
       );
     }
     return null;
@@ -226,8 +254,7 @@ class CreateCheckoutSessionDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'successUrl',
-    'cancelUrl',
+    'merchantId',
     'currency',
     'metadata',
   };

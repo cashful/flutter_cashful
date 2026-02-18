@@ -9,16 +9,16 @@ All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**storageControllerConfirmUploadCanary**](StorageApi.md#storagecontrollerconfirmuploadcanary) | **POST** /api/canary/storage/confirm-upload | Confirm that a file upload was completed
-[**storageControllerDeleteCanary**](StorageApi.md#storagecontrollerdeletecanary) | **DELETE** /api/canary/storage/{id} | Delete a file
-[**storageControllerGetDownloadUrlCanary**](StorageApi.md#storagecontrollergetdownloadurlcanary) | **GET** /api/canary/storage/{id}/download-url | Get a presigned download URL for a file
-[**storageControllerListCanary**](StorageApi.md#storagecontrollerlistcanary) | **GET** /api/canary/storage | List files
-[**storageControllerRequestUploadUrlCanary**](StorageApi.md#storagecontrollerrequestuploadurlcanary) | **POST** /api/canary/storage/upload-url | Request a presigned URL for file upload
-[**storageControllerRetrieveCanary**](StorageApi.md#storagecontrollerretrievecanary) | **GET** /api/canary/storage/{id} | Get file details
+[**confirmUpload**](StorageApi.md#confirmupload) | **POST** /api/canary/storage/confirm-upload | Confirm that a file upload was completed
+[**deleteFile**](StorageApi.md#deletefile) | **DELETE** /api/canary/storage/{id} | Delete a file
+[**getDownloadUrl**](StorageApi.md#getdownloadurl) | **GET** /api/canary/storage/{id}/download-url | Get a presigned download URL for a file
+[**getFileDetails**](StorageApi.md#getfiledetails) | **GET** /api/canary/storage/{id} | Get file details
+[**listFiles**](StorageApi.md#listfiles) | **GET** /api/canary/storage | List files
+[**requestUploadUrl**](StorageApi.md#requestuploadurl) | **POST** /api/canary/storage/upload-url | Request a presigned URL for file upload
 
 
-# **storageControllerConfirmUploadCanary**
-> FileDto storageControllerConfirmUploadCanary(confirmUploadDto)
+# **confirmUpload**
+> FileDto confirmUpload(confirmUploadDto)
 
 Confirm that a file upload was completed
 
@@ -36,10 +36,10 @@ final api_instance = StorageApi();
 final confirmUploadDto = ConfirmUploadDto(); // ConfirmUploadDto | 
 
 try {
-    final result = api_instance.storageControllerConfirmUploadCanary(confirmUploadDto);
+    final result = api_instance.confirmUpload(confirmUploadDto);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->storageControllerConfirmUploadCanary: $e\n');
+    print('Exception when calling StorageApi->confirmUpload: $e\n');
 }
 ```
 
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **storageControllerDeleteCanary**
-> storageControllerDeleteCanary(id)
+# **deleteFile**
+> deleteFile(id)
 
 Delete a file
 
@@ -83,9 +83,9 @@ final api_instance = StorageApi();
 final id = id_example; // String | File ID
 
 try {
-    api_instance.storageControllerDeleteCanary(id);
+    api_instance.deleteFile(id);
 } catch (e) {
-    print('Exception when calling StorageApi->storageControllerDeleteCanary: $e\n');
+    print('Exception when calling StorageApi->deleteFile: $e\n');
 }
 ```
 
@@ -110,8 +110,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **storageControllerGetDownloadUrlCanary**
-> PresignedDownloadResponseDto storageControllerGetDownloadUrlCanary(id)
+# **getDownloadUrl**
+> PresignedDownloadResponseDto getDownloadUrl(id)
 
 Get a presigned download URL for a file
 
@@ -129,10 +129,10 @@ final api_instance = StorageApi();
 final id = id_example; // String | File ID
 
 try {
-    final result = api_instance.storageControllerGetDownloadUrlCanary(id);
+    final result = api_instance.getDownloadUrl(id);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->storageControllerGetDownloadUrlCanary: $e\n');
+    print('Exception when calling StorageApi->getDownloadUrl: $e\n');
 }
 ```
 
@@ -157,8 +157,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **storageControllerListCanary**
-> ListFilesResponseDto storageControllerListCanary(limit, offset, tag, status, relatedEntityId, relatedEntityType)
+# **getFileDetails**
+> FileDto getFileDetails(id)
+
+Get file details
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = StorageApi();
+final id = id_example; // String | File ID
+
+try {
+    final result = api_instance.getFileDetails(id);
+    print(result);
+} catch (e) {
+    print('Exception when calling StorageApi->getFileDetails: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| File ID | 
+
+### Return type
+
+[**FileDto**](FileDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listFiles**
+> ListFilesResponseDto listFiles(limit, offset, tag, status, relatedEntityId, relatedEntityType)
 
 List files
 
@@ -181,10 +228,10 @@ final relatedEntityId = relatedEntityId_example; // String |
 final relatedEntityType = relatedEntityType_example; // String | 
 
 try {
-    final result = api_instance.storageControllerListCanary(limit, offset, tag, status, relatedEntityId, relatedEntityType);
+    final result = api_instance.listFiles(limit, offset, tag, status, relatedEntityId, relatedEntityType);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->storageControllerListCanary: $e\n');
+    print('Exception when calling StorageApi->listFiles: $e\n');
 }
 ```
 
@@ -214,8 +261,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **storageControllerRequestUploadUrlCanary**
-> PresignedUploadResponseDto storageControllerRequestUploadUrlCanary(requestUploadUrlDto)
+# **requestUploadUrl**
+> PresignedUploadResponseDto requestUploadUrl(requestUploadUrlDto)
 
 Request a presigned URL for file upload
 
@@ -233,10 +280,10 @@ final api_instance = StorageApi();
 final requestUploadUrlDto = RequestUploadUrlDto(); // RequestUploadUrlDto | 
 
 try {
-    final result = api_instance.storageControllerRequestUploadUrlCanary(requestUploadUrlDto);
+    final result = api_instance.requestUploadUrl(requestUploadUrlDto);
     print(result);
 } catch (e) {
-    print('Exception when calling StorageApi->storageControllerRequestUploadUrlCanary: $e\n');
+    print('Exception when calling StorageApi->requestUploadUrl: $e\n');
 }
 ```
 
@@ -257,53 +304,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **storageControllerRetrieveCanary**
-> FileDto storageControllerRetrieveCanary(id)
-
-Get file details
-
-### Example
-```dart
-import 'package:flutter_cashful/api.dart';
-// TODO Configure HTTP Bearer authorization: bearer
-// Case 1. Use String Token
-//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
-// Case 2. Use Function which generate token.
-// String yourTokenGeneratorFunction() { ... }
-//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
-
-final api_instance = StorageApi();
-final id = id_example; // String | File ID
-
-try {
-    final result = api_instance.storageControllerRetrieveCanary(id);
-    print(result);
-} catch (e) {
-    print('Exception when calling StorageApi->storageControllerRetrieveCanary: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**| File ID | 
-
-### Return type
-
-[**FileDto**](FileDto.md)
-
-### Authorization
-
-[bearer](../README.md#bearer)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

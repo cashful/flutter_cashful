@@ -11,11 +11,11 @@
 import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
 
-// tests for ErrorResponseDto
+// tests for InternalServerErrorResponseDto
 void main() {
-  // final instance = ErrorResponseDto();
+  // final instance = InternalServerErrorResponseDto();
 
-  group('test ErrorResponseDto', () {
+  group('test InternalServerErrorResponseDto', () {
     // HTTP status code
     // num statusCode
     test('to test the property `statusCode`', () async {

@@ -13,14 +13,14 @@ part of openapi.api;
 class EvervaultEncryptedCardDto {
   /// Returns a new [EvervaultEncryptedCardDto] instance.
   EvervaultEncryptedCardDto({
-    required this.PAN,
+    required this.pAN,
     required this.expiryDate,
     required this.cardSecurityCode,
     this.cardholderName,
   });
 
   /// Encrypted Primary Account Number (PAN)
-  String PAN;
+  String pAN;
 
   /// Encrypted card expiry date
   String expiryDate;
@@ -39,7 +39,7 @@ class EvervaultEncryptedCardDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is EvervaultEncryptedCardDto &&
-    other.PAN == PAN &&
+    other.pAN == pAN &&
     other.expiryDate == expiryDate &&
     other.cardSecurityCode == cardSecurityCode &&
     other.cardholderName == cardholderName;
@@ -47,23 +47,23 @@ class EvervaultEncryptedCardDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (PAN.hashCode) +
+    (pAN.hashCode) +
     (expiryDate.hashCode) +
     (cardSecurityCode.hashCode) +
     (cardholderName == null ? 0 : cardholderName!.hashCode);
 
   @override
-  String toString() => 'EvervaultEncryptedCardDto[PAN=$PAN, expiryDate=$expiryDate, cardSecurityCode=$cardSecurityCode, cardholderName=$cardholderName]';
+  String toString() => 'EvervaultEncryptedCardDto[pAN=$pAN, expiryDate=$expiryDate, cardSecurityCode=$cardSecurityCode, cardholderName=$cardholderName]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'PAN'] = this.PAN;
-      json[r'ExpiryDate'] = this.expiryDate;
-      json[r'CardSecurityCode'] = this.cardSecurityCode;
+      json[r'pAN'] = this.pAN;
+      json[r'expiryDate'] = this.expiryDate;
+      json[r'cardSecurityCode'] = this.cardSecurityCode;
     if (this.cardholderName != null) {
-      json[r'CardholderName'] = this.cardholderName;
+      json[r'cardholderName'] = this.cardholderName;
     } else {
-      json[r'CardholderName'] = null;
+      json[r'cardholderName'] = null;
     }
     return json;
   }
@@ -87,10 +87,10 @@ class EvervaultEncryptedCardDto {
       }());
 
       return EvervaultEncryptedCardDto(
-        PAN: mapValueOfType<String>(json, r'PAN')!,
-        expiryDate: mapValueOfType<String>(json, r'ExpiryDate')!,
-        cardSecurityCode: mapValueOfType<String>(json, r'CardSecurityCode')!,
-        cardholderName: mapValueOfType<String>(json, r'CardholderName'),
+        pAN: mapValueOfType<String>(json, r'pAN')!,
+        expiryDate: mapValueOfType<String>(json, r'expiryDate')!,
+        cardSecurityCode: mapValueOfType<String>(json, r'cardSecurityCode')!,
+        cardholderName: mapValueOfType<String>(json, r'cardholderName'),
       );
     }
     return null;
@@ -138,9 +138,9 @@ class EvervaultEncryptedCardDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'PAN',
-    'ExpiryDate',
-    'CardSecurityCode',
+    'pAN',
+    'expiryDate',
+    'cardSecurityCode',
   };
 }
 

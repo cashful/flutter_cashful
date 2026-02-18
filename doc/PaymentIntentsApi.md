@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **confirmPaymentIntent**
-> PaymentIntentResponseDto confirmPaymentIntent(id)
+> ConfirmPaymentIntentResponseDto confirmPaymentIntent(id, confirmPaymentIntentDto)
 
 Confirm Payment Intent
 
-Confirms a payment intent that requires confirmation. This initiates the actual payment processing.
+Confirms a payment intent that requires confirmation and returns 3DS parameters for card authentication.
 
 ### Example
 ```dart
@@ -84,9 +84,10 @@ import 'package:flutter_cashful/api.dart';
 
 final api_instance = PaymentIntentsApi();
 final id = id_example; // String | The unique identifier of the payment intent
+final confirmPaymentIntentDto = ConfirmPaymentIntentDto(); // ConfirmPaymentIntentDto | 
 
 try {
-    final result = api_instance.confirmPaymentIntent(id);
+    final result = api_instance.confirmPaymentIntent(id, confirmPaymentIntentDto);
     print(result);
 } catch (e) {
     print('Exception when calling PaymentIntentsApi->confirmPaymentIntent: $e\n');
@@ -98,10 +99,11 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**| The unique identifier of the payment intent | 
+ **confirmPaymentIntentDto** | [**ConfirmPaymentIntentDto**](ConfirmPaymentIntentDto.md)|  | 
 
 ### Return type
 
-[**PaymentIntentResponseDto**](PaymentIntentResponseDto.md)
+[**ConfirmPaymentIntentResponseDto**](ConfirmPaymentIntentResponseDto.md)
 
 ### Authorization
 
@@ -109,7 +111,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -119,7 +121,7 @@ Name | Type | Description  | Notes
 
 Create Payment Intent
 
-Creates a payment intent for off-session charges. Used for subscriptions, recurring billing, or server-to-server payments with saved cards.
+Creates a payment intent for a payment attempt. Used for hosted checkout or direct integrations.
 
 ### Example
 ```dart
@@ -164,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listPaymentIntents**
-> ListPaymentIntentsResponseDto listPaymentIntents(merchantId, limit, offset, status)
+> ListPaymentIntentsResponseDto listPaymentIntents(status, offset, limit, merchantId)
 
 List Payment Intents
 
@@ -181,13 +183,13 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = PaymentIntentsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant. If omitted, defaults to the authenticated merchant.
-final limit = 8.14; // num | Maximum number of records to return
-final offset = 8.14; // num | Number of records to skip
-final status = status_example; // String | Filter by status
+final status = status_example; // String | 
+final offset = 8.14; // num | 
+final limit = 8.14; // num | 
+final merchantId = merchantId_example; // String | 
 
 try {
-    final result = api_instance.listPaymentIntents(merchantId, limit, offset, status);
+    final result = api_instance.listPaymentIntents(status, offset, limit, merchantId);
     print(result);
 } catch (e) {
     print('Exception when calling PaymentIntentsApi->listPaymentIntents: $e\n');
@@ -198,10 +200,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant. If omitted, defaults to the authenticated merchant. | [optional] 
- **limit** | **num**| Maximum number of records to return | [optional] [default to 50]
- **offset** | **num**| Number of records to skip | [optional] [default to 0]
- **status** | **String**| Filter by status | [optional] 
+ **status** | **String**|  | [optional] 
+ **offset** | **num**|  | [optional] 
+ **limit** | **num**|  | [optional] 
+ **merchantId** | **String**|  | [optional] 
 
 ### Return type
 

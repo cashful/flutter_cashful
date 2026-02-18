@@ -30,7 +30,7 @@ void main() {
     //
     // Lists checkout sessions
     //
-    //Future<ListCheckoutSessionsResponseDto> listCheckoutSessions(String merchantId, { num limit, num offset, String status }) async
+    //Future<ListCheckoutSessionsResponseDto> listCheckoutSessions({ num limit, num offset }) async
     test('test listCheckoutSessions', () async {
       // TODO
     });

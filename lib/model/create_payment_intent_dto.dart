@@ -25,7 +25,7 @@ class CreatePaymentIntentDto {
     this.expiresAt,
   });
 
-  /// The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
+  /// The ID of the merchant. If omitted, defaults to the authenticated merchant.
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
   /// does not include a default value (using the "default:" property), however, the generated

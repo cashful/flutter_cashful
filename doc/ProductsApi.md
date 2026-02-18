@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createProduct**](ProductsApi.md#createproduct) | **POST** /api/canary/products | Create Product
 [**listProducts**](ProductsApi.md#listproducts) | **GET** /api/canary/products | List Products
+[**retrieveMultipleProducts**](ProductsApi.md#retrievemultipleproducts) | **POST** /api/canary/products/multiple | Retrieve Multiple Products by ID
 [**retrieveProduct**](ProductsApi.md#retrieveproduct) | **GET** /api/canary/products/{id} | Retrieve Product
 [**updateProduct**](ProductsApi.md#updateproduct) | **PATCH** /api/canary/products/{id} | Update Product
 
@@ -115,6 +116,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **retrieveMultipleProducts**
+> List<ProductResponseDto> retrieveMultipleProducts(retrieveMultipleProductsDto)
+
+Retrieve Multiple Products by ID
+
+Retrieves multiple products using the provided ID's with a maximum of 50 IDs.
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = ProductsApi();
+final retrieveMultipleProductsDto = RetrieveMultipleProductsDto(); // RetrieveMultipleProductsDto | List of product IDs
+
+try {
+    final result = api_instance.retrieveMultipleProducts(retrieveMultipleProductsDto);
+    print(result);
+} catch (e) {
+    print('Exception when calling ProductsApi->retrieveMultipleProducts: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **retrieveMultipleProductsDto** | [**RetrieveMultipleProductsDto**](RetrieveMultipleProductsDto.md)| List of product IDs | 
+
+### Return type
+
+[**List<ProductResponseDto>**](ProductResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

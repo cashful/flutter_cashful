@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **currency** | **String** | Three-letter ISO 4217 currency code | 
 **merchantId** | **String** | The unique identifier of the merchant | 
 **evervaultEncryptedCard** | [**EvervaultEncryptedCardDto**](EvervaultEncryptedCardDto.md) | Evervault encrypted card details | 
-**paymentIntentId** | **String** | Payment intent ID (generated if not provided) | [optional] 
+**paymentIntentId** | **String** | Payment intent ID linked to the checkout/payment flow | 
 **maskedPan** | **String** | Masked PAN for display purposes | [optional] 
 **tokenizeCard** | **bool** | Whether to tokenize the card for future use | [optional] [default to false]
 **firstName** | **String** | Cardholder first name | [optional] 

@@ -28,16 +28,16 @@ void main() {
 
     // Confirm Payment Intent
     //
-    // Confirms a payment intent that requires confirmation. This initiates the actual payment processing.
+    // Confirms a payment intent that requires confirmation and returns 3DS parameters for card authentication.
     //
-    //Future<PaymentIntentResponseDto> confirmPaymentIntent(String id) async
+    //Future<ConfirmPaymentIntentResponseDto> confirmPaymentIntent(String id, ConfirmPaymentIntentDto confirmPaymentIntentDto) async
     test('test confirmPaymentIntent', () async {
       // TODO
     });
 
     // Create Payment Intent
     //
-    // Creates a payment intent for off-session charges. Used for subscriptions, recurring billing, or server-to-server payments with saved cards.
+    // Creates a payment intent for a payment attempt. Used for hosted checkout or direct integrations.
     //
     //Future<PaymentIntentResponseDto> createPaymentIntent(CreatePaymentIntentDto createPaymentIntentDto) async
     test('test createPaymentIntent', () async {
@@ -48,7 +48,7 @@ void main() {
     //
     // Lists payment intents for a specific merchant with pagination and filtering.
     //
-    //Future<ListPaymentIntentsResponseDto> listPaymentIntents({ String merchantId, num limit, num offset, String status }) async
+    //Future<ListPaymentIntentsResponseDto> listPaymentIntents({ String status, num offset, num limit, String merchantId }) async
     test('test listPaymentIntents', () async {
       // TODO
     });

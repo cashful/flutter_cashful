@@ -13,11 +13,23 @@ part of openapi.api;
 class LineItemDto {
   /// Returns a new [LineItemDto] instance.
   LineItemDto({
+    this.name,
     this.productId,
     this.quantity,
     required this.amount,
     required this.currency,
+    this.imageId,
+    this.imageUrl,
   });
+
+  /// The name of the line item
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? name;
 
   /// The unique identifier of the product
   ///
@@ -43,26 +55,55 @@ class LineItemDto {
   /// The three-letter ISO 4217 currency code
   String currency;
 
+  /// The image identifier for the line item
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? imageId;
+
+  /// The URL of the image for the line item
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? imageUrl;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is LineItemDto &&
+    other.name == name &&
     other.productId == productId &&
     other.quantity == quantity &&
     other.amount == amount &&
-    other.currency == currency;
+    other.currency == currency &&
+    other.imageId == imageId &&
+    other.imageUrl == imageUrl;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
     (productId == null ? 0 : productId!.hashCode) +
     (quantity == null ? 0 : quantity!.hashCode) +
     (amount.hashCode) +
-    (currency.hashCode);
+    (currency.hashCode) +
+    (imageId == null ? 0 : imageId!.hashCode) +
+    (imageUrl == null ? 0 : imageUrl!.hashCode);
 
   @override
-  String toString() => 'LineItemDto[productId=$productId, quantity=$quantity, amount=$amount, currency=$currency]';
+  String toString() => 'LineItemDto[name=$name, productId=$productId, quantity=$quantity, amount=$amount, currency=$currency, imageId=$imageId, imageUrl=$imageUrl]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
     if (this.productId != null) {
       json[r'productId'] = this.productId;
     } else {
@@ -75,6 +116,16 @@ class LineItemDto {
     }
       json[r'amount'] = this.amount;
       json[r'currency'] = this.currency;
+    if (this.imageId != null) {
+      json[r'imageId'] = this.imageId;
+    } else {
+      json[r'imageId'] = null;
+    }
+    if (this.imageUrl != null) {
+      json[r'imageUrl'] = this.imageUrl;
+    } else {
+      json[r'imageUrl'] = null;
+    }
     return json;
   }
 
@@ -97,10 +148,13 @@ class LineItemDto {
       }());
 
       return LineItemDto(
+        name: mapValueOfType<String>(json, r'name'),
         productId: mapValueOfType<String>(json, r'productId'),
         quantity: num.parse('${json[r'quantity']}'),
         amount: num.parse('${json[r'amount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
+        imageId: mapValueOfType<String>(json, r'imageId'),
+        imageUrl: mapValueOfType<String>(json, r'imageUrl'),
       );
     }
     return null;

@@ -163,6 +163,67 @@ class ProductsApi {
     return null;
   }
 
+  /// Retrieve Multiple Products by ID
+  ///
+  /// Retrieves multiple products using the provided ID's with a maximum of 50 IDs.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [RetrieveMultipleProductsDto] retrieveMultipleProductsDto (required):
+  ///   List of product IDs
+  Future<Response> retrieveMultipleProductsWithHttpInfo(RetrieveMultipleProductsDto retrieveMultipleProductsDto,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/products/multiple';
+
+    // ignore: prefer_final_locals
+    Object? postBody = retrieveMultipleProductsDto;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Retrieve Multiple Products by ID
+  ///
+  /// Retrieves multiple products using the provided ID's with a maximum of 50 IDs.
+  ///
+  /// Parameters:
+  ///
+  /// * [RetrieveMultipleProductsDto] retrieveMultipleProductsDto (required):
+  ///   List of product IDs
+  Future<List<ProductResponseDto>?> retrieveMultipleProducts(RetrieveMultipleProductsDto retrieveMultipleProductsDto,) async {
+    final response = await retrieveMultipleProductsWithHttpInfo(retrieveMultipleProductsDto,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      final responseBody = await _decodeBodyBytes(response);
+      return (await apiClient.deserializeAsync(responseBody, 'List<ProductResponseDto>') as List)
+        .cast<ProductResponseDto>()
+        .toList(growable: false);
+
+    }
+    return null;
+  }
+
   /// Retrieve Product
   ///
   /// Retrieves a single product by ID.

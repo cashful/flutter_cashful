@@ -16,7 +16,7 @@ void main() {
   // final instance = CreatePaymentIntentDto();
 
   group('test CreatePaymentIntentDto', () {
-    // The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
+    // The ID of the merchant. If omitted, defaults to the authenticated merchant.
     // String merchantId
     test('to test the property `merchantId`', () async {
       // TODO

@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 **deletedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **merchantId** | **String** |  | 
+**paymentIntentId** | **String** |  | [optional] 
 **customerId** | **String** |  | [optional] 
 **sessionUrl** | **String** |  | 
 **successUrl** | **String** |  | 
@@ -24,6 +25,7 @@ Name | Type | Description | Notes
 **status** | **String** |  | 
 **expiresAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **metadata** | [**Map<String, Object>**](Object.md) |  | [default to const {}]
+**hostedCheckoutConfig** | [**HostedCheckoutConfigDto**](HostedCheckoutConfigDto.md) | Configuration for the hosted checkout page | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

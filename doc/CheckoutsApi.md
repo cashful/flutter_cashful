@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listCheckoutSessions**
-> ListCheckoutSessionsResponseDto listCheckoutSessions(merchantId, limit, offset, status)
+> ListCheckoutSessionsResponseDto listCheckoutSessions(limit, offset)
 
 List Checkout Sessions
 
@@ -81,13 +81,11 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = CheckoutsApi();
-final merchantId = merchantId_example; // String | The ID of the merchant to filter checkout sessions
-final limit = 50; // num | Maximum number of records to return
-final offset = 0; // num | Number of records to skip
-final status = status_example; // String | The status to filter checkout sessions
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
 
 try {
-    final result = api_instance.listCheckoutSessions(merchantId, limit, offset, status);
+    final result = api_instance.listCheckoutSessions(limit, offset);
     print(result);
 } catch (e) {
     print('Exception when calling CheckoutsApi->listCheckoutSessions: $e\n');
@@ -98,10 +96,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantId** | **String**| The ID of the merchant to filter checkout sessions | 
  **limit** | **num**| Maximum number of records to return | [optional] 
  **offset** | **num**| Number of records to skip | [optional] 
- **status** | **String**| The status to filter checkout sessions | [optional] 
 
 ### Return type
 

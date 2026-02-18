@@ -18,6 +18,7 @@ class CheckoutSessionResponseDto {
     required this.updatedAt,
     this.deletedAt,
     required this.merchantId,
+    this.paymentIntentId,
     this.customerId,
     required this.sessionUrl,
     required this.successUrl,
@@ -29,6 +30,7 @@ class CheckoutSessionResponseDto {
     required this.status,
     this.expiresAt,
     this.metadata = const {},
+    this.hostedCheckoutConfig,
   });
 
   /// Unique identifier
@@ -47,6 +49,14 @@ class CheckoutSessionResponseDto {
   DateTime? deletedAt;
 
   String merchantId;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? paymentIntentId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -94,6 +104,15 @@ class CheckoutSessionResponseDto {
 
   Map<String, Object> metadata;
 
+  /// Configuration for the hosted checkout page
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  HostedCheckoutConfigDto? hostedCheckoutConfig;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CheckoutSessionResponseDto &&
     other.id == id &&
@@ -101,6 +120,7 @@ class CheckoutSessionResponseDto {
     other.updatedAt == updatedAt &&
     other.deletedAt == deletedAt &&
     other.merchantId == merchantId &&
+    other.paymentIntentId == paymentIntentId &&
     other.customerId == customerId &&
     other.sessionUrl == sessionUrl &&
     other.successUrl == successUrl &&
@@ -111,7 +131,8 @@ class CheckoutSessionResponseDto {
     other.mode == mode &&
     other.status == status &&
     other.expiresAt == expiresAt &&
-    _deepEquality.equals(other.metadata, metadata);
+    _deepEquality.equals(other.metadata, metadata) &&
+    other.hostedCheckoutConfig == hostedCheckoutConfig;
 
   @override
   int get hashCode =>
@@ -121,6 +142,7 @@ class CheckoutSessionResponseDto {
     (updatedAt.hashCode) +
     (deletedAt == null ? 0 : deletedAt!.hashCode) +
     (merchantId.hashCode) +
+    (paymentIntentId == null ? 0 : paymentIntentId!.hashCode) +
     (customerId == null ? 0 : customerId!.hashCode) +
     (sessionUrl.hashCode) +
     (successUrl.hashCode) +
@@ -131,10 +153,11 @@ class CheckoutSessionResponseDto {
     (mode == null ? 0 : mode!.hashCode) +
     (status.hashCode) +
     (expiresAt == null ? 0 : expiresAt!.hashCode) +
-    (metadata.hashCode);
+    (metadata.hashCode) +
+    (hostedCheckoutConfig == null ? 0 : hostedCheckoutConfig!.hashCode);
 
   @override
-  String toString() => 'CheckoutSessionResponseDto[id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, merchantId=$merchantId, customerId=$customerId, sessionUrl=$sessionUrl, successUrl=$successUrl, cancelUrl=$cancelUrl, lineItems=$lineItems, totalAmount=$totalAmount, currency=$currency, mode=$mode, status=$status, expiresAt=$expiresAt, metadata=$metadata]';
+  String toString() => 'CheckoutSessionResponseDto[id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, merchantId=$merchantId, paymentIntentId=$paymentIntentId, customerId=$customerId, sessionUrl=$sessionUrl, successUrl=$successUrl, cancelUrl=$cancelUrl, lineItems=$lineItems, totalAmount=$totalAmount, currency=$currency, mode=$mode, status=$status, expiresAt=$expiresAt, metadata=$metadata, hostedCheckoutConfig=$hostedCheckoutConfig]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -147,6 +170,11 @@ class CheckoutSessionResponseDto {
       json[r'deletedAt'] = null;
     }
       json[r'merchantId'] = this.merchantId;
+    if (this.paymentIntentId != null) {
+      json[r'paymentIntentId'] = this.paymentIntentId;
+    } else {
+      json[r'paymentIntentId'] = null;
+    }
     if (this.customerId != null) {
       json[r'customerId'] = this.customerId;
     } else {
@@ -174,6 +202,11 @@ class CheckoutSessionResponseDto {
       json[r'expiresAt'] = null;
     }
       json[r'metadata'] = this.metadata;
+    if (this.hostedCheckoutConfig != null) {
+      json[r'hostedCheckoutConfig'] = this.hostedCheckoutConfig;
+    } else {
+      json[r'hostedCheckoutConfig'] = null;
+    }
     return json;
   }
 
@@ -201,6 +234,7 @@ class CheckoutSessionResponseDto {
         updatedAt: mapDateTime(json, r'updatedAt', r'')!,
         deletedAt: mapDateTime(json, r'deletedAt', r''),
         merchantId: mapValueOfType<String>(json, r'merchantId')!,
+        paymentIntentId: mapValueOfType<String>(json, r'paymentIntentId'),
         customerId: mapValueOfType<String>(json, r'customerId'),
         sessionUrl: mapValueOfType<String>(json, r'sessionUrl')!,
         successUrl: mapValueOfType<String>(json, r'successUrl')!,
@@ -212,6 +246,7 @@ class CheckoutSessionResponseDto {
         status: mapValueOfType<String>(json, r'status')!,
         expiresAt: mapDateTime(json, r'expiresAt', r''),
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
+        hostedCheckoutConfig: HostedCheckoutConfigDto.fromJson(json[r'hostedCheckoutConfig']),
       );
     }
     return null;

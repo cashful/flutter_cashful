@@ -14,17 +14,20 @@ class PaymentLinkResponseDto {
   /// Returns a new [PaymentLinkResponseDto] instance.
   PaymentLinkResponseDto({
     required this.id,
+    this.name,
+    this.description,
     required this.merchantId,
     required this.url,
-    this.productId,
+    this.lineItems = const [],
     this.customerId,
-    this.amount,
+    required this.totalAmount,
     required this.currency,
     required this.mode,
     required this.active,
     required this.successUrl,
     required this.cancelUrl,
     this.metadata = const {},
+    this.hostedCheckoutConfig,
     required this.createdAt,
     required this.updatedAt,
     this.deletedAt,
@@ -32,9 +35,13 @@ class PaymentLinkResponseDto {
 
   String id;
 
-  String merchantId;
-
-  String url;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? name;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -42,7 +49,13 @@ class PaymentLinkResponseDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? productId;
+  String? description;
+
+  String merchantId;
+
+  String url;
+
+  List<LineItemDto> lineItems;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -52,13 +65,7 @@ class PaymentLinkResponseDto {
   ///
   String? customerId;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? amount;
+  num totalAmount;
 
   String currency;
 
@@ -71,6 +78,15 @@ class PaymentLinkResponseDto {
   String cancelUrl;
 
   Map<String, Object> metadata;
+
+  /// Configuration for the hosted checkout page
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  HostedCheckoutConfigDto? hostedCheckoutConfig;
 
   DateTime createdAt;
 
@@ -87,17 +103,20 @@ class PaymentLinkResponseDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PaymentLinkResponseDto &&
     other.id == id &&
+    other.name == name &&
+    other.description == description &&
     other.merchantId == merchantId &&
     other.url == url &&
-    other.productId == productId &&
+    _deepEquality.equals(other.lineItems, lineItems) &&
     other.customerId == customerId &&
-    other.amount == amount &&
+    other.totalAmount == totalAmount &&
     other.currency == currency &&
     other.mode == mode &&
     other.active == active &&
     other.successUrl == successUrl &&
     other.cancelUrl == cancelUrl &&
     _deepEquality.equals(other.metadata, metadata) &&
+    other.hostedCheckoutConfig == hostedCheckoutConfig &&
     other.createdAt == createdAt &&
     other.updatedAt == updatedAt &&
     other.deletedAt == deletedAt;
@@ -106,50 +125,60 @@ class PaymentLinkResponseDto {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
     (merchantId.hashCode) +
     (url.hashCode) +
-    (productId == null ? 0 : productId!.hashCode) +
+    (lineItems.hashCode) +
     (customerId == null ? 0 : customerId!.hashCode) +
-    (amount == null ? 0 : amount!.hashCode) +
+    (totalAmount.hashCode) +
     (currency.hashCode) +
     (mode.hashCode) +
     (active.hashCode) +
     (successUrl.hashCode) +
     (cancelUrl.hashCode) +
     (metadata.hashCode) +
+    (hostedCheckoutConfig == null ? 0 : hostedCheckoutConfig!.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode) +
     (deletedAt == null ? 0 : deletedAt!.hashCode);
 
   @override
-  String toString() => 'PaymentLinkResponseDto[id=$id, merchantId=$merchantId, url=$url, productId=$productId, customerId=$customerId, amount=$amount, currency=$currency, mode=$mode, active=$active, successUrl=$successUrl, cancelUrl=$cancelUrl, metadata=$metadata, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt]';
+  String toString() => 'PaymentLinkResponseDto[id=$id, name=$name, description=$description, merchantId=$merchantId, url=$url, lineItems=$lineItems, customerId=$customerId, totalAmount=$totalAmount, currency=$currency, mode=$mode, active=$active, successUrl=$successUrl, cancelUrl=$cancelUrl, metadata=$metadata, hostedCheckoutConfig=$hostedCheckoutConfig, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
+    }
       json[r'merchantId'] = this.merchantId;
       json[r'url'] = this.url;
-    if (this.productId != null) {
-      json[r'productId'] = this.productId;
-    } else {
-      json[r'productId'] = null;
-    }
+      json[r'lineItems'] = this.lineItems;
     if (this.customerId != null) {
       json[r'customerId'] = this.customerId;
     } else {
       json[r'customerId'] = null;
     }
-    if (this.amount != null) {
-      json[r'amount'] = this.amount;
-    } else {
-      json[r'amount'] = null;
-    }
+      json[r'totalAmount'] = this.totalAmount;
       json[r'currency'] = this.currency;
       json[r'mode'] = this.mode;
       json[r'active'] = this.active;
       json[r'successUrl'] = this.successUrl;
       json[r'cancelUrl'] = this.cancelUrl;
       json[r'metadata'] = this.metadata;
+    if (this.hostedCheckoutConfig != null) {
+      json[r'hostedCheckoutConfig'] = this.hostedCheckoutConfig;
+    } else {
+      json[r'hostedCheckoutConfig'] = null;
+    }
       json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
       json[r'updatedAt'] = this.updatedAt.toUtc().toIso8601String();
     if (this.deletedAt != null) {
@@ -180,17 +209,20 @@ class PaymentLinkResponseDto {
 
       return PaymentLinkResponseDto(
         id: mapValueOfType<String>(json, r'id')!,
+        name: mapValueOfType<String>(json, r'name'),
+        description: mapValueOfType<String>(json, r'description'),
         merchantId: mapValueOfType<String>(json, r'merchantId')!,
         url: mapValueOfType<String>(json, r'url')!,
-        productId: mapValueOfType<String>(json, r'productId'),
+        lineItems: LineItemDto.listFromJson(json[r'lineItems']),
         customerId: mapValueOfType<String>(json, r'customerId'),
-        amount: num.parse('${json[r'amount']}'),
+        totalAmount: num.parse('${json[r'totalAmount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
         mode: PaymentLinkResponseDtoModeEnum.fromJson(json[r'mode'])!,
         active: mapValueOfType<bool>(json, r'active')!,
         successUrl: mapValueOfType<String>(json, r'successUrl')!,
         cancelUrl: mapValueOfType<String>(json, r'cancelUrl')!,
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
+        hostedCheckoutConfig: HostedCheckoutConfigDto.fromJson(json[r'hostedCheckoutConfig']),
         createdAt: mapDateTime(json, r'createdAt', r'')!,
         updatedAt: mapDateTime(json, r'updatedAt', r'')!,
         deletedAt: mapDateTime(json, r'deletedAt', r''),
@@ -244,6 +276,7 @@ class PaymentLinkResponseDto {
     'id',
     'merchantId',
     'url',
+    'totalAmount',
     'currency',
     'mode',
     'active',

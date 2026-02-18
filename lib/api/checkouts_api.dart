@@ -82,18 +82,12 @@ class CheckoutsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant to filter checkout sessions
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
-  ///
-  /// * [String] status:
-  ///   The status to filter checkout sessions
-  Future<Response> listCheckoutSessionsWithHttpInfo(String merchantId, { num? limit, num? offset, String? status, }) async {
+  Future<Response> listCheckoutSessionsWithHttpInfo({ num? limit, num? offset, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/checkout/sessions';
 
@@ -109,10 +103,6 @@ class CheckoutsApi {
     }
     if (offset != null) {
       queryParams.addAll(_queryParams('', 'offset', offset));
-    }
-      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
-    if (status != null) {
-      queryParams.addAll(_queryParams('', 'status', status));
     }
 
     const contentTypes = <String>[];
@@ -135,19 +125,13 @@ class CheckoutsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] merchantId (required):
-  ///   The ID of the merchant to filter checkout sessions
-  ///
   /// * [num] limit:
   ///   Maximum number of records to return
   ///
   /// * [num] offset:
   ///   Number of records to skip
-  ///
-  /// * [String] status:
-  ///   The status to filter checkout sessions
-  Future<ListCheckoutSessionsResponseDto?> listCheckoutSessions(String merchantId, { num? limit, num? offset, String? status, }) async {
-    final response = await listCheckoutSessionsWithHttpInfo(merchantId,  limit: limit, offset: offset, status: status, );
+  Future<ListCheckoutSessionsResponseDto?> listCheckoutSessions({ num? limit, num? offset, }) async {
+    final response = await listCheckoutSessionsWithHttpInfo( limit: limit, offset: offset, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

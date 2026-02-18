@@ -13,16 +13,37 @@ part of openapi.api;
 class CreatePaymentLinkDto {
   /// Returns a new [CreatePaymentLinkDto] instance.
   CreatePaymentLinkDto({
+    this.name,
+    this.description,
     this.merchantId,
-    this.productId,
+    this.lineItems = const [],
     this.customerId,
-    this.amount,
+    required this.totalAmount,
     required this.currency,
     required this.mode,
     required this.successUrl,
     required this.cancelUrl,
     this.metadata = const {},
+    this.hostedCheckoutConfig,
   });
+
+  /// The name of the payment link
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? name;
+
+  /// A description of the payment link
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? description;
 
   /// The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
   ///
@@ -33,14 +54,8 @@ class CreatePaymentLinkDto {
   ///
   String? merchantId;
 
-  /// The unique identifier of the product
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? productId;
+  /// Array of line items for the checkout
+  List<LineItemDto> lineItems;
 
   /// The unique identifier of the customer
   ///
@@ -51,14 +66,8 @@ class CreatePaymentLinkDto {
   ///
   String? customerId;
 
-  /// The amount in the smallest currency unit
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  num? amount;
+  /// The total amount in the smallest currency unit
+  num totalAmount;
 
   /// The three-letter ISO 4217 currency code
   String currency;
@@ -75,61 +84,83 @@ class CreatePaymentLinkDto {
   /// Optional custom metadata
   Map<String, Object> metadata;
 
+  /// Configuration for the hosted checkout page
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  HostedCheckoutConfigDto? hostedCheckoutConfig;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreatePaymentLinkDto &&
+    other.name == name &&
+    other.description == description &&
     other.merchantId == merchantId &&
-    other.productId == productId &&
+    _deepEquality.equals(other.lineItems, lineItems) &&
     other.customerId == customerId &&
-    other.amount == amount &&
+    other.totalAmount == totalAmount &&
     other.currency == currency &&
     other.mode == mode &&
     other.successUrl == successUrl &&
     other.cancelUrl == cancelUrl &&
-    _deepEquality.equals(other.metadata, metadata);
+    _deepEquality.equals(other.metadata, metadata) &&
+    other.hostedCheckoutConfig == hostedCheckoutConfig;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
     (merchantId == null ? 0 : merchantId!.hashCode) +
-    (productId == null ? 0 : productId!.hashCode) +
+    (lineItems.hashCode) +
     (customerId == null ? 0 : customerId!.hashCode) +
-    (amount == null ? 0 : amount!.hashCode) +
+    (totalAmount.hashCode) +
     (currency.hashCode) +
     (mode.hashCode) +
     (successUrl.hashCode) +
     (cancelUrl.hashCode) +
-    (metadata.hashCode);
+    (metadata.hashCode) +
+    (hostedCheckoutConfig == null ? 0 : hostedCheckoutConfig!.hashCode);
 
   @override
-  String toString() => 'CreatePaymentLinkDto[merchantId=$merchantId, productId=$productId, customerId=$customerId, amount=$amount, currency=$currency, mode=$mode, successUrl=$successUrl, cancelUrl=$cancelUrl, metadata=$metadata]';
+  String toString() => 'CreatePaymentLinkDto[name=$name, description=$description, merchantId=$merchantId, lineItems=$lineItems, customerId=$customerId, totalAmount=$totalAmount, currency=$currency, mode=$mode, successUrl=$successUrl, cancelUrl=$cancelUrl, metadata=$metadata, hostedCheckoutConfig=$hostedCheckoutConfig]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
+    }
     if (this.merchantId != null) {
       json[r'merchantId'] = this.merchantId;
     } else {
       json[r'merchantId'] = null;
     }
-    if (this.productId != null) {
-      json[r'productId'] = this.productId;
-    } else {
-      json[r'productId'] = null;
-    }
+      json[r'lineItems'] = this.lineItems;
     if (this.customerId != null) {
       json[r'customerId'] = this.customerId;
     } else {
       json[r'customerId'] = null;
     }
-    if (this.amount != null) {
-      json[r'amount'] = this.amount;
-    } else {
-      json[r'amount'] = null;
-    }
+      json[r'totalAmount'] = this.totalAmount;
       json[r'currency'] = this.currency;
       json[r'mode'] = this.mode;
       json[r'successUrl'] = this.successUrl;
       json[r'cancelUrl'] = this.cancelUrl;
       json[r'metadata'] = this.metadata;
+    if (this.hostedCheckoutConfig != null) {
+      json[r'hostedCheckoutConfig'] = this.hostedCheckoutConfig;
+    } else {
+      json[r'hostedCheckoutConfig'] = null;
+    }
     return json;
   }
 
@@ -152,15 +183,18 @@ class CreatePaymentLinkDto {
       }());
 
       return CreatePaymentLinkDto(
+        name: mapValueOfType<String>(json, r'name'),
+        description: mapValueOfType<String>(json, r'description'),
         merchantId: mapValueOfType<String>(json, r'merchantId'),
-        productId: mapValueOfType<String>(json, r'productId'),
+        lineItems: LineItemDto.listFromJson(json[r'lineItems']),
         customerId: mapValueOfType<String>(json, r'customerId'),
-        amount: num.parse('${json[r'amount']}'),
+        totalAmount: num.parse('${json[r'totalAmount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
         mode: CreatePaymentLinkDtoModeEnum.fromJson(json[r'mode'])!,
         successUrl: mapValueOfType<String>(json, r'successUrl')!,
         cancelUrl: mapValueOfType<String>(json, r'cancelUrl')!,
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
+        hostedCheckoutConfig: HostedCheckoutConfigDto.fromJson(json[r'hostedCheckoutConfig']),
       );
     }
     return null;
@@ -208,6 +242,7 @@ class CreatePaymentLinkDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
+    'totalAmount',
     'currency',
     'mode',
     'successUrl',

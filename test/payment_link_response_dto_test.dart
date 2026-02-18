@@ -21,6 +21,16 @@ void main() {
       // TODO
     });
 
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
     // String merchantId
     test('to test the property `merchantId`', () async {
       // TODO
@@ -31,8 +41,8 @@ void main() {
       // TODO
     });
 
-    // String productId
-    test('to test the property `productId`', () async {
+    // List<LineItemDto> lineItems (default value: const [])
+    test('to test the property `lineItems`', () async {
       // TODO
     });
 
@@ -41,8 +51,8 @@ void main() {
       // TODO
     });
 
-    // num amount
-    test('to test the property `amount`', () async {
+    // num totalAmount
+    test('to test the property `totalAmount`', () async {
       // TODO
     });
 
@@ -73,6 +83,12 @@ void main() {
 
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+    // Configuration for the hosted checkout page
+    // HostedCheckoutConfigDto hostedCheckoutConfig
+    test('to test the property `hostedCheckoutConfig`', () async {
       // TODO
     });
 

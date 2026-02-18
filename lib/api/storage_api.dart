@@ -23,7 +23,7 @@ class StorageApi {
   /// Parameters:
   ///
   /// * [ConfirmUploadDto] confirmUploadDto (required):
-  Future<Response> storageControllerConfirmUploadCanaryWithHttpInfo(ConfirmUploadDto confirmUploadDto,) async {
+  Future<Response> confirmUploadWithHttpInfo(ConfirmUploadDto confirmUploadDto,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage/confirm-upload';
 
@@ -53,8 +53,8 @@ class StorageApi {
   /// Parameters:
   ///
   /// * [ConfirmUploadDto] confirmUploadDto (required):
-  Future<FileDto?> storageControllerConfirmUploadCanary(ConfirmUploadDto confirmUploadDto,) async {
-    final response = await storageControllerConfirmUploadCanaryWithHttpInfo(confirmUploadDto,);
+  Future<FileDto?> confirmUpload(ConfirmUploadDto confirmUploadDto,) async {
+    final response = await confirmUploadWithHttpInfo(confirmUploadDto,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -76,7 +76,7 @@ class StorageApi {
   ///
   /// * [String] id (required):
   ///   File ID
-  Future<Response> storageControllerDeleteCanaryWithHttpInfo(String id,) async {
+  Future<Response> deleteFileWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage/{id}'
       .replaceAll('{id}', id);
@@ -108,8 +108,8 @@ class StorageApi {
   ///
   /// * [String] id (required):
   ///   File ID
-  Future<void> storageControllerDeleteCanary(String id,) async {
-    final response = await storageControllerDeleteCanaryWithHttpInfo(id,);
+  Future<void> deleteFile(String id,) async {
+    final response = await deleteFileWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -123,7 +123,7 @@ class StorageApi {
   ///
   /// * [String] id (required):
   ///   File ID
-  Future<Response> storageControllerGetDownloadUrlCanaryWithHttpInfo(String id,) async {
+  Future<Response> getDownloadUrlWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage/{id}/download-url'
       .replaceAll('{id}', id);
@@ -155,8 +155,8 @@ class StorageApi {
   ///
   /// * [String] id (required):
   ///   File ID
-  Future<PresignedDownloadResponseDto?> storageControllerGetDownloadUrlCanary(String id,) async {
-    final response = await storageControllerGetDownloadUrlCanaryWithHttpInfo(id,);
+  Future<PresignedDownloadResponseDto?> getDownloadUrl(String id,) async {
+    final response = await getDownloadUrlWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -165,6 +165,61 @@ class StorageApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PresignedDownloadResponseDto',) as PresignedDownloadResponseDto;
+    
+    }
+    return null;
+  }
+
+  /// Get file details
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   File ID
+  Future<Response> getFileDetailsWithHttpInfo(String id,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/storage/{id}'
+      .replaceAll('{id}', id);
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Get file details
+  ///
+  /// Parameters:
+  ///
+  /// * [String] id (required):
+  ///   File ID
+  Future<FileDto?> getFileDetails(String id,) async {
+    final response = await getFileDetailsWithHttpInfo(id,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FileDto',) as FileDto;
     
     }
     return null;
@@ -190,7 +245,7 @@ class StorageApi {
   /// * [String] relatedEntityId:
   ///
   /// * [String] relatedEntityType:
-  Future<Response> storageControllerListCanaryWithHttpInfo({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
+  Future<Response> listFilesWithHttpInfo({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage';
 
@@ -252,8 +307,8 @@ class StorageApi {
   /// * [String] relatedEntityId:
   ///
   /// * [String] relatedEntityType:
-  Future<ListFilesResponseDto?> storageControllerListCanary({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
-    final response = await storageControllerListCanaryWithHttpInfo( limit: limit, offset: offset, tag: tag, status: status, relatedEntityId: relatedEntityId, relatedEntityType: relatedEntityType, );
+  Future<ListFilesResponseDto?> listFiles({ num? limit, num? offset, String? tag, String? status, String? relatedEntityId, String? relatedEntityType, }) async {
+    final response = await listFilesWithHttpInfo( limit: limit, offset: offset, tag: tag, status: status, relatedEntityId: relatedEntityId, relatedEntityType: relatedEntityType, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -274,7 +329,7 @@ class StorageApi {
   /// Parameters:
   ///
   /// * [RequestUploadUrlDto] requestUploadUrlDto (required):
-  Future<Response> storageControllerRequestUploadUrlCanaryWithHttpInfo(RequestUploadUrlDto requestUploadUrlDto,) async {
+  Future<Response> requestUploadUrlWithHttpInfo(RequestUploadUrlDto requestUploadUrlDto,) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/storage/upload-url';
 
@@ -304,8 +359,8 @@ class StorageApi {
   /// Parameters:
   ///
   /// * [RequestUploadUrlDto] requestUploadUrlDto (required):
-  Future<PresignedUploadResponseDto?> storageControllerRequestUploadUrlCanary(RequestUploadUrlDto requestUploadUrlDto,) async {
-    final response = await storageControllerRequestUploadUrlCanaryWithHttpInfo(requestUploadUrlDto,);
+  Future<PresignedUploadResponseDto?> requestUploadUrl(RequestUploadUrlDto requestUploadUrlDto,) async {
+    final response = await requestUploadUrlWithHttpInfo(requestUploadUrlDto,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -314,61 +369,6 @@ class StorageApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PresignedUploadResponseDto',) as PresignedUploadResponseDto;
-    
-    }
-    return null;
-  }
-
-  /// Get file details
-  ///
-  /// Note: This method returns the HTTP [Response].
-  ///
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  ///   File ID
-  Future<Response> storageControllerRetrieveCanaryWithHttpInfo(String id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/canary/storage/{id}'
-      .replaceAll('{id}', id);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Get file details
-  ///
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  ///   File ID
-  Future<FileDto?> storageControllerRetrieveCanary(String id,) async {
-    final response = await storageControllerRetrieveCanaryWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FileDto',) as FileDto;
     
     }
     return null;

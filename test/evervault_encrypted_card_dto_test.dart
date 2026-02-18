@@ -17,8 +17,8 @@ void main() {
 
   group('test EvervaultEncryptedCardDto', () {
     // Encrypted Primary Account Number (PAN)
-    // String PAN
-    test('to test the property `PAN`', () async {
+    // String pAN
+    test('to test the property `pAN`', () async {
       // TODO
     });
 

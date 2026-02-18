@@ -16,6 +16,12 @@ void main() {
   // final instance = LineItemDto();
 
   group('test LineItemDto', () {
+    // The name of the line item
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
     // The unique identifier of the product
     // String productId
     test('to test the property `productId`', () async {
@@ -37,6 +43,18 @@ void main() {
     // The three-letter ISO 4217 currency code
     // String currency
     test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // The image identifier for the line item
+    // String imageId
+    test('to test the property `imageId`', () async {
+      // TODO
+    });
+
+    // The URL of the image for the line item
+    // String imageUrl
+    test('to test the property `imageUrl`', () async {
       // TODO
     });
 

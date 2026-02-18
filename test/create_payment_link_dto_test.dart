@@ -16,15 +16,27 @@ void main() {
   // final instance = CreatePaymentLinkDto();
 
   group('test CreatePaymentLinkDto', () {
+    // The name of the payment link
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // A description of the payment link
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
     // The ID of the merchant whose balance is being requested. If omitted, defaults to the authenticated merchant.
     // String merchantId
     test('to test the property `merchantId`', () async {
       // TODO
     });
 
-    // The unique identifier of the product
-    // String productId
-    test('to test the property `productId`', () async {
+    // Array of line items for the checkout
+    // List<LineItemDto> lineItems (default value: const [])
+    test('to test the property `lineItems`', () async {
       // TODO
     });
 
@@ -34,9 +46,9 @@ void main() {
       // TODO
     });
 
-    // The amount in the smallest currency unit
-    // num amount
-    test('to test the property `amount`', () async {
+    // The total amount in the smallest currency unit
+    // num totalAmount
+    test('to test the property `totalAmount`', () async {
       // TODO
     });
 
@@ -67,6 +79,12 @@ void main() {
     // Optional custom metadata
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+    // Configuration for the hosted checkout page
+    // HostedCheckoutConfigDto hostedCheckoutConfig
+    test('to test the property `hostedCheckoutConfig`', () async {
       // TODO
     });
 

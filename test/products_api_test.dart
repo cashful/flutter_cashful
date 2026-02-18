@@ -35,6 +35,15 @@ void main() {
       // TODO
     });
 
+    // Retrieve Multiple Products by ID
+    //
+    // Retrieves multiple products using the provided ID's with a maximum of 50 IDs.
+    //
+    //Future<List<ProductResponseDto>> retrieveMultipleProducts(RetrieveMultipleProductsDto retrieveMultipleProductsDto) async
+    test('test retrieveMultipleProducts', () async {
+      // TODO
+    });
+
     // Retrieve Product
     //
     // Retrieves a single product by ID.

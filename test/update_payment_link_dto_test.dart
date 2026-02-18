@@ -16,14 +16,26 @@ void main() {
   // final instance = UpdatePaymentLinkDto();
 
   group('test UpdatePaymentLinkDto', () {
+    // The name of the payment link
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // A description of the payment link
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
     // Whether the payment link is active
     // bool active
     test('to test the property `active`', () async {
       // TODO
     });
 
-    // num amount
-    test('to test the property `amount`', () async {
+    // num totalAmount
+    test('to test the property `totalAmount`', () async {
       // TODO
     });
 
@@ -42,6 +54,12 @@ void main() {
     // Optional custom metadata
     // Map<String, Object> metadata (default value: const {})
     test('to test the property `metadata`', () async {
+      // TODO
+    });
+
+    // Configuration for the hosted checkout page
+    // HostedCheckoutConfigDto hostedCheckoutConfig
+    test('to test the property `hostedCheckoutConfig`', () async {
       // TODO
     });
 
