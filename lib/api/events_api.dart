@@ -16,6 +16,102 @@ class EventsApi {
 
   final ApiClient apiClient;
 
+  /// Create Event
+  ///
+  /// Records a new event and triggers associated webhooks.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateEventDto] createEventDto (required):
+  Future<Response> createEventWithHttpInfo(CreateEventDto createEventDto,) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/events';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createEventDto;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Create Event
+  ///
+  /// Records a new event and triggers associated webhooks.
+  ///
+  /// Parameters:
+  ///
+  /// * [CreateEventDto] createEventDto (required):
+  Future<void> createEvent(CreateEventDto createEventDto,) async {
+    final response = await createEventWithHttpInfo(createEventDto,);
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// List Event Types
+  ///
+  /// Retrieves all available event types that can be sent or subscribed to.
+  ///
+  /// Note: This method returns the HTTP [Response].
+  Future<Response> listEventTypesWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/canary/events/types';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// List Event Types
+  ///
+  /// Retrieves all available event types that can be sent or subscribed to.
+  Future<ListEventTypesResponseDto?> listEventTypes() async {
+    final response = await listEventTypesWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ListEventTypesResponseDto',) as ListEventTypesResponseDto;
+    
+    }
+    return null;
+  }
+
   /// List Events
   ///
   /// Retrieves a log of all API events for debugging and logging.

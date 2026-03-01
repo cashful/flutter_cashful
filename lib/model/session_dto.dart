@@ -15,6 +15,11 @@ class SessionDto {
   SessionDto({
     required this.id,
     required this.userId,
+    required this.token,
+    required this.createdAt,
+    required this.updatedAt,
+    this.impersonatedBy,
+    this.activeOrganizationId,
     required this.expiresAt,
     this.ipAddress,
     this.userAgent,
@@ -23,6 +28,28 @@ class SessionDto {
   String id;
 
   String userId;
+
+  String token;
+
+  DateTime createdAt;
+
+  DateTime updatedAt;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? impersonatedBy;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? activeOrganizationId;
 
   DateTime expiresAt;
 
@@ -46,6 +73,11 @@ class SessionDto {
   bool operator ==(Object other) => identical(this, other) || other is SessionDto &&
     other.id == id &&
     other.userId == userId &&
+    other.token == token &&
+    other.createdAt == createdAt &&
+    other.updatedAt == updatedAt &&
+    other.impersonatedBy == impersonatedBy &&
+    other.activeOrganizationId == activeOrganizationId &&
     other.expiresAt == expiresAt &&
     other.ipAddress == ipAddress &&
     other.userAgent == userAgent;
@@ -55,17 +87,35 @@ class SessionDto {
     // ignore: unnecessary_parenthesis
     (id.hashCode) +
     (userId.hashCode) +
+    (token.hashCode) +
+    (createdAt.hashCode) +
+    (updatedAt.hashCode) +
+    (impersonatedBy == null ? 0 : impersonatedBy!.hashCode) +
+    (activeOrganizationId == null ? 0 : activeOrganizationId!.hashCode) +
     (expiresAt.hashCode) +
     (ipAddress == null ? 0 : ipAddress!.hashCode) +
     (userAgent == null ? 0 : userAgent!.hashCode);
 
   @override
-  String toString() => 'SessionDto[id=$id, userId=$userId, expiresAt=$expiresAt, ipAddress=$ipAddress, userAgent=$userAgent]';
+  String toString() => 'SessionDto[id=$id, userId=$userId, token=$token, createdAt=$createdAt, updatedAt=$updatedAt, impersonatedBy=$impersonatedBy, activeOrganizationId=$activeOrganizationId, expiresAt=$expiresAt, ipAddress=$ipAddress, userAgent=$userAgent]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = this.id;
       json[r'userId'] = this.userId;
+      json[r'token'] = this.token;
+      json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
+      json[r'updatedAt'] = this.updatedAt.toUtc().toIso8601String();
+    if (this.impersonatedBy != null) {
+      json[r'impersonatedBy'] = this.impersonatedBy;
+    } else {
+      json[r'impersonatedBy'] = null;
+    }
+    if (this.activeOrganizationId != null) {
+      json[r'activeOrganizationId'] = this.activeOrganizationId;
+    } else {
+      json[r'activeOrganizationId'] = null;
+    }
       json[r'expiresAt'] = this.expiresAt.toUtc().toIso8601String();
     if (this.ipAddress != null) {
       json[r'ipAddress'] = this.ipAddress;
@@ -101,6 +151,11 @@ class SessionDto {
       return SessionDto(
         id: mapValueOfType<String>(json, r'id')!,
         userId: mapValueOfType<String>(json, r'userId')!,
+        token: mapValueOfType<String>(json, r'token')!,
+        createdAt: mapDateTime(json, r'createdAt', r'')!,
+        updatedAt: mapDateTime(json, r'updatedAt', r'')!,
+        impersonatedBy: mapValueOfType<String>(json, r'impersonatedBy'),
+        activeOrganizationId: mapValueOfType<String>(json, r'activeOrganizationId'),
         expiresAt: mapDateTime(json, r'expiresAt', r'')!,
         ipAddress: mapValueOfType<String>(json, r'ipAddress'),
         userAgent: mapValueOfType<String>(json, r'userAgent'),
@@ -153,6 +208,9 @@ class SessionDto {
   static const requiredKeys = <String>{
     'id',
     'userId',
+    'token',
+    'createdAt',
+    'updatedAt',
     'expiresAt',
   };
 }

@@ -9,6 +9,7 @@ import 'package:flutter_cashful/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **status** | **String** | Service health status | 
+**environment** | **String** | Current environment mode | 
 **timestamp** | **String** | Current server timestamp in ISO format | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

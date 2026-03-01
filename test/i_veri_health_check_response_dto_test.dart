@@ -22,6 +22,12 @@ void main() {
       // TODO
     });
 
+    // Current environment mode
+    // String environment
+    test('to test the property `environment`', () async {
+      // TODO
+    });
+
     // Current server timestamp in ISO format
     // String timestamp
     test('to test the property `timestamp`', () async {

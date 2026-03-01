@@ -17,6 +17,16 @@ class SessionUserDto {
     required this.email,
     required this.emailVerified,
     required this.name,
+    this.image,
+    this.role,
+    this.banned,
+    this.banReason,
+    this.banExpires,
+    this.isAnonymous,
+    this.username,
+    this.displayUsername,
+    this.phoneNumber,
+    this.phoneNumberVerified,
     required this.createdAt,
     required this.updatedAt,
   });
@@ -29,6 +39,86 @@ class SessionUserDto {
 
   String name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? image;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? role;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? banned;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? banReason;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? banExpires;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? isAnonymous;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? username;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? displayUsername;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? phoneNumber;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? phoneNumberVerified;
+
   DateTime createdAt;
 
   DateTime updatedAt;
@@ -39,6 +129,16 @@ class SessionUserDto {
     other.email == email &&
     other.emailVerified == emailVerified &&
     other.name == name &&
+    other.image == image &&
+    other.role == role &&
+    other.banned == banned &&
+    other.banReason == banReason &&
+    other.banExpires == banExpires &&
+    other.isAnonymous == isAnonymous &&
+    other.username == username &&
+    other.displayUsername == displayUsername &&
+    other.phoneNumber == phoneNumber &&
+    other.phoneNumberVerified == phoneNumberVerified &&
     other.createdAt == createdAt &&
     other.updatedAt == updatedAt;
 
@@ -49,11 +149,21 @@ class SessionUserDto {
     (email.hashCode) +
     (emailVerified.hashCode) +
     (name.hashCode) +
+    (image == null ? 0 : image!.hashCode) +
+    (role == null ? 0 : role!.hashCode) +
+    (banned == null ? 0 : banned!.hashCode) +
+    (banReason == null ? 0 : banReason!.hashCode) +
+    (banExpires == null ? 0 : banExpires!.hashCode) +
+    (isAnonymous == null ? 0 : isAnonymous!.hashCode) +
+    (username == null ? 0 : username!.hashCode) +
+    (displayUsername == null ? 0 : displayUsername!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (phoneNumberVerified == null ? 0 : phoneNumberVerified!.hashCode) +
     (createdAt.hashCode) +
     (updatedAt.hashCode);
 
   @override
-  String toString() => 'SessionUserDto[id=$id, email=$email, emailVerified=$emailVerified, name=$name, createdAt=$createdAt, updatedAt=$updatedAt]';
+  String toString() => 'SessionUserDto[id=$id, email=$email, emailVerified=$emailVerified, name=$name, image=$image, role=$role, banned=$banned, banReason=$banReason, banExpires=$banExpires, isAnonymous=$isAnonymous, username=$username, displayUsername=$displayUsername, phoneNumber=$phoneNumber, phoneNumberVerified=$phoneNumberVerified, createdAt=$createdAt, updatedAt=$updatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -61,6 +171,56 @@ class SessionUserDto {
       json[r'email'] = this.email;
       json[r'emailVerified'] = this.emailVerified;
       json[r'name'] = this.name;
+    if (this.image != null) {
+      json[r'image'] = this.image;
+    } else {
+      json[r'image'] = null;
+    }
+    if (this.role != null) {
+      json[r'role'] = this.role;
+    } else {
+      json[r'role'] = null;
+    }
+    if (this.banned != null) {
+      json[r'banned'] = this.banned;
+    } else {
+      json[r'banned'] = null;
+    }
+    if (this.banReason != null) {
+      json[r'banReason'] = this.banReason;
+    } else {
+      json[r'banReason'] = null;
+    }
+    if (this.banExpires != null) {
+      json[r'banExpires'] = this.banExpires!.toUtc().toIso8601String();
+    } else {
+      json[r'banExpires'] = null;
+    }
+    if (this.isAnonymous != null) {
+      json[r'isAnonymous'] = this.isAnonymous;
+    } else {
+      json[r'isAnonymous'] = null;
+    }
+    if (this.username != null) {
+      json[r'username'] = this.username;
+    } else {
+      json[r'username'] = null;
+    }
+    if (this.displayUsername != null) {
+      json[r'displayUsername'] = this.displayUsername;
+    } else {
+      json[r'displayUsername'] = null;
+    }
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
+    }
+    if (this.phoneNumberVerified != null) {
+      json[r'phoneNumberVerified'] = this.phoneNumberVerified;
+    } else {
+      json[r'phoneNumberVerified'] = null;
+    }
       json[r'createdAt'] = this.createdAt.toUtc().toIso8601String();
       json[r'updatedAt'] = this.updatedAt.toUtc().toIso8601String();
     return json;
@@ -89,6 +249,16 @@ class SessionUserDto {
         email: mapValueOfType<String>(json, r'email')!,
         emailVerified: mapValueOfType<bool>(json, r'emailVerified')!,
         name: mapValueOfType<String>(json, r'name')!,
+        image: mapValueOfType<String>(json, r'image'),
+        role: mapValueOfType<String>(json, r'role'),
+        banned: mapValueOfType<bool>(json, r'banned'),
+        banReason: mapValueOfType<String>(json, r'banReason'),
+        banExpires: mapDateTime(json, r'banExpires', r''),
+        isAnonymous: mapValueOfType<bool>(json, r'isAnonymous'),
+        username: mapValueOfType<String>(json, r'username'),
+        displayUsername: mapValueOfType<String>(json, r'displayUsername'),
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+        phoneNumberVerified: mapValueOfType<bool>(json, r'phoneNumberVerified'),
         createdAt: mapDateTime(json, r'createdAt', r'')!,
         updatedAt: mapDateTime(json, r'updatedAt', r'')!,
       );

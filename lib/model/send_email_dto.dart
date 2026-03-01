@@ -22,6 +22,7 @@ class SendEmailDto {
     this.from,
     this.cc,
     this.bcc,
+    this.merchantId,
   });
 
   /// Recipient email address(es)
@@ -93,6 +94,15 @@ class SendEmailDto {
   ///
   Object? bcc;
 
+  /// Merchant ID for context and auditing
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? merchantId;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SendEmailDto &&
     other.to == to &&
@@ -103,7 +113,8 @@ class SendEmailDto {
     other.text == text &&
     other.from == from &&
     other.cc == cc &&
-    other.bcc == bcc;
+    other.bcc == bcc &&
+    other.merchantId == merchantId;
 
   @override
   int get hashCode =>
@@ -116,10 +127,11 @@ class SendEmailDto {
     (text == null ? 0 : text!.hashCode) +
     (from == null ? 0 : from!.hashCode) +
     (cc == null ? 0 : cc!.hashCode) +
-    (bcc == null ? 0 : bcc!.hashCode);
+    (bcc == null ? 0 : bcc!.hashCode) +
+    (merchantId == null ? 0 : merchantId!.hashCode);
 
   @override
-  String toString() => 'SendEmailDto[to=$to, subject=$subject, template=$template, context=$context, html=$html, text=$text, from=$from, cc=$cc, bcc=$bcc]';
+  String toString() => 'SendEmailDto[to=$to, subject=$subject, template=$template, context=$context, html=$html, text=$text, from=$from, cc=$cc, bcc=$bcc, merchantId=$merchantId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -160,6 +172,11 @@ class SendEmailDto {
     } else {
       json[r'bcc'] = null;
     }
+    if (this.merchantId != null) {
+      json[r'merchantId'] = this.merchantId;
+    } else {
+      json[r'merchantId'] = null;
+    }
     return json;
   }
 
@@ -191,6 +208,7 @@ class SendEmailDto {
         from: mapValueOfType<String>(json, r'from'),
         cc: mapValueOfType<Object>(json, r'cc'),
         bcc: mapValueOfType<Object>(json, r'bcc'),
+        merchantId: mapValueOfType<String>(json, r'merchantId'),
       );
     }
     return null;

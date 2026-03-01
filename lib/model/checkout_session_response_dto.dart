@@ -21,8 +21,8 @@ class CheckoutSessionResponseDto {
     this.paymentIntentId,
     this.customerId,
     required this.sessionUrl,
-    required this.successUrl,
-    required this.cancelUrl,
+    this.successUrl,
+    this.cancelUrl,
     this.lineItems = const [],
     this.totalAmount,
     required this.currency,
@@ -68,9 +68,21 @@ class CheckoutSessionResponseDto {
 
   String sessionUrl;
 
-  String successUrl;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? successUrl;
 
-  String cancelUrl;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? cancelUrl;
 
   List<LineItemDto> lineItems;
 
@@ -145,8 +157,8 @@ class CheckoutSessionResponseDto {
     (paymentIntentId == null ? 0 : paymentIntentId!.hashCode) +
     (customerId == null ? 0 : customerId!.hashCode) +
     (sessionUrl.hashCode) +
-    (successUrl.hashCode) +
-    (cancelUrl.hashCode) +
+    (successUrl == null ? 0 : successUrl!.hashCode) +
+    (cancelUrl == null ? 0 : cancelUrl!.hashCode) +
     (lineItems.hashCode) +
     (totalAmount == null ? 0 : totalAmount!.hashCode) +
     (currency.hashCode) +
@@ -181,8 +193,16 @@ class CheckoutSessionResponseDto {
       json[r'customerId'] = null;
     }
       json[r'sessionUrl'] = this.sessionUrl;
+    if (this.successUrl != null) {
       json[r'successUrl'] = this.successUrl;
+    } else {
+      json[r'successUrl'] = null;
+    }
+    if (this.cancelUrl != null) {
       json[r'cancelUrl'] = this.cancelUrl;
+    } else {
+      json[r'cancelUrl'] = null;
+    }
       json[r'lineItems'] = this.lineItems;
     if (this.totalAmount != null) {
       json[r'totalAmount'] = this.totalAmount;
@@ -237,8 +257,8 @@ class CheckoutSessionResponseDto {
         paymentIntentId: mapValueOfType<String>(json, r'paymentIntentId'),
         customerId: mapValueOfType<String>(json, r'customerId'),
         sessionUrl: mapValueOfType<String>(json, r'sessionUrl')!,
-        successUrl: mapValueOfType<String>(json, r'successUrl')!,
-        cancelUrl: mapValueOfType<String>(json, r'cancelUrl')!,
+        successUrl: mapValueOfType<String>(json, r'successUrl'),
+        cancelUrl: mapValueOfType<String>(json, r'cancelUrl'),
         lineItems: LineItemDto.listFromJson(json[r'lineItems']),
         totalAmount: num.parse('${json[r'totalAmount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
@@ -299,8 +319,6 @@ class CheckoutSessionResponseDto {
     'updatedAt',
     'merchantId',
     'sessionUrl',
-    'successUrl',
-    'cancelUrl',
     'currency',
     'status',
     'metadata',

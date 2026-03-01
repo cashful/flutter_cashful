@@ -41,7 +41,7 @@ void main() {
     });
 
     // Optional callback URL after successful sign-up
-    // String callbackURL
+    // String callbackURL (default value: 'https://api.cashful.africa/auth/callback')
     test('to test the property `callbackURL`', () async {
       // TODO
     });

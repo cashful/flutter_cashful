@@ -10,37 +10,36 @@
 
 part of openapi.api;
 
-class ListUsersResponseDto {
-  /// Returns a new [ListUsersResponseDto] instance.
-  ListUsersResponseDto({
-    this.users = const [],
+class ListEventTypesResponseDto {
+  /// Returns a new [ListEventTypesResponseDto] instance.
+  ListEventTypesResponseDto({
+    this.data = const [],
   });
 
-  /// List of users
-  List<SessionUserDto> users;
+  List<EventTypeResponseDto> data;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ListUsersResponseDto &&
-    _deepEquality.equals(other.users, users);
+  bool operator ==(Object other) => identical(this, other) || other is ListEventTypesResponseDto &&
+    _deepEquality.equals(other.data, data);
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (users.hashCode);
+    (data.hashCode);
 
   @override
-  String toString() => 'ListUsersResponseDto[users=$users]';
+  String toString() => 'ListEventTypesResponseDto[data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'users'] = this.users;
+      json[r'data'] = this.data;
     return json;
   }
 
-  /// Returns a new [ListUsersResponseDto] instance and imports its values from
+  /// Returns a new [ListEventTypesResponseDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ListUsersResponseDto? fromJson(dynamic value) {
+  static ListEventTypesResponseDto? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -49,24 +48,24 @@ class ListUsersResponseDto {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "ListUsersResponseDto[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "ListUsersResponseDto[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "ListEventTypesResponseDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ListEventTypesResponseDto[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return ListUsersResponseDto(
-        users: SessionUserDto.listFromJson(json[r'users']),
+      return ListEventTypesResponseDto(
+        data: EventTypeResponseDto.listFromJson(json[r'data']),
       );
     }
     return null;
   }
 
-  static List<ListUsersResponseDto> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <ListUsersResponseDto>[];
+  static List<ListEventTypesResponseDto> listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ListEventTypesResponseDto>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = ListUsersResponseDto.fromJson(row);
+        final value = ListEventTypesResponseDto.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -75,12 +74,12 @@ class ListUsersResponseDto {
     return result.toList(growable: growable);
   }
 
-  static Map<String, ListUsersResponseDto> mapFromJson(dynamic json) {
-    final map = <String, ListUsersResponseDto>{};
+  static Map<String, ListEventTypesResponseDto> mapFromJson(dynamic json) {
+    final map = <String, ListEventTypesResponseDto>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = ListUsersResponseDto.fromJson(entry.value);
+        final value = ListEventTypesResponseDto.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -89,14 +88,14 @@ class ListUsersResponseDto {
     return map;
   }
 
-  // maps a json object with a list of ListUsersResponseDto-objects as value to a dart map
-  static Map<String, List<ListUsersResponseDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<ListUsersResponseDto>>{};
+  // maps a json object with a list of ListEventTypesResponseDto-objects as value to a dart map
+  static Map<String, List<ListEventTypesResponseDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<ListEventTypesResponseDto>>{};
     if (json is Map && json.isNotEmpty) {
       // ignore: parameter_assignments
       json = json.cast<String, dynamic>();
       for (final entry in json.entries) {
-        map[entry.key] = ListUsersResponseDto.listFromJson(entry.value, growable: growable,);
+        map[entry.key] = ListEventTypesResponseDto.listFromJson(entry.value, growable: growable,);
       }
     }
     return map;
@@ -104,7 +103,7 @@ class ListUsersResponseDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'users',
+    'data',
   };
 }
 

@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listPaymentIntents**
-> ListPaymentIntentsResponseDto listPaymentIntents(status, offset, limit, merchantId)
+> ListPaymentIntentsResponseDto listPaymentIntents(merchantId, limit, offset, status)
 
 List Payment Intents
 
@@ -183,13 +183,13 @@ import 'package:flutter_cashful/api.dart';
 //defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
 
 final api_instance = PaymentIntentsApi();
-final status = status_example; // String | 
-final offset = 8.14; // num | 
-final limit = 8.14; // num | 
-final merchantId = merchantId_example; // String | 
+final merchantId = merchantId_example; // String | The ID of the merchant. If omitted, defaults to the authenticated merchant.
+final limit = 8.14; // num | Maximum number of records to return
+final offset = 8.14; // num | Number of records to skip
+final status = status_example; // String | Filter by status
 
 try {
-    final result = api_instance.listPaymentIntents(status, offset, limit, merchantId);
+    final result = api_instance.listPaymentIntents(merchantId, limit, offset, status);
     print(result);
 } catch (e) {
     print('Exception when calling PaymentIntentsApi->listPaymentIntents: $e\n');
@@ -200,10 +200,10 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **status** | **String**|  | [optional] 
- **offset** | **num**|  | [optional] 
- **limit** | **num**|  | [optional] 
- **merchantId** | **String**|  | [optional] 
+ **merchantId** | **String**| The ID of the merchant. If omitted, defaults to the authenticated merchant. | [optional] 
+ **limit** | **num**| Maximum number of records to return | [optional] [default to 50]
+ **offset** | **num**| Number of records to skip | [optional] [default to 0]
+ **status** | **String**| Filter by status | [optional] 
 
 ### Return type
 

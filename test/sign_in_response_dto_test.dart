@@ -29,7 +29,7 @@ void main() {
     });
 
     // Whether to redirect
-    // num redirect
+    // bool redirect
     test('to test the property `redirect`', () async {
       // TODO
     });

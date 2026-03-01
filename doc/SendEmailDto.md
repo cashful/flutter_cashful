@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **from** | **String** | Sender email address | [optional] 
 **cc** | [**Object**](.md) | CC email address(es) | [optional] 
 **bcc** | [**Object**](.md) | BCC email address(es) | [optional] 
+**merchantId** | **String** | Merchant ID for context and auditing | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

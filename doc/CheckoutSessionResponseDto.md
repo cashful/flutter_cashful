@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **paymentIntentId** | **String** |  | [optional] 
 **customerId** | **String** |  | [optional] 
 **sessionUrl** | **String** |  | 
-**successUrl** | **String** |  | 
-**cancelUrl** | **String** |  | 
+**successUrl** | **String** |  | [optional] 
+**cancelUrl** | **String** |  | [optional] 
 **lineItems** | [**List<LineItemDto>**](LineItemDto.md) |  | [optional] [default to const []]
 **totalAmount** | **num** |  | [optional] 
 **currency** | **String** |  | 

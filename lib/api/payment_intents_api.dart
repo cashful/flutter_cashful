@@ -204,14 +204,18 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] status:
-  ///
-  /// * [num] offset:
+  /// * [String] merchantId:
+  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
+  ///   Maximum number of records to return
   ///
-  /// * [String] merchantId:
-  Future<Response> listPaymentIntentsWithHttpInfo({ String? status, num? offset, num? limit, String? merchantId, }) async {
+  /// * [num] offset:
+  ///   Number of records to skip
+  ///
+  /// * [String] status:
+  ///   Filter by status
+  Future<Response> listPaymentIntentsWithHttpInfo({ String? merchantId, num? limit, num? offset, String? status, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/canary/payment-intents';
 
@@ -222,17 +226,17 @@ class PaymentIntentsApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    if (status != null) {
-      queryParams.addAll(_queryParams('', 'status', status));
-    }
-    if (offset != null) {
-      queryParams.addAll(_queryParams('', 'offset', offset));
+    if (merchantId != null) {
+      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
     }
     if (limit != null) {
       queryParams.addAll(_queryParams('', 'limit', limit));
     }
-    if (merchantId != null) {
-      queryParams.addAll(_queryParams('', 'merchantId', merchantId));
+    if (offset != null) {
+      queryParams.addAll(_queryParams('', 'offset', offset));
+    }
+    if (status != null) {
+      queryParams.addAll(_queryParams('', 'status', status));
     }
 
     const contentTypes = <String>[];
@@ -255,15 +259,19 @@ class PaymentIntentsApi {
   ///
   /// Parameters:
   ///
-  /// * [String] status:
-  ///
-  /// * [num] offset:
+  /// * [String] merchantId:
+  ///   The ID of the merchant. If omitted, defaults to the authenticated merchant.
   ///
   /// * [num] limit:
+  ///   Maximum number of records to return
   ///
-  /// * [String] merchantId:
-  Future<ListPaymentIntentsResponseDto?> listPaymentIntents({ String? status, num? offset, num? limit, String? merchantId, }) async {
-    final response = await listPaymentIntentsWithHttpInfo( status: status, offset: offset, limit: limit, merchantId: merchantId, );
+  /// * [num] offset:
+  ///   Number of records to skip
+  ///
+  /// * [String] status:
+  ///   Filter by status
+  Future<ListPaymentIntentsResponseDto?> listPaymentIntents({ String? merchantId, num? limit, num? offset, String? status, }) async {
+    final response = await listPaymentIntentsWithHttpInfo( merchantId: merchantId, limit: limit, offset: offset, status: status, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -8,7 +8,7 @@ import 'package:flutter_cashful/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**accounts** | [**List<Object>**](Object.md) | List of linked social accounts | [default to const []]
+**accounts** | [**List<LinkedAccountDto>**](LinkedAccountDto.md) | List of linked social accounts | [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

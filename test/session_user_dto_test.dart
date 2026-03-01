@@ -36,6 +36,56 @@ void main() {
       // TODO
     });
 
+    // String image
+    test('to test the property `image`', () async {
+      // TODO
+    });
+
+    // String role
+    test('to test the property `role`', () async {
+      // TODO
+    });
+
+    // bool banned
+    test('to test the property `banned`', () async {
+      // TODO
+    });
+
+    // String banReason
+    test('to test the property `banReason`', () async {
+      // TODO
+    });
+
+    // DateTime banExpires
+    test('to test the property `banExpires`', () async {
+      // TODO
+    });
+
+    // bool isAnonymous
+    test('to test the property `isAnonymous`', () async {
+      // TODO
+    });
+
+    // String username
+    test('to test the property `username`', () async {
+      // TODO
+    });
+
+    // String displayUsername
+    test('to test the property `displayUsername`', () async {
+      // TODO
+    });
+
+    // String phoneNumber
+    test('to test the property `phoneNumber`', () async {
+      // TODO
+    });
+
+    // bool phoneNumberVerified
+    test('to test the property `phoneNumberVerified`', () async {
+      // TODO
+    });
+
     // DateTime createdAt
     test('to test the property `createdAt`', () async {
       // TODO

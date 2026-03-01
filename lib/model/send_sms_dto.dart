@@ -16,6 +16,7 @@ class SendSmsDto {
     required this.to,
     required this.message,
     this.from,
+    this.merchantId,
   });
 
   /// Recipient phone number(s) in international format
@@ -33,21 +34,32 @@ class SendSmsDto {
   ///
   String? from;
 
+  /// Merchant ID for context and auditing
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? merchantId;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SendSmsDto &&
     other.to == to &&
     other.message == message &&
-    other.from == from;
+    other.from == from &&
+    other.merchantId == merchantId;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (to.hashCode) +
     (message.hashCode) +
-    (from == null ? 0 : from!.hashCode);
+    (from == null ? 0 : from!.hashCode) +
+    (merchantId == null ? 0 : merchantId!.hashCode);
 
   @override
-  String toString() => 'SendSmsDto[to=$to, message=$message, from=$from]';
+  String toString() => 'SendSmsDto[to=$to, message=$message, from=$from, merchantId=$merchantId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -57,6 +69,11 @@ class SendSmsDto {
       json[r'from'] = this.from;
     } else {
       json[r'from'] = null;
+    }
+    if (this.merchantId != null) {
+      json[r'merchantId'] = this.merchantId;
+    } else {
+      json[r'merchantId'] = null;
     }
     return json;
   }
@@ -83,6 +100,7 @@ class SendSmsDto {
         to: mapValueOfType<Object>(json, r'to')!,
         message: mapValueOfType<String>(json, r'message')!,
         from: mapValueOfType<String>(json, r'from'),
+        merchantId: mapValueOfType<String>(json, r'merchantId'),
       );
     }
     return null;

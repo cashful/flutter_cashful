@@ -17,6 +17,24 @@ void main() {
   // final instance = EventsApi();
 
   group('tests for EventsApi', () {
+    // Create Event
+    //
+    // Records a new event and triggers associated webhooks.
+    //
+    //Future createEvent(CreateEventDto createEventDto) async
+    test('test createEvent', () async {
+      // TODO
+    });
+
+    // List Event Types
+    //
+    // Retrieves all available event types that can be sent or subscribed to.
+    //
+    //Future<ListEventTypesResponseDto> listEventTypes() async
+    test('test listEventTypes', () async {
+      // TODO
+    });
+
     // List Events
     //
     // Retrieves a log of all API events for debugging and logging.

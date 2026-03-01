@@ -17,7 +17,7 @@ class SignUpDto {
     required this.email,
     required this.password,
     this.image,
-    this.callbackURL,
+    this.callbackURL = 'https://api.cashful.africa/auth/callback',
     this.rememberMe,
   });
 
@@ -40,13 +40,7 @@ class SignUpDto {
   String? image;
 
   /// Optional callback URL after successful sign-up
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? callbackURL;
+  String callbackURL;
 
   /// Optional flag to indicate if the user should be remembered
   ///
@@ -73,7 +67,7 @@ class SignUpDto {
     (email.hashCode) +
     (password.hashCode) +
     (image == null ? 0 : image!.hashCode) +
-    (callbackURL == null ? 0 : callbackURL!.hashCode) +
+    (callbackURL.hashCode) +
     (rememberMe == null ? 0 : rememberMe!.hashCode);
 
   @override
@@ -89,11 +83,7 @@ class SignUpDto {
     } else {
       json[r'image'] = null;
     }
-    if (this.callbackURL != null) {
       json[r'callbackURL'] = this.callbackURL;
-    } else {
-      json[r'callbackURL'] = null;
-    }
     if (this.rememberMe != null) {
       json[r'rememberMe'] = this.rememberMe;
     } else {
@@ -125,7 +115,7 @@ class SignUpDto {
         email: mapValueOfType<String>(json, r'email')!,
         password: mapValueOfType<String>(json, r'password')!,
         image: mapValueOfType<String>(json, r'image'),
-        callbackURL: mapValueOfType<String>(json, r'callbackURL'),
+        callbackURL: mapValueOfType<String>(json, r'callbackURL') ?? 'https://api.cashful.africa/auth/callback',
         rememberMe: mapValueOfType<bool>(json, r'rememberMe'),
       );
     }

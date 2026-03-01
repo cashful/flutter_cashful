@@ -12,6 +12,16 @@ Name | Type | Description | Notes
 **email** | **String** |  | 
 **emailVerified** | **bool** |  | 
 **name** | **String** |  | 
+**image** | **String** |  | [optional] 
+**role** | **String** |  | [optional] 
+**banned** | **bool** |  | [optional] 
+**banReason** | **String** |  | [optional] 
+**banExpires** | [**DateTime**](DateTime.md) |  | [optional] 
+**isAnonymous** | **bool** |  | [optional] 
+**username** | **String** |  | [optional] 
+**displayUsername** | **String** |  | [optional] 
+**phoneNumber** | **String** |  | [optional] 
+**phoneNumberVerified** | **bool** |  | [optional] 
 **createdAt** | [**DateTime**](DateTime.md) |  | 
 **updatedAt** | [**DateTime**](DateTime.md) |  | 
 

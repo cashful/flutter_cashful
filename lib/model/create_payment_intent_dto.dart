@@ -18,7 +18,7 @@ class CreatePaymentIntentDto {
     this.paymentMethodId,
     required this.amount,
     required this.currency,
-    this.mode = const CreatePaymentIntentDtoModeEnum._('payment'),
+    this.mode,
     this.description,
     this.metadata = const {},
     this.idempotencyKey,
@@ -59,7 +59,7 @@ class CreatePaymentIntentDto {
   String currency;
 
   /// The mode of the payment intent
-  CreatePaymentIntentDtoModeEnum mode;
+  CreatePaymentIntentDtoModeEnum? mode;
 
   /// Optional description for the payment
   ///
@@ -112,7 +112,7 @@ class CreatePaymentIntentDto {
     (paymentMethodId == null ? 0 : paymentMethodId!.hashCode) +
     (amount.hashCode) +
     (currency.hashCode) +
-    (mode.hashCode) +
+    (mode == null ? 0 : mode!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
     (metadata.hashCode) +
     (idempotencyKey == null ? 0 : idempotencyKey!.hashCode) +
@@ -140,7 +140,11 @@ class CreatePaymentIntentDto {
     }
       json[r'amount'] = this.amount;
       json[r'currency'] = this.currency;
+    if (this.mode != null) {
       json[r'mode'] = this.mode;
+    } else {
+      json[r'mode'] = null;
+    }
     if (this.description != null) {
       json[r'description'] = this.description;
     } else {
@@ -184,7 +188,7 @@ class CreatePaymentIntentDto {
         paymentMethodId: mapValueOfType<String>(json, r'paymentMethodId'),
         amount: num.parse('${json[r'amount']}'),
         currency: mapValueOfType<String>(json, r'currency')!,
-        mode: CreatePaymentIntentDtoModeEnum.fromJson(json[r'mode']) ?? 'payment',
+        mode: CreatePaymentIntentDtoModeEnum.fromJson(json[r'mode']),
         description: mapValueOfType<String>(json, r'description'),
         metadata: mapCastOfType<String, Object>(json, r'metadata') ?? const {},
         idempotencyKey: mapValueOfType<String>(json, r'idempotencyKey'),

@@ -1931,7 +1931,7 @@ import 'package:flutter_cashful/api.dart';
 
 final api_instance = AuthenticationApi();
 final token = token_example; // String | 
-final callbackURL = https://example.com/reset-password; // String | The URL to redirect user to reset their password
+final callbackURL = https://www.cashful.africa/reset-password; // String | The URL to redirect user to reset their password
 
 try {
     final result = api_instance.resetPasswordCallback(token, callbackURL);
@@ -2802,7 +2802,7 @@ import 'package:flutter_cashful/api.dart';
 
 final api_instance = AuthenticationApi();
 final token = verify_token_12345; // String | The token to verify email
-final callbackURL = https://example.com/callback; // String | The URL to redirect to after email verification
+final callbackURL = https://www.cashful.africa/callback; // String | The URL to redirect to after email verification
 
 try {
     final result = api_instance.verifyEmail(token, callbackURL);

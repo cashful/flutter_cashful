@@ -26,6 +26,31 @@ void main() {
       // TODO
     });
 
+    // String token
+    test('to test the property `token`', () async {
+      // TODO
+    });
+
+    // DateTime createdAt
+    test('to test the property `createdAt`', () async {
+      // TODO
+    });
+
+    // DateTime updatedAt
+    test('to test the property `updatedAt`', () async {
+      // TODO
+    });
+
+    // String impersonatedBy
+    test('to test the property `impersonatedBy`', () async {
+      // TODO
+    });
+
+    // String activeOrganizationId
+    test('to test the property `activeOrganizationId`', () async {
+      // TODO
+    });
+
     // DateTime expiresAt
     test('to test the property `expiresAt`', () async {
       // TODO

@@ -14,7 +14,7 @@ class CreateCustomerDto {
   /// Returns a new [CreateCustomerDto] instance.
   CreateCustomerDto({
     this.merchantId,
-    required this.phoneNumber,
+    this.phoneNumber,
     this.email,
     this.name,
     this.metadata = const {},
@@ -30,7 +30,13 @@ class CreateCustomerDto {
   String? merchantId;
 
   /// The phone number of the customer
-  String phoneNumber;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? phoneNumber;
 
   /// The email address of the customer
   ///
@@ -65,7 +71,7 @@ class CreateCustomerDto {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (merchantId == null ? 0 : merchantId!.hashCode) +
-    (phoneNumber.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
     (email == null ? 0 : email!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (metadata.hashCode);
@@ -80,7 +86,11 @@ class CreateCustomerDto {
     } else {
       json[r'merchantId'] = null;
     }
+    if (this.phoneNumber != null) {
       json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
+    }
     if (this.email != null) {
       json[r'email'] = this.email;
     } else {
@@ -115,7 +125,7 @@ class CreateCustomerDto {
 
       return CreateCustomerDto(
         merchantId: mapValueOfType<String>(json, r'merchantId'),
-        phoneNumber: mapValueOfType<String>(json, r'phoneNumber')!,
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
         email: mapValueOfType<String>(json, r'email'),
         name: mapValueOfType<String>(json, r'name'),
         metadata: mapCastOfType<String, Object>(json, r'metadata')!,
@@ -166,7 +176,6 @@ class CreateCustomerDto {
 
   /// The list of required keys that must be present in a JSON.
   static const requiredKeys = <String>{
-    'phoneNumber',
     'metadata',
   };
 }

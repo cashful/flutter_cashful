@@ -9,8 +9,103 @@ All URIs are relative to *https://api.cashful.africa*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**createEvent**](EventsApi.md#createevent) | **POST** /api/canary/events | Create Event
+[**listEventTypes**](EventsApi.md#listeventtypes) | **GET** /api/canary/events/types | List Event Types
 [**listEvents**](EventsApi.md#listevents) | **GET** /api/canary/events | List Events
 
+
+# **createEvent**
+> createEvent(createEventDto)
+
+Create Event
+
+Records a new event and triggers associated webhooks.
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = EventsApi();
+final createEventDto = CreateEventDto(); // CreateEventDto | 
+
+try {
+    api_instance.createEvent(createEventDto);
+} catch (e) {
+    print('Exception when calling EventsApi->createEvent: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createEventDto** | [**CreateEventDto**](CreateEventDto.md)|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **listEventTypes**
+> ListEventTypesResponseDto listEventTypes()
+
+List Event Types
+
+Retrieves all available event types that can be sent or subscribed to.
+
+### Example
+```dart
+import 'package:flutter_cashful/api.dart';
+// TODO Configure HTTP Bearer authorization: bearer
+// Case 1. Use String Token
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken('YOUR_ACCESS_TOKEN');
+// Case 2. Use Function which generate token.
+// String yourTokenGeneratorFunction() { ... }
+//defaultApiClient.getAuthentication<HttpBearerAuth>('bearer').setAccessToken(yourTokenGeneratorFunction);
+
+final api_instance = EventsApi();
+
+try {
+    final result = api_instance.listEventTypes();
+    print(result);
+} catch (e) {
+    print('Exception when calling EventsApi->listEventTypes: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ListEventTypesResponseDto**](ListEventTypesResponseDto.md)
+
+### Authorization
+
+[bearer](../README.md#bearer)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **listEvents**
 > ListEventsResponseDto listEvents(merchantId, limit, offset, type, status, startDate, endDate)

@@ -47,7 +47,7 @@ void main() {
     });
 
     // The mode of the payment intent
-    // String mode (default value: 'payment')
+    // String mode
     test('to test the property `mode`', () async {
       // TODO
     });

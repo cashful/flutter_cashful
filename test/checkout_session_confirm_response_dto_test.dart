@@ -36,6 +36,41 @@ void main() {
       // TODO
     });
 
+    // bool sandboxMode
+    test('to test the property `sandboxMode`', () async {
+      // TODO
+    });
+
+    // String status
+    test('to test the property `status`', () async {
+      // TODO
+    });
+
+    // String transactionId
+    test('to test the property `transactionId`', () async {
+      // TODO
+    });
+
+    // String authCode
+    test('to test the property `authCode`', () async {
+      // TODO
+    });
+
+    // num amount
+    test('to test the property `amount`', () async {
+      // TODO
+    });
+
+    // String currency
+    test('to test the property `currency`', () async {
+      // TODO
+    });
+
+    // String reason
+    test('to test the property `reason`', () async {
+      // TODO
+    });
+
 
   });
 

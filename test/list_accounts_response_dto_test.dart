@@ -17,7 +17,7 @@ void main() {
 
   group('test ListAccountsResponseDto', () {
     // List of linked social accounts
-    // List<Object> accounts (default value: const [])
+    // List<LinkedAccountDto> accounts (default value: const [])
     test('to test the property `accounts`', () async {
       // TODO
     });

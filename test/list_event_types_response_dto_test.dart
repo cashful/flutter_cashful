@@ -11,14 +11,13 @@
 import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
 
-// tests for ListUsersResponseDto
+// tests for ListEventTypesResponseDto
 void main() {
-  // final instance = ListUsersResponseDto();
+  // final instance = ListEventTypesResponseDto();
 
-  group('test ListUsersResponseDto', () {
-    // List of users
-    // List<SessionUserDto> users (default value: const [])
-    test('to test the property `users`', () async {
+  group('test ListEventTypesResponseDto', () {
+    // List<EventTypeResponseDto> data (default value: const [])
+    test('to test the property `data`', () async {
       // TODO
     });
 

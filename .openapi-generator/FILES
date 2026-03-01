@@ -54,6 +54,8 @@ doc/CreateApiKeyResponseDto.md
 doc/CreateBalanceDto.md
 doc/CreateCheckoutSessionDto.md
 doc/CreateCustomerDto.md
+doc/CreateEventDto.md
+doc/CreateEventTypeDto.md
 doc/CreateOrganizationComplianceDto.md
 doc/CreateOrganizationDto.md
 doc/CreateOrganizationResponseDto.md
@@ -79,6 +81,7 @@ doc/DeleteOrganizationResponseDto.md
 doc/DeleteUserDto.md
 doc/DeleteUserResponseDto.md
 doc/EventResponseDto.md
+doc/EventTypeResponseDto.md
 doc/EventsApi.md
 doc/EvervaultEncryptedCardDto.md
 doc/FileDto.md
@@ -117,12 +120,14 @@ doc/LeaveOrganizationResponseDto.md
 doc/LineItemDto.md
 doc/LinkSocialDto.md
 doc/LinkSocialResponseDto.md
+doc/LinkedAccountDto.md
 doc/ListAccountsResponseDto.md
 doc/ListApiKeysResponseDto.md
 doc/ListCheckoutSessionsResponseDto.md
 doc/ListCustomerPaymentMethodsResponseDto.md
 doc/ListCustomerTransactionsResponseDto.md
 doc/ListCustomersResponseDto.md
+doc/ListEventTypesResponseDto.md
 doc/ListEventsResponseDto.md
 doc/ListFilesResponseDto.md
 doc/ListInvitationsResponseDto.md
@@ -310,6 +315,8 @@ lib/model/create_api_key_response_dto.dart
 lib/model/create_balance_dto.dart
 lib/model/create_checkout_session_dto.dart
 lib/model/create_customer_dto.dart
+lib/model/create_event_dto.dart
+lib/model/create_event_type_dto.dart
 lib/model/create_organization_compliance_dto.dart
 lib/model/create_organization_dto.dart
 lib/model/create_organization_response_dto.dart
@@ -334,6 +341,7 @@ lib/model/delete_organization_response_dto.dart
 lib/model/delete_user_dto.dart
 lib/model/delete_user_response_dto.dart
 lib/model/event_response_dto.dart
+lib/model/event_type_response_dto.dart
 lib/model/evervault_encrypted_card_dto.dart
 lib/model/file_dto.dart
 lib/model/forbidden_response_dto.dart
@@ -370,12 +378,14 @@ lib/model/leave_organization_response_dto.dart
 lib/model/line_item_dto.dart
 lib/model/link_social_dto.dart
 lib/model/link_social_response_dto.dart
+lib/model/linked_account_dto.dart
 lib/model/list_accounts_response_dto.dart
 lib/model/list_api_keys_response_dto.dart
 lib/model/list_checkout_sessions_response_dto.dart
 lib/model/list_customer_payment_methods_response_dto.dart
 lib/model/list_customer_transactions_response_dto.dart
 lib/model/list_customers_response_dto.dart
+lib/model/list_event_types_response_dto.dart
 lib/model/list_events_response_dto.dart
 lib/model/list_files_response_dto.dart
 lib/model/list_invitations_response_dto.dart
@@ -531,6 +541,8 @@ test/create_api_key_response_dto_test.dart
 test/create_balance_dto_test.dart
 test/create_checkout_session_dto_test.dart
 test/create_customer_dto_test.dart
+test/create_event_dto_test.dart
+test/create_event_type_dto_test.dart
 test/create_organization_compliance_dto_test.dart
 test/create_organization_dto_test.dart
 test/create_organization_response_dto_test.dart
@@ -556,6 +568,7 @@ test/delete_organization_response_dto_test.dart
 test/delete_user_dto_test.dart
 test/delete_user_response_dto_test.dart
 test/event_response_dto_test.dart
+test/event_type_response_dto_test.dart
 test/events_api_test.dart
 test/evervault_encrypted_card_dto_test.dart
 test/file_dto_test.dart
@@ -594,12 +607,14 @@ test/leave_organization_response_dto_test.dart
 test/line_item_dto_test.dart
 test/link_social_dto_test.dart
 test/link_social_response_dto_test.dart
+test/linked_account_dto_test.dart
 test/list_accounts_response_dto_test.dart
 test/list_api_keys_response_dto_test.dart
 test/list_checkout_sessions_response_dto_test.dart
 test/list_customer_payment_methods_response_dto_test.dart
 test/list_customer_transactions_response_dto_test.dart
 test/list_customers_response_dto_test.dart
+test/list_event_types_response_dto_test.dart
 test/list_events_response_dto_test.dart
 test/list_files_response_dto_test.dart
 test/list_invitations_response_dto_test.dart

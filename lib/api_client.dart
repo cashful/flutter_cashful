@@ -274,6 +274,10 @@ class ApiClient {
           return CreateCheckoutSessionDto.fromJson(value);
         case 'CreateCustomerDto':
           return CreateCustomerDto.fromJson(value);
+        case 'CreateEventDto':
+          return CreateEventDto.fromJson(value);
+        case 'CreateEventTypeDto':
+          return CreateEventTypeDto.fromJson(value);
         case 'CreateOrganizationComplianceDto':
           return CreateOrganizationComplianceDto.fromJson(value);
         case 'CreateOrganizationDto':
@@ -322,6 +326,8 @@ class ApiClient {
           return DeleteUserResponseDto.fromJson(value);
         case 'EventResponseDto':
           return EventResponseDto.fromJson(value);
+        case 'EventTypeResponseDto':
+          return EventTypeResponseDto.fromJson(value);
         case 'EvervaultEncryptedCardDto':
           return EvervaultEncryptedCardDto.fromJson(value);
         case 'FileDto':
@@ -394,6 +400,8 @@ class ApiClient {
           return LinkSocialDto.fromJson(value);
         case 'LinkSocialResponseDto':
           return LinkSocialResponseDto.fromJson(value);
+        case 'LinkedAccountDto':
+          return LinkedAccountDto.fromJson(value);
         case 'ListAccountsResponseDto':
           return ListAccountsResponseDto.fromJson(value);
         case 'ListApiKeysResponseDto':
@@ -406,6 +414,8 @@ class ApiClient {
           return ListCustomerTransactionsResponseDto.fromJson(value);
         case 'ListCustomersResponseDto':
           return ListCustomersResponseDto.fromJson(value);
+        case 'ListEventTypesResponseDto':
+          return ListEventTypesResponseDto.fromJson(value);
         case 'ListEventsResponseDto':
           return ListEventsResponseDto.fromJson(value);
         case 'ListFilesResponseDto':

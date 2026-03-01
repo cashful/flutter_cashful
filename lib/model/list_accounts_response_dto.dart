@@ -17,7 +17,7 @@ class ListAccountsResponseDto {
   });
 
   /// List of linked social accounts
-  List<Object> accounts;
+  List<LinkedAccountDto> accounts;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ListAccountsResponseDto &&
@@ -56,7 +56,7 @@ class ListAccountsResponseDto {
       }());
 
       return ListAccountsResponseDto(
-        accounts: Object.listFromJson(json[r'accounts']),
+        accounts: LinkedAccountDto.listFromJson(json[r'accounts']),
       );
     }
     return null;

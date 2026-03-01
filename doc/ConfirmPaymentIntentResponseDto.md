@@ -9,8 +9,15 @@ import 'package:flutter_cashful/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **paymentIntent** | [**PaymentIntentResponseDto**](PaymentIntentResponseDto.md) |  | 
-**iveriParams** | [**Object**](.md) |  | 
-**iVeri3dsEndpoint** | **String** |  | 
+**iveriParams** | [**Object**](.md) |  | [optional] 
+**iVeri3dsEndpoint** | **String** |  | [optional] 
+**sandboxMode** | **bool** |  | [optional] 
+**status** | **String** |  | [optional] 
+**transactionId** | **String** |  | [optional] 
+**authCode** | **String** |  | [optional] 
+**amount** | **num** |  | [optional] 
+**currency** | **String** |  | [optional] 
+**reason** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

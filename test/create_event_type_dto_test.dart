@@ -11,14 +11,20 @@
 import 'package:flutter_cashful/api.dart';
 import 'package:test/test.dart';
 
-// tests for ListUsersResponseDto
+// tests for CreateEventTypeDto
 void main() {
-  // final instance = ListUsersResponseDto();
+  // final instance = CreateEventTypeDto();
 
-  group('test ListUsersResponseDto', () {
-    // List of users
-    // List<SessionUserDto> users (default value: const [])
-    test('to test the property `users`', () async {
+  group('test CreateEventTypeDto', () {
+    // Name of the event type
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // Description of the event type
+    // String description
+    test('to test the property `description`', () async {
       // TODO
     });
 

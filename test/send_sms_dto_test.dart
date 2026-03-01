@@ -34,6 +34,12 @@ void main() {
       // TODO
     });
 
+    // Merchant ID for context and auditing
+    // String merchantId
+    test('to test the property `merchantId`', () async {
+      // TODO
+    });
+
 
   });
 

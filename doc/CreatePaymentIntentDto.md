@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **paymentMethodId** | **String** | The unique identifier of the payment method. Optional if payment method will be collected later. | [optional] 
 **amount** | **num** | The amount to charge in the smallest currency unit (cents) | 
 **currency** | **String** | The three-letter ISO 4217 currency code | 
-**mode** | **String** | The mode of the payment intent | [optional] [default to 'payment']
+**mode** | **String** | The mode of the payment intent | [optional] 
 **description** | **String** | Optional description for the payment | [optional] 
 **metadata** | [**Map<String, Object>**](Object.md) | Optional custom metadata | [optional] [default to const {}]
 **idempotencyKey** | **String** | A unique key to prevent duplicate charges. If not provided, one will be generated. | [optional] 

@@ -10,6 +10,11 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **userId** | **String** |  | 
+**token** | **String** |  | 
+**createdAt** | [**DateTime**](DateTime.md) |  | 
+**updatedAt** | [**DateTime**](DateTime.md) |  | 
+**impersonatedBy** | **String** |  | [optional] 
+**activeOrganizationId** | **String** |  | [optional] 
 **expiresAt** | [**DateTime**](DateTime.md) |  | 
 **ipAddress** | **String** |  | [optional] 
 **userAgent** | **String** |  | [optional] 

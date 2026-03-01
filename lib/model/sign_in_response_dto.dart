@@ -26,7 +26,7 @@ class SignInResponseDto {
   String token;
 
   /// Whether to redirect
-  SignInResponseDtoRedirectEnum? redirect;
+  bool redirect;
 
   /// Redirect URL
   ///
@@ -49,7 +49,7 @@ class SignInResponseDto {
     // ignore: unnecessary_parenthesis
     (user.hashCode) +
     (token.hashCode) +
-    (redirect == null ? 0 : redirect!.hashCode) +
+    (redirect.hashCode) +
     (url == null ? 0 : url!.hashCode);
 
   @override
@@ -59,11 +59,7 @@ class SignInResponseDto {
     final json = <String, dynamic>{};
       json[r'user'] = this.user;
       json[r'token'] = this.token;
-    if (this.redirect != null) {
       json[r'redirect'] = this.redirect;
-    } else {
-      json[r'redirect'] = null;
-    }
     if (this.url != null) {
       json[r'url'] = this.url;
     } else {
@@ -93,9 +89,7 @@ class SignInResponseDto {
       return SignInResponseDto(
         user: SessionUserDto.fromJson(json[r'user'])!,
         token: mapValueOfType<String>(json, r'token')!,
-        redirect: json[r'redirect'] == null
-            ? null
-            : SignInResponseDtoRedirectEnum.parse('${json[r'redirect']}'),
+        redirect: mapValueOfType<bool>(json, r'redirect')!,
         url: mapValueOfType<String>(json, r'url'),
       );
     }
@@ -149,72 +143,4 @@ class SignInResponseDto {
     'redirect',
   };
 }
-
-/// Whether to redirect
-class SignInResponseDtoRedirectEnum {
-  /// Instantiate a new enum with the provided [value].
-  const SignInResponseDtoRedirectEnum._(this.value);
-
-  /// The underlying value of this enum member.
-  final num value;
-
-  @override
-  String toString() => value.toString();
-
-  num toJson() => value;
-
-
-  /// List of all possible values in this [enum][SignInResponseDtoRedirectEnum].
-  static const values = <SignInResponseDtoRedirectEnum>[
-  ];
-
-  static SignInResponseDtoRedirectEnum? fromJson(dynamic value) => SignInResponseDtoRedirectEnumTypeTransformer().decode(value);
-
-  static List<SignInResponseDtoRedirectEnum> listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <SignInResponseDtoRedirectEnum>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = SignInResponseDtoRedirectEnum.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-}
-
-/// Transformation class that can [encode] an instance of [SignInResponseDtoRedirectEnum] to num,
-/// and [decode] dynamic data back to [SignInResponseDtoRedirectEnum].
-class SignInResponseDtoRedirectEnumTypeTransformer {
-  factory SignInResponseDtoRedirectEnumTypeTransformer() => _instance ??= const SignInResponseDtoRedirectEnumTypeTransformer._();
-
-  const SignInResponseDtoRedirectEnumTypeTransformer._();
-
-  num encode(SignInResponseDtoRedirectEnum data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a SignInResponseDtoRedirectEnum.
-  ///
-  /// If [allowNull] is true and the [dynamic value][data] cannot be decoded successfully,
-  /// then null is returned. However, if [allowNull] is false and the [dynamic value][data]
-  /// cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  ///
-  /// The [allowNull] is very handy when an API changes and a new enum value is added or removed,
-  /// and users are still using an old app with the old code.
-  SignInResponseDtoRedirectEnum? decode(dynamic data, {bool allowNull = true}) {
-    if (data != null) {
-      switch (data) {
-        default:
-          if (!allowNull) {
-            throw ArgumentError('Unknown enum value to decode: $data');
-          }
-      }
-    }
-    return null;
-  }
-
-  /// Singleton [SignInResponseDtoRedirectEnumTypeTransformer] instance.
-  static SignInResponseDtoRedirectEnumTypeTransformer? _instance;
-}
-
 
